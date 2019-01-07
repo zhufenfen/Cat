@@ -1,0 +1,22 @@
+{
+    "publish":[
+        {
+            "id":1,
+            "title":"publish_background",
+            "alt":"",
+            "img":"static/imgs/publish/background.png"
+        },
+        {
+            "id":2,
+            "title":"发帖",
+            "alt":"发帖",
+            "img":"static/imgs/publish/icon-ft.png"
+        },
+        {
+            "id":3,
+            "title":"相册",
+            "alt":"相册",
+            "img":"static/imgs/publish/icon-xc.png"
+        }
+    ]
+}
