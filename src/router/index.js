@@ -7,8 +7,6 @@ import Shop from "@/components/shop"
 import My from "@/components/my"
 import Err from "@/components/error"
 import Login from "@/components/login"
-import Post from "@/components/publish/components/post"
-import Photo from "@/components/publish/components/photo"
 Vue.use(Router)
 
 var router = new Router({
@@ -22,8 +20,7 @@ var router = new Router({
       name:"home",
       component:Home,
       meta:{
-        requireAuth:true,
-        flag:true
+        requireAuth:true
       }
     },
     {
@@ -31,29 +28,15 @@ var router = new Router({
       name:"community",
       component:Community,
       meta:{
-        requireAuth:true,
-        flag:true
+        requireAuth:true
       }
     },
     {
       path:"/publish",
       name:"publish",
       component:Publish,
-      children:[
-        {
-          path:"/publish/post",
-          name:"post",
-          component:Post
-        },
-        {
-          path:"/publish/photo",
-          name:"photo",
-          component:Photo
-        }
-      ],
       meta:{
-        requireAuth:true,
-        flag:false
+        requireAuth:true
       }
     },
     {
@@ -61,8 +44,7 @@ var router = new Router({
       name:"shop",
       component:Shop,
       meta:{
-        requireAuth:true,
-        flag:true
+        requireAuth:true
       }
     },
     {
@@ -70,8 +52,7 @@ var router = new Router({
       name:"my",
       component:My,
       meta:{
-        requireAuth:true,
-        flag:true
+        requireAuth:true
       }
     },
     {

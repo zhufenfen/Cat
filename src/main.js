@@ -4,8 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from "./store"
-import axios from "axios"
-Vue.prototype.$http = axios
 import "../node_modules/swiper/dist/css/swiper.min.css"
 import "./common/css/reset.css"
 import "./common/js/flexble"
