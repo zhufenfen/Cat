@@ -1,6 +1,6 @@
 <template>
     <div>
-        商城
+        我是更改后的商城啦
     </div>
 </template>
 
