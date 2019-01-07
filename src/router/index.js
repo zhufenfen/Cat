@@ -39,23 +39,21 @@ var router = new Router({
       path:"/publish",
       name:"publish",
       component:Publish,
-      children:[
-        {
-          path:"/publish/post",
-          name:"post",
-          component:Post
-        },
-        {
-          path:"/publish/photo",
-          name:"photo",
-          component:Photo
-        }
-      ],
       meta:{
         requireAuth:true,
         flag:false
       }
     },
+    {
+      path:"/post",   //发布页面跳转到发帖页面
+      name:"post",
+      component:Post
+    },
+    {
+      path:"/photo",   //发布页面跳转到相册页面
+      name:"photo",
+      component:Photo
+    }, 
     {
       path:"/shop",
       name:"shop",
