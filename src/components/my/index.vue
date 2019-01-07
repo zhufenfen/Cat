@@ -1,6 +1,8 @@
 <template>
     <div>
         <Header-com></Header-com>
+        <router-view/>
+        我的
     </div>
 </template>
 

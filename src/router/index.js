@@ -7,8 +7,9 @@ import Shop from "@/components/shop"
 import My from "@/components/my"
 import Err from "@/components/error"
 import Login from "@/components/login"
-import Post from "@/components/publish/components/post"
-import Photo from "@/components/publish/components/photo"
+import Article from "@/components/my/article"
+import Pet from "@/components/my/pet"
+import Collect from "@/components/my/collect"
 Vue.use(Router)
 
 var router = new Router({
@@ -68,9 +69,34 @@ var router = new Router({
       name:"my",
       component:My,
       meta:{
-        requireAuth:true,
-        flag:true
-      }
+        requireAuth:true
+      },
+      children:[
+        {
+          path:"/my/article",
+          name:"article",
+          component:Article,
+          meta:{
+            requireAuth:true
+          },
+        },
+        {
+          path:"/my/collect",
+          name:"collect",
+          component:Collect,
+          meta:{
+            requireAuth:true
+          },
+        },
+        {
+          path:"/my/pet",
+          name:"pet",
+          component:Pet,
+          meta:{
+            requireAuth:true
+          },
+        }
+      ],
     },
     {
       path:"/login",
