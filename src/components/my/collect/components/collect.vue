@@ -1,6 +1,6 @@
 <template>
     <div>
-        收藏
+        收藏hhahahahha 
     </div>
 </template>
 
