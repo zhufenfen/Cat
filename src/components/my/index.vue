@@ -1,26 +1,21 @@
 <template>
     <div>
-        我的
-        <Pet-com/>
-        <Collect-com/>
-        <Article-com/>
+        <Header-com></Header-com>
     </div>
 </template>
 
 <script>
-import Pet from "./pet/index"
-import Collect from "./collect/index"
-import Article from "./article/index"
+import Header from './components/header'
 export default {
     components:{
-      "Pet-com":Pet,
-      "Collect-com":Collect,
-      "Article-com":Article,
+        "Header-com":Header,
+
     }
 }
+    
 </script>
 
 
-<style lang="sass">
+<style lang="scss">
     
 </style>
