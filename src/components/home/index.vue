@@ -1,16 +1,17 @@
 <template>
     <div>
-        首页
+        <Top-com/>
     </div>
 </template>
 
 <script>
+import Top from './top'
 export default {
-    
+    "Top-com":Top
 }
 </script>
 
 
-<style lang="sass">
+<style lang="scss">
     
 </style>
