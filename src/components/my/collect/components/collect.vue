@@ -1,6 +1,6 @@
 <template>
     <div>
-        收藏hhahahahha 
+        收藏，我是收藏页，晚上提交
     </div>
 </template>
 
