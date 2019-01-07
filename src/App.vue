@@ -17,4 +17,10 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
+=======
+#app {
+  
+}
+>>>>>>> lijipeng
 </style>
