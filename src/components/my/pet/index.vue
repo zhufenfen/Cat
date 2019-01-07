@@ -1,6 +1,5 @@
 <template>
     <div>
-        我是修改后的胡仁杰
         <Pet-com/>
     </div>
 </template>

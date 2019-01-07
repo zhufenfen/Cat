@@ -1,6 +1,6 @@
 <template>
     <div>
-        收藏，我是收藏页，11111111111
+        收藏
     </div>
 </template>
 
