@@ -1,16 +1,21 @@
 <template>
     <div>
-        我的
+        <Header-com></Header-com>
     </div>
 </template>
 
 <script>
+import Header from './components/header'
 export default {
-    
+    components:{
+        "Header-com":Header,
+
+    }
 }
+    
 </script>
 
 
-<style lang="sass">
+<style lang="scss">
     
 </style>
