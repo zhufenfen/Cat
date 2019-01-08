@@ -1,25 +1,56 @@
 <template>
     <div class="out">
-        收藏
         <div class="header">
-           <span>〈</span>
+           <span><router-link :to="{name:name}">〈</router-link></span>
            <ul>
-               <li>
+               <li @click="handleToggle(1)">
                      宝贝收藏
                </li>
-               <li>
+               <li @click="handleToggle(0)">
                      文章收藏
                </li>
            </ul>
         </div>
+            <component :is="comName"></component>
     </div>
 </template>
 
 <script>
-
+import ArticleCollect from "./articleCollect.vue";
+import TreasoreCollect from "./treasoreCollect.vue";
+import BScroll from "better-scroll";
+console.log(ArticleCollect)
 export default {
-    components:{
-    
+    components: {
+    "ArticleCollect-com":ArticleCollect,
+    "TreasoreCollect-com": TreasoreCollect,
+     },
+     data(){
+         return{
+             comName: "TreasoreCollect-com",
+             path:"/my",
+             name:"my",
+         }
+     },
+     methods: {
+    handleToggle(index) {
+      switch (index) {
+        case 0:
+          this.comName = "ArticleCollect-com";
+          break;
+        case 1:
+          this.comName = "TreasoreCollect-com";
+          break;
+      }
+    },
+   },
+   mounted () {
+        this.scroll = new BScroll(this.$refs.homeWrapper,{
+            //只有设置成true pullingUp才能使用
+            pullUpLoad:true,
+            click:true,
+            probeType:2
+        });
     }
 }
 </script>
@@ -29,11 +60,11 @@ export default {
     .out{
         color: black;
         width:7.85rem;
-        height:16.29rem;
         background: #eae6e6;
         .header{
             height: 0.8rem;
             width: 100%;
+            margin-bottom: 0.1rem;
             span{
                 height: 0.56rem;
                 width: 0.3rem;
