@@ -1,7 +1,6 @@
 <template>
     <div>
-        <router-view/>
-        我的
+        宠物
     </div>
 </template>
 
@@ -9,7 +8,7 @@
 
 export default {
     components:{
-
+    
     }
 }
 </script>

@@ -1,15 +1,14 @@
 <template>
     <div>
-        <router-view/>
-        我的
+        <Pet-com/>
     </div>
 </template>
 
 <script>
-
+import Pet from "./components/pet"
 export default {
     components:{
-
+             "Pet-com":Pet,
     }
 }
 </script>
