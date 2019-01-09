@@ -8,17 +8,14 @@ import My from "@/components/my"
 import Fans from "@/components/my/components/fans"
 import Err from "@/components/error"
 import Login from "@/components/login"
-<<<<<<< HEAD
 import Details from "@/components/community/component/details"
 import CatDetail from "@/components/community/component/catDetail"
-=======
 import Article from "@/components/my/article"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
 import Post from "@/components/publish/components/post"
 import Photo from "@/components/publish/components/photo"
 import Dynamic from "@/components/publish/components/dynamic"
->>>>>>> 3b86006916ced707b6223a366177aa1a991f7669
 Vue.use(Router)
 
 var router = new Router({
