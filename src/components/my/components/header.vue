@@ -5,22 +5,25 @@
       <ul class="fans">
         <li>
           <router-link :to="{name:'fans'}">
-          <p>粉丝
-            <span>11</span>
-          </p>
-          </router-link> 
+            <p>
+              粉丝
+              <span>11</span>
+            </p>
+          </router-link>
         </li>
         <li>
-          <p>关注
+          <p>
+            关注
             <span>11</span>
           </p>
-          
         </li>
         <li>
-          <p>动态
-            <span>11</span>
-          </p>
-          
+          <router-link :to="{name:'Dell'}">
+            <p>
+              动态
+              <span>11</span>
+            </p>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -67,30 +70,28 @@ export default {
       position: absolute;
       top: 1.31rem;
       left: 2.92rem;
-     
     }
     .fans {
-        position: absolute;
-        width:100%;
-        top:2.05rem;
-        display: flex;
-        justify-content: space-between;
-       padding-left:.93rem;
-       padding-right: .93rem;
+      position: absolute;
+      width: 100%;
+      top: 2.05rem;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0.93rem;
+      padding-right: 0.93rem;
       li {
-        width: .56rem;
-        height: .45rem;
-        font-size: .28rem;
+        width: 0.56rem;
+        height: 0.45rem;
+        font-size: 0.28rem;
         font-family: PingFang-SC-Regular;
         font-weight: 400;
         color: #202020;
-        span{
+        span {
           display: block;
-          margin-top:.10rem;
+          margin-top: 0.1rem;
+          text-align: center;
         }
-       
       }
-    
     }
   }
   .head {

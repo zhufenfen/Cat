@@ -39,45 +39,35 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
       path: "/community",
       name: "community",
       component: Community,
+      /*-----发现页面重定向------ */
+      redirect: "/community/discover",
       meta: {
         requireAuth: true,
         flag: true
-      }
-=======
-      path:"/community",
-      name:"community",
-      component:Community,
-      /*-----发现页面重定向------ */
-      redirect:"/community/discover",
-      meta:{
-        requireAuth:true,
-        flag:true
       },
       /*----发现喵圈页面路由----- */
-      children:[
+      children: [
         {
-          path:"/community/discover",
-          name:"discover",
-          component:Discover,
-          meta:{
-            flag:true,
-            requireAuth:true
+          path: "/community/discover",
+          name: "discover",
+          component: Discover,
+          meta: {
+            flag: true,
+            requireAuth: true
           }
-        },{
-          path:"/community/meowCircle",
-          name:"meowCircle",
-          component:MeowCircle,
-          meta:{
-            flag:true,
-            requireAuth:true
+        }, {
+          path: "/community/meowCircle",
+          name: "meowCircle",
+          component: MeowCircle,
+          meta: {
+            flag: true,
+            requireAuth: true
           }
         }
       ]
->>>>>>> 7ea007e6ae4efdff5966b7eeab7b350787ce11af
     },
     {
       path: "/publish",   //发布路由
@@ -124,26 +114,17 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
+      path: "/my/components",//我的页面跳转到粉丝页面
+      name: "fans",
+      component: Fans,
+    },
+    {
       path: "/my",
       name: "my",
       component: My,
       meta: {
         requireAuth: true,
         flag: true
-=======
-      path: "/my/components",//我的页面跳转到粉丝页面
-      name: "fans",
-      component: Fans,
-    },
-    {
-      path:"/my",
-      name:"my",
-      component:My,
-      meta:{
-        requireAuth:true,
-        flag:true
->>>>>>> 7ea007e6ae4efdff5966b7eeab7b350787ce11af
       },
       children: [
         {
@@ -188,21 +169,12 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
       path: "/catDetail",
       name: "catDetail",
       component: CatDetail,
       meta: {
-        flag: true,
+        flag: false,
         requireAuth: true
-=======
-      path:"/catDetail",
-      name:"catDetail",
-      component:CatDetail,
-      meta:{
-        flag:false,
-        requireAuth:true
->>>>>>> 7ea007e6ae4efdff5966b7eeab7b350787ce11af
       }
     },
     {
