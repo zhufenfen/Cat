@@ -4,6 +4,7 @@ import Home from "@/components/home"
 import Community from "@/components/community"
 import Publish from "@/components/publish"
 import Shop from "@/components/shop"
+import ShopList from "@/components/shop/shopList"
 import My from "@/components/my"
 import Fans from "@/components/my/components/fans"
 import Err from "@/components/error"
@@ -84,6 +85,15 @@ var router = new Router({
       meta:{
         requireAuth:true,
         flag:true
+      }
+    },
+    {
+      path:"/shopList",
+      name:"shopList",
+      component:ShopList,
+      meta:{
+        requireAuth:false,
+        flag:false
       }
     },
     {
