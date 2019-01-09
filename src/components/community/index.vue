@@ -1,9 +1,11 @@
 <template>
   <div class="communitys">
     <div class="communityT">
-      <span  class="cover" :class="a==2?'':'active'" @click="handleDis(1)">发现</span>
-      <span  :class="a==1?'':'active'" @click="handleDis(2)">喵圈</span>
-      <component :a="a" :is="comName"></component>
+      
+      <span  class="cover" :class="a==2?'':'active'" @click="$router.push('/community/discover')">发现</span>
+      <span  :class="a==1?'':'active'" @click="$router.push('/community/meowCircle')">喵圈</span>
+      <!-- <component :a="a" :is="comName"></component> -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -20,20 +22,26 @@ export default {
   data() {
     return {
       a:1,
-      comName: "Discover-com"
+      // comName: "Discover-com"
     };
   },
   methods: {
     handleDis(val) {
       if (val == 1) {
-        this.comName = "Discover-com";
+        // this.comName = "Discover-com";
         this.a = 1;
       } else {
-        this.comName = "MeowCircle-com";
+        // this.comName = "MeowCircle-com";
         this.a = 2;
       }
     }
-  }
+  },
+  watch:{
+    $router(newVal,oldVal){
+      console.log(newVal,oldVal);
+      
+    }
+  },
 };
 </script>
 
@@ -67,7 +75,7 @@ img {
   }
 }
 .active{
-  color: #FF9797;
+  color:rgba(255,120,120,1);
   border-bottom: 1px solid #FF7878;
 }
 </style>

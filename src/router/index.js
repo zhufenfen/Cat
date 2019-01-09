@@ -7,8 +7,12 @@ import Shop from "@/components/shop"
 import My from "@/components/my"
 import Err from "@/components/error"
 import Login from "@/components/login"
+/* ---------喵圈路由-------------*/ 
 import Details from "@/components/community/component/details"
 import CatDetail from "@/components/community/component/catDetail"
+import Discover from "@/components/community/component/discover"
+import MeowCircle from "@/components/community/component/meowCircle"
+
 import Article from "@/components/my/article"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
@@ -36,10 +40,32 @@ var router = new Router({
       path:"/community",
       name:"community",
       component:Community,
+      /*-----发现页面重定向------ */
+      redirect:"/community/discover",
       meta:{
         requireAuth:true,
         flag:true
-      }
+      },
+      /*----发现喵圈页面路由----- */
+      children:[
+        {
+          path:"/community/discover",
+          name:"discover",
+          component:Discover,
+          meta:{
+            flag:true,
+            requireAuth:true
+          }
+        },{
+          path:"/community/meowCircle",
+          name:"meowCircle",
+          component:MeowCircle,
+          meta:{
+            flag:true,
+            requireAuth:true
+          }
+        }
+      ]
     },
     {
       path:"/publish",   //发布路由
@@ -125,6 +151,7 @@ var router = new Router({
       name:"login",
       component:Login,
     },
+    /*----------------喵圈路由 ----*/
     {
       path:"/details",
       name:"details",
@@ -139,7 +166,7 @@ var router = new Router({
       name:"catDetail",
       component:CatDetail,
       meta:{
-        flag:true,
+        flag:false,
         requireAuth:true
       }
     },
