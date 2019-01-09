@@ -1,7 +1,6 @@
 <template>
     <div>
-        <router-view/>
-        我的
+        宝贝收藏
     </div>
 </template>
 
@@ -15,6 +14,6 @@ export default {
 </script>
 
 
-<style lang="sass">
+<style lang="scss">
     
 </style>

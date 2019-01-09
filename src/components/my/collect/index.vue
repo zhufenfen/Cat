@@ -1,15 +1,14 @@
 <template>
     <div>
-        <router-view/>
-        我的
+        <Collect-com/>
     </div>
 </template>
 
 <script>
-
+import Collect from "./components/collect"
 export default {
     components:{
-
+             "Collect-com":Collect,
     }
 }
 </script>

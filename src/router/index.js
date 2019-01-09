@@ -7,8 +7,17 @@ import Shop from "@/components/shop"
 import My from "@/components/my"
 import Err from "@/components/error"
 import Login from "@/components/login"
+<<<<<<< HEAD
 import Details from "@/components/community/component/details"
 import CatDetail from "@/components/community/component/catDetail"
+=======
+import Article from "@/components/my/article"
+import Pet from "@/components/my/pet"
+import Collect from "@/components/my/collect"
+import Post from "@/components/publish/components/post"
+import Photo from "@/components/publish/components/photo"
+import Dynamic from "@/components/publish/components/dynamic"
+>>>>>>> 3b86006916ced707b6223a366177aa1a991f7669
 Vue.use(Router)
 
 var router = new Router({
@@ -22,7 +31,8 @@ var router = new Router({
       name:"home",
       component:Home,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
       }
     },
     {
@@ -30,23 +40,52 @@ var router = new Router({
       name:"community",
       component:Community,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
       }
     },
     {
-      path:"/publish",
+      path:"/publish",   //发布路由
       name:"publish",
       component:Publish,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:false
       }
     },
+    {
+      path:"/post",   //发布页面跳转到发帖页面
+      name:"post",
+      component:Post,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/photo",   //发布页面跳转到相册页面
+      name:"photo",
+      component:Photo,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    }, 
+    {
+      path:"/dynamic",   //相册页面跳转到发布动态页面
+      name:"dynamic",
+      component:Dynamic,
+      meta:{
+        requireAuth:true
+      }
+    }, 
     {
       path:"/shop",
       name:"shop",
       component:Shop,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
       }
     },
     {
@@ -54,8 +93,35 @@ var router = new Router({
       name:"my",
       component:My,
       meta:{
-        requireAuth:true
-      }
+        requireAuth:true,
+        flag:true
+      },
+      children:[
+        {
+          path:"/my/article",
+          name:"article",
+          component:Article,
+          meta:{
+            requireAuth:true
+          },
+        },
+        {
+          path:"/my/collect",
+          name:"collect",
+          component:Collect,
+          meta:{
+            requireAuth:true
+          },
+        },
+        {
+          path:"/my/pet",
+          name:"pet",
+          component:Pet,
+          meta:{
+            requireAuth:true
+          },
+        }
+      ],
     },
     {
       path:"/login",
