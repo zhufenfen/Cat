@@ -5,8 +5,16 @@ import Community from "@/components/community"
 import Publish from "@/components/publish"
 import Shop from "@/components/shop"
 import My from "@/components/my"
+import Fans from "@/components/my/components/fans"
 import Err from "@/components/error"
 import Login from "@/components/login"
+
+/* ---------喵圈路由-------------*/
+import Details from "@/components/community/component/details"
+import CatDetail from "@/components/community/component/catDetail"
+import Discover from "@/components/community/component/discover"
+import MeowCircle from "@/components/community/component/meowCircle"
+
 import Article from "@/components/my/article"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
@@ -31,6 +39,7 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/community",
       name: "community",
       component: Community,
@@ -38,6 +47,37 @@ var router = new Router({
         requireAuth: true,
         flag: true
       }
+=======
+      path:"/community",
+      name:"community",
+      component:Community,
+      /*-----发现页面重定向------ */
+      redirect:"/community/discover",
+      meta:{
+        requireAuth:true,
+        flag:true
+      },
+      /*----发现喵圈页面路由----- */
+      children:[
+        {
+          path:"/community/discover",
+          name:"discover",
+          component:Discover,
+          meta:{
+            flag:true,
+            requireAuth:true
+          }
+        },{
+          path:"/community/meowCircle",
+          name:"meowCircle",
+          component:MeowCircle,
+          meta:{
+            flag:true,
+            requireAuth:true
+          }
+        }
+      ]
+>>>>>>> 7ea007e6ae4efdff5966b7eeab7b350787ce11af
     },
     {
       path: "/publish",   //发布路由
@@ -84,12 +124,26 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/my",
       name: "my",
       component: My,
       meta: {
         requireAuth: true,
         flag: true
+=======
+      path: "/my/components",//我的页面跳转到粉丝页面
+      name: "fans",
+      component: Fans,
+    },
+    {
+      path:"/my",
+      name:"my",
+      component:My,
+      meta:{
+        requireAuth:true,
+        flag:true
+>>>>>>> 7ea007e6ae4efdff5966b7eeab7b350787ce11af
       },
       children: [
         {
@@ -123,6 +177,7 @@ var router = new Router({
       name: "login",
       component: Login,
     },
+    /*----------------喵圈路由 ----*/
     {
       path: "/details",
       name: "details",
@@ -133,12 +188,21 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/catDetail",
       name: "catDetail",
       component: CatDetail,
       meta: {
         flag: true,
         requireAuth: true
+=======
+      path:"/catDetail",
+      name:"catDetail",
+      component:CatDetail,
+      meta:{
+        flag:false,
+        requireAuth:true
+>>>>>>> 7ea007e6ae4efdff5966b7eeab7b350787ce11af
       }
     },
     {

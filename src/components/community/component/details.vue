@@ -3,7 +3,7 @@
         <div class="top">
             <div class="left" @click="$router.push('/community')"><img src="../../../../static/communityImg/jiao_03.jpg" alt=""></div>
             <div class="middle">详情</div>
-            <div class="right">12</div>
+            <div class="right"><img src="../../../../static/communityImg/xin_03.jpg" alt=""></div>
         </div>
         <div class="center">
             <span class="one"><img src="../../../../static/communityImg/tpuxiang-xq@2x.png"></span>
@@ -17,6 +17,7 @@
             容易导致生产时出现难产。
         </p>
         <div class="img"><img src="../../../../static/communityImg/img-xq@2x.png" alt=""></div>
+        <div class="last"><img src="../../../../static/communityImg/hxin_03.jpg" alt=""></div>
     </div>
 </template>
 <script>
@@ -39,6 +40,7 @@ body{
             justify-content: space-between;
             align-items: center;
             font-size: 0.36rem;
+            letter-spacing: 0.025rem;
             color:  #202020 ;
             .left{
                 padding-left: 0.25rem;
@@ -97,6 +99,10 @@ body{
                 width: 100%;
                 height: 100%;
             }
+        }
+        .last{
+            margin-left: 6.68rem;
+            margin-top: 1.5rem;
         }
     }
 </style>
