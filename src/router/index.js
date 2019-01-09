@@ -5,6 +5,7 @@ import Community from "@/components/community"
 import Publish from "@/components/publish"
 import Shop from "@/components/shop"
 import My from "@/components/my"
+import Fans from "@/components/my/components/fans"
 import Err from "@/components/error"
 import Login from "@/components/login"
 import Article from "@/components/my/article"
@@ -82,6 +83,11 @@ var router = new Router({
         requireAuth:true,
         flag:true
       }
+    },
+    {
+      path: "/my/components",//我的页面跳转到粉丝页面
+      name: "fans",
+      component: Fans,
     },
     {
       path:"/my",
