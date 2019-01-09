@@ -43,6 +43,7 @@ export default {};
   width: 100%;
   height: 3.6rem;
   background: #fff;
+  z-index:5;
   .top {
     width: 100%;
     height: 3rem;

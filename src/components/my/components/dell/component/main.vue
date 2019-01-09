@@ -1,52 +1,87 @@
 <template>
-  <div class="main">
-    <div class="center">
-      <div class="top">
-        <b></b>
-        <span>12-25</span>
-      </div>
-      <div class="middle">
-        <b class="wire"></b>
-        <div class="right">
-          <p>温柔小眼神</p>
-          <div class="pic">
-            <img src="static/myImgs/dell/pic1.png">
+  <div class="wrapper main" ref="mainWrapper">
+    <div class="content mainInside">
+      <div class="center">
+        <div class="top">
+          <b></b>
+          <span>12-25</span>
+        </div>
+        <div class="middle">
+          <b class="wire"></b>
+          <div class="right">
+            <p>温柔小眼神</p>
+            <div class="pic">
+              <img src="static/myImgs/dell/pic1.png">
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-     <div class="center">
-      <div class="top">
-        <b></b>
-        <span>12-25</span>
-      </div>
-      <div class="middle">
-        <b class="wire"></b>
-        <div class="right">
-          <p>温柔小眼神</p>
-          <div class="pic">
-            <img src="static/myImgs/dell/pic2.png">
-             <img src="static/myImgs/dell/pic3.png">
+      <div class="center">
+        <div class="top">
+          <b></b>
+          <span>12-25</span>
+        </div>
+        <div class="middle">
+          <b class="wire"></b>
+          <div class="right">
+            <p>温柔小眼神</p>
+            <div class="pic">
+              <img src="static/myImgs/dell/pic2.png">
+              <img src="static/myImgs/dell/pic3.png">
+            </div>
           </div>
-          
         </div>
       </div>
-    </div>
 
-     <div class="center">
-      <div class="top">
-        <b></b>
-        <span>12-25</span>
+      <div class="center">
+        <div class="top">
+          <b></b>
+          <span>12-25</span>
+        </div>
+        <div class="middle">
+          <b class="wire"></b>
+          <div class="right">
+            <p>温柔小眼神</p>
+            <div class="pic">
+              <img src="static/myImgs/dell/pic4.png">
+              <img src="static/myImgs/dell/pic5.png">
+              <img src="static/myImgs/dell/pic6.png">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="middle">
-        <b class="wire"></b>
-        <div class="right">
-          <p>温柔小眼神</p>
-          <div class="pic">
-            <img src="static/myImgs/dell/pic4.png">
-            <img src="static/myImgs/dell/pic5.png">
-            <img src="static/myImgs/dell/pic6.png">
+
+      <div class="center">
+        <div class="top">
+          <b></b>
+          <span>12-25</span>
+        </div>
+        <div class="middle">
+          <b class="wire"></b>
+          <div class="right">
+            <p>温柔小眼神</p>
+            <div class="pic">
+              <img src="static/myImgs/dell/pic2.png">
+              <img src="static/myImgs/dell/pic3.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="top">
+          <b></b>
+          <span>12-25</span>
+        </div>
+        <div class="middle">
+          <b class="wire"></b>
+          <div class="right">
+            <p>温柔小眼神</p>
+            <div class="pic">
+              <img src="static/myImgs/dell/pic2.png">
+              <img src="static/myImgs/dell/pic3.png">
+            </div>
           </div>
         </div>
       </div>
@@ -54,12 +89,23 @@
   </div>
 </template>
 <script>
-export default {};
+import BScroll from "better-scroll";
+export default {
+  mounted() {
+    this.scroll = new BScroll(this.$refs.mainWrapper);
+    console.log(this.scroll);
+  }
+};
 </script>
 <style lang="scss" scoped>
 .main {
-  flex: 1;
-   background:rgba(241,241,241,1);
+  width: 100%;
+  height: 11.37rem;
+  background: rgba(241, 241, 241, 1);
+}
+.mainInside {
+  width: 100%;
+  padding-bottom: 1.5rem;
   .top {
     width: 1rem;
     height: 0.18rem;
@@ -103,12 +149,12 @@ export default {};
       .pic {
         width: 1.6rem;
         height: 1.6rem;
-        margin-top:.19rem;
+        margin-top: 0.19rem;
         display: flex;
         img {
           width: 100%;
-          border:1px dashed #202020;
-          margin-right:.19rem;
+          border: 1px dashed #202020;
+          margin-right: 0.19rem;
         }
       }
     }
