@@ -201,7 +201,8 @@ html {
             display: flex;
             justify-content: flex-left;
             font-size: 0.18rem;
-            line-height: 0.6rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.15rem;
             .one {
               display: inline-block;
               margin-left: 0.2rem;
@@ -217,7 +218,6 @@ html {
             }
             .thr {
               width: 0.33rem;
-              // height: 0.20rem;
               color: #ff9797;
               margin-left: 0.1rem;
             }
@@ -249,7 +249,6 @@ html {
         width: 3.36rem;
         height: 3.4rem;
         float: left;
-        // margin-left: 0.25rem;
         margin-bottom: 0.2rem;
         .up {
           width: 100%;
@@ -329,6 +328,7 @@ html {
             height: 100%;
           }
         }
+        /**/
         .bot {
           width: 3.37rem;
           height: 1.46rem;
@@ -339,7 +339,8 @@ html {
             display: flex;
             justify-content: flex-left;
             font-size: 0.18rem;
-            line-height: 0.6rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.15rem;
             .one {
               display: inline-block;
               margin-left: 0.2rem;
@@ -355,7 +356,6 @@ html {
             }
             .thr {
               width: 0.33rem;
-              // height: 0.20rem;
               color: #ff9797;
               margin-left: 0.1rem;
             }
