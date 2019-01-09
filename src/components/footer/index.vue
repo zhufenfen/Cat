@@ -66,6 +66,7 @@ export default {
         bottom:0;
         width:100%;
         height:0.98rem;
+        background: #fff;
         ul{
             display: flex;
             justify-content: space-around;

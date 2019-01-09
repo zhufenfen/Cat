@@ -7,6 +7,8 @@ import Shop from "@/components/shop"
 import My from "@/components/my"
 import Err from "@/components/error"
 import Login from "@/components/login"
+import Details from "@/components/community/component/details"
+import CatDetail from "@/components/community/component/catDetail"
 Vue.use(Router)
 
 var router = new Router({
@@ -61,9 +63,28 @@ var router = new Router({
       component:Login,
     },
     {
+      path:"/details",
+      name:"details",
+      component:Details,
+      meta:{
+        flag:false,
+        requireAuth:true
+      }
+    },
+    {
+      path:"/catDetail",
+      name:"catDetail",
+      component:CatDetail,
+      meta:{
+        flag:true,
+        requireAuth:true
+      }
+    },
+    {
       path:"**",
       component:Err
-    }
+    },
+    
   ]
 })
 // 全局守卫（登录验证）
