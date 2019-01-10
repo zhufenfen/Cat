@@ -1,19 +1,13 @@
 <template>
     <div>
-        信息
+        商品详情
     </div>
 </template>
-
 <script>
-
 export default {
-    components:{
     
-    }
 }
 </script>
-
-
-<style lang="sass">
+<style lang="scss" scoped>
     
 </style>

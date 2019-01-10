@@ -1,15 +1,13 @@
 <template>
     <div>
-        <Article-com/>
+        <router-view/>
     </div>
 </template>
 
 <script>
-import Article from "./components/article"
+
 export default {
-    components:{
-             "Article-com":Article,
-    }
+
 }
 </script>
 

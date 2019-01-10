@@ -1,39 +1,70 @@
 <template>
     <div class="out">
-        收藏
         <div class="header">
-           <span>〈</span>
+           <span><router-link :to="{name:name}">〈</router-link></span>
            <ul>
-               <li>
+               <li @click="handleToggle(1)">
                      宝贝收藏
                </li>
-               <li>
+               <li @click="handleToggle(0)">
                      文章收藏
                </li>
            </ul>
         </div>
+             <component :is="comName"></component>
     </div>
 </template>
 
 <script>
-
+import ArticleCollect from "./articleCollect.vue";
+import TreasoreCollect from "./treasoreCollect.vue";
+import BScroll from "better-scroll";
 export default {
-    components:{
-    
+    components: {
+    "ArticleCollect-com":ArticleCollect,
+    "TreasoreCollect-com": TreasoreCollect,
+     },
+     data(){
+         return{
+             comName: "TreasoreCollect-com",
+             path:"/my",
+             name:"my",
+         }
+     },
+     methods: {
+    handleToggle(index) {
+      switch (index) {
+        case 0:
+          this.comName = "ArticleCollect-com";
+          break;
+        case 1:
+          this.comName = "TreasoreCollect-com";
+          break;
+      }
+    },
+   },
+   mounted () {
+        
     }
 }
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     .out{
+        height:100%;
         color: black;
         width:7.85rem;
-        height:16.29rem;
         background: #eae6e6;
+        .content{
+            width: 100%;
+            height: 100%;
+        }
         .header{
+            z-index: 999;
             height: 0.8rem;
             width: 100%;
+            margin-bottom: 0.2rem;
             span{
                 height: 0.56rem;
                 width: 0.3rem;
