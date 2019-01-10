@@ -18,9 +18,20 @@ import MeowCircle from "@/components/community/component/meowCircle"
 import Article from "@/components/my/article"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
+<<<<<<< HEAD
 import Post from "@/components/publish/components/post"
 import Photo from "@/components/publish/components/photo"
 import Dynamic from "@/components/publish/components/dynamic"
+=======
+import Address from "@/components/login/componen/address_lnn"
+import Sign from "@/components/login/componen/sign"
+import Noneress from "@/components/login/componen/noneress"
+import Moudifiress from "@/components/login/componen/moudifiress"
+
+
+
+
+>>>>>>> LNN
 Vue.use(Router)
 
 var router = new Router({
@@ -79,6 +90,7 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -125,6 +137,51 @@ var router = new Router({
       meta: {
         requireAuth: true,
         flag: true
+=======
+      path:"/home",
+      name:"home",
+      component:Home,
+      meta:{
+        requireAuth:true,
+        flag:true
+        
+      }
+    },
+    {
+      path:"/community",
+      name:"community",
+      component:Community,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
+      path:"/publish",
+      name:"publish",
+      component:Publish,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/shop",
+      name:"shop",
+      component:Shop,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
+      path:"/my",
+      name:"my",
+      component:My,
+      meta:{
+        requireAuth:true,
+        flag:true
+>>>>>>> LNN
       },
       children: [
         {
@@ -154,11 +211,64 @@ var router = new Router({
       ],
     },
     {
+<<<<<<< HEAD
       path: "/login",
       name: "login",
       component: Login,
     },
     /*----------------喵圈路由 ----*/
+=======
+      path:"/login",//跳转到登陆页面
+      name:"login",
+      component:Login,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    {
+      path:"/address",//跳转到增加地址页面
+      name:"address",
+      component:Address,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    {
+      path:"/sign",//跳转到注册页面
+      name:"sign",
+      component:Sign,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    {
+      path:"/noneress",//跳转到注册页面
+      name:"noneress",
+      component:Noneress,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    {
+      path:"/moudifiress",//跳转到注册页面
+      name:"moudifiress",
+      component:Moudifiress,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    
+    
+>>>>>>> LNN
     {
       path: "/details",
       name: "details",

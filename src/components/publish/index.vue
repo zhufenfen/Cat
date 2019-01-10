@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div id="publish">
         <div class="day">
             <div>
@@ -126,4 +127,15 @@ export default {
             font-size: .64rem
         }
     }
+=======
+	<div id="publish">
+		发布
+	</div>
+</template>
+
+<script>
+</script>
+
+<style>
+>>>>>>> LNN
 </style>
