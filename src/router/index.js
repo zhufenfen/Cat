@@ -8,8 +8,11 @@ import My from "@/components/my"
 import Err from "@/components/error"
 import Login from "@/components/login"
 import Article from "@/components/my/article"
+import Noarticle from "@/components/my/article/components/noarticle"
+import Nocollect from "@/components/my/article/components/nocollect"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
+import PetChange from "@/components/my/pet/components/petchange"
 Vue.use(Router)
 
 var router = new Router({
@@ -65,6 +68,26 @@ var router = new Router({
           meta:{
             requireAuth:true
           },
+          children:[
+            {
+              path:"/my/article/noarticle",
+              name:"noarticle",
+              component:Noarticle,
+              meta:{
+                requireAuth:true
+              },
+              
+            },
+            {
+              path:"/my/article/nocollect",
+              name:"nocollect",
+              component:Nocollect,
+              meta:{
+                requireAuth:true
+              },
+              
+            },
+          ]
         },
         {
           path:"/my/collect",
@@ -81,7 +104,17 @@ var router = new Router({
           meta:{
             requireAuth:true
           },
-        }
+        },
+            {
+              path:"/my/pet/petchange",
+              name:"change",
+              component:PetChange,
+              meta:{
+                requireAuth:true
+              },      
+            },
+          
+        
       ],
     },
     {

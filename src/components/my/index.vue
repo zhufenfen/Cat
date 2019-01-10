@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-view/>
-        我的
+        
     </div>
 </template>
 

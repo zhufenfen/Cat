@@ -11,7 +11,7 @@
                </li>
            </ul>
         </div>
-            <component :is="comName"></component>
+             <component :is="comName"></component>
     </div>
 </template>
 
@@ -19,7 +19,6 @@
 import ArticleCollect from "./articleCollect.vue";
 import TreasoreCollect from "./treasoreCollect.vue";
 import BScroll from "better-scroll";
-console.log(ArticleCollect)
 export default {
     components: {
     "ArticleCollect-com":ArticleCollect,
@@ -45,26 +44,27 @@ export default {
     },
    },
    mounted () {
-        this.scroll = new BScroll(this.$refs.homeWrapper,{
-            //只有设置成true pullingUp才能使用
-            pullUpLoad:true,
-            click:true,
-            probeType:2
-        });
+        
     }
 }
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     .out{
+        height:100%;
         color: black;
         width:7.85rem;
         background: #eae6e6;
+        .content{
+            width: 100%;
+            height: 100%;
+        }
         .header{
+            z-index: 999;
             height: 0.8rem;
             width: 100%;
-            margin-bottom: 0.1rem;
+            margin-bottom: 0.2rem;
             span{
                 height: 0.56rem;
                 width: 0.3rem;
