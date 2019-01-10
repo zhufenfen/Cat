@@ -6,6 +6,7 @@ import Publish from "@/components/publish"
 import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
+import It from "@/components/my/components/it"          //跳转到他人主页
 import Dell from "@/components/my/components/dell"      //跳转到动态
 import Err from "@/components/error"
 import Login from "@/components/login"
@@ -90,6 +91,12 @@ var router = new Router({
       name: "fans",
       component: Fans,
     },
+    {
+      path: "/my/components/it",//粉丝页面跳转到他人主页
+      name: "It",
+      component: It,
+    },
+
     {
       path:"/my/components/dell",//我的页面跳转到动态页面
       name:"Dell",

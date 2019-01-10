@@ -1,10 +1,12 @@
 <template>
   <div class="main">
     <div class="center">
-      <a>
-        <img src="static/myImgs/fans/1.png" alt>
-      </a>
-      <p>仙女与</p>
+      <router-link :to="{name:'It'}">
+        <a>
+          <img src="static/myImgs/fans/1.png" alt>
+        </a>
+        <p>仙女与</p>
+      </router-link>
       <span>已关注</span>
       <b></b>
     </div>
@@ -41,8 +43,8 @@ export default {};
 .main {
   width: 100%;
   height: 100%;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   .center {
     margin-top: 0.24rem;
     margin-left: 0.32rem;
@@ -60,7 +62,8 @@ export default {};
     }
     p {
       float: left;
-      margin-top: 0.54rem;
+      display: block;
+      margin-top: -1;
       margin-left: 0.22rem;
       font-size: 0.36rem;
       font-family: PingFang-SC-Regular;
@@ -69,9 +72,9 @@ export default {};
     }
     span {
       float: left;
-      position:absolute;
-     top:.58rem;
-     left:5.76rem;
+      position: absolute;
+      top: 0.58rem;
+      left: 5.76rem;
       width: 1.2rem;
       height: 0.45rem;
       line-height: 0.45rem;
@@ -85,7 +88,7 @@ export default {};
     }
     b {
       display: block;
-      margin-top:1.7rem;
+      margin-top: 1.7rem;
       width: 686px;
       height: 1px;
       background: rgba(241, 241, 241, 1);
