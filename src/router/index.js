@@ -8,8 +8,6 @@ import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import Dell from "@/components/my/components/dell"      //跳转到动态
 import ShopList from "@/components/shop/shopList"
-import My from "@/components/my"
-import Fans from "@/components/my/components/fans"
 import Err from "@/components/error"
 import Login from "@/components/login"
 
