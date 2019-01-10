@@ -8,6 +8,7 @@ import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import It from "@/components/my/components/it"          //跳转到他人主页
 import Dell from "@/components/my/components/dell"      //跳转到动态
+import Not from "@/components/my/components/not"        //跳转到无数据页面
 import Err from "@/components/error"
 import Login from "@/components/login"
 import Article from "@/components/my/article"
@@ -21,69 +22,69 @@ Vue.use(Router)
 var router = new Router({
   routes: [
     {
-      path:"/",
-      redirect:"/home"
+      path: "/",
+      redirect: "/home"
     },
     {
-      path:"/home",
-      name:"home",
-      component:Home,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
-      path:"/community",
-      name:"community",
-      component:Community,
-      meta:{
-        requireAuth:true,
-        flag:true
+      path: "/home",
+      name: "home",
+      component: Home,
+      meta: {
+        requireAuth: true,
+        flag: true
       }
     },
     {
-      path:"/publish",   //发布路由
-      name:"publish",
-      component:Publish,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/community",
+      name: "community",
+      component: Community,
+      meta: {
+        requireAuth: true,
+        flag: true
       }
     },
     {
-      path:"/post",   //发布页面跳转到发帖页面
-      name:"post",
-      component:Post,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/publish",   //发布路由
+      name: "publish",
+      component: Publish,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
-      path:"/photo",   //发布页面跳转到相册页面
-      name:"photo",
-      component:Photo,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/post",   //发布页面跳转到发帖页面
+      name: "post",
+      component: Post,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
-    }, 
+    },
     {
-      path:"/dynamic",   //相册页面跳转到发布动态页面
-      name:"dynamic",
-      component:Dynamic,
-      meta:{
-        requireAuth:true
+      path: "/photo",   //发布页面跳转到相册页面
+      name: "photo",
+      component: Photo,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
-    }, 
+    },
     {
-      path:"/shop",
-      name:"shop",
-      component:Shop,
-      meta:{
-        requireAuth:true,
-        flag:true
+      path: "/dynamic",   //相册页面跳转到发布动态页面
+      name: "dynamic",
+      component: Dynamic,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: "/shop",
+      name: "shop",
+      component: Shop,
+      meta: {
+        requireAuth: true,
+        flag: true
       }
     },
     {
@@ -96,55 +97,59 @@ var router = new Router({
       name: "It",
       component: It,
     },
+    {
+      path: "/my/components/not",//关注页面跳转到无数据页面
+      name: "Not",
+      component: Not,
+    },
 
     {
-      path:"/my/components/dell",//我的页面跳转到动态页面
-      name:"Dell",
-      component:Dell,
+      path: "/my/components/dell",//我的页面跳转到动态页面
+      name: "Dell",
+      component: Dell,
     },
     {
-      path:"/my",
-      name:"my",
-      component:My,
-      meta:{
-        requireAuth:true,
-        flag:true
+      path: "/my",//my主页面
+      name: "my",
+      component: My,
+      meta: {
+        requireAuth: true,
+        flag: true
       },
-      children:[
-        {
-          path:"/my/article",
-          name:"article",
-          component:Article,
-          meta:{
-            requireAuth:true
-          },
-        },
-        {
-          path:"/my/collect",
-          name:"collect",
-          component:Collect,
-          meta:{
-            requireAuth:true
-          },
-        },
-        {
-          path:"/my/pet",
-          name:"pet",
-          component:Pet,
-          meta:{
-            requireAuth:true
-          },
-        }
-      ],
     },
     {
-      path:"/login",
-      name:"login",
-      component:Login,
+      path: "/my/article",//my信息页面
+      name: "article",
+      component: Article,
+      meta: {
+        requireAuth: true
+      },
     },
     {
-      path:"**",
-      component:Err
+      path: "/my/collect",//my收藏页面
+      name: "collect",
+      component: Collect,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: "/my/pet",//my宠物界面
+      name: "pet",
+      component: Pet,
+      meta: {
+        requireAuth: true
+      }
+    },
+
+    {
+      path: "/login",
+      name: "login",
+      component: Login,
+    },
+    {
+      path: "**",
+      component: Err
     }
   ]
 })
