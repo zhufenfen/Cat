@@ -18,13 +18,13 @@ import Discover from "@/components/community/component/discover"
 import MeowCircle from "@/components/community/component/meowCircle"
 
 import Article from "@/components/my/article"
+import Noarticle from "@/components/my/article/components/noarticle"
+import Nocollect from "@/components/my/article/components/nocollect"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
-<<<<<<< HEAD
 import Post from "@/components/publish/components/post"
 import Photo from "@/components/publish/components/photo"
 import Dynamic from "@/components/publish/components/dynamic"
-=======
 import Address from "@/components/login/componen/address_lnn"
 import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
@@ -33,7 +33,8 @@ import Moudifiress from "@/components/login/componen/moudifiress"
 
 
 
->>>>>>> LNN
+
+import PetChange from "@/components/my/pet/components/petchange"
 Vue.use(Router)
 
 var router = new Router({
@@ -92,7 +93,6 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -157,7 +157,9 @@ var router = new Router({
       meta: {
         requireAuth: true,
         flag: true
-=======
+      }
+    },
+    {
       path:"/home",
       name:"home",
       component:Home,
@@ -201,7 +203,6 @@ var router = new Router({
       meta:{
         requireAuth:true,
         flag:true
->>>>>>> LNN
       },
       children: [
         {
@@ -211,6 +212,26 @@ var router = new Router({
           meta: {
             requireAuth: true
           },
+          children:[
+            {
+              path:"/my/article/noarticle",
+              name:"noarticle",
+              component:Noarticle,
+              meta:{
+                requireAuth:true
+              },
+              
+            },
+            {
+              path:"/my/article/nocollect",
+              name:"nocollect",
+              component:Nocollect,
+              meta:{
+                requireAuth:true
+              },
+              
+            },
+          ]
         },
         {
           path: "/my/collect",
@@ -227,17 +248,26 @@ var router = new Router({
           meta: {
             requireAuth: true
           },
-        }
+        },
+            {
+              path:"/my/pet/petchange",
+              name:"change",
+              component:PetChange,
+              meta:{
+                requireAuth:true
+              },      
+            },
+          
+        
       ],
     },
     {
-<<<<<<< HEAD
       path: "/login",
       name: "login",
       component: Login,
     },
     /*----------------喵圈路由 ----*/
-=======
+    {
       path:"/login",//跳转到登陆页面
       name:"login",
       component:Login,
@@ -288,7 +318,6 @@ var router = new Router({
     
     
     
->>>>>>> LNN
     {
       path: "/details",
       name: "details",
