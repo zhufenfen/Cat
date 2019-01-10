@@ -4,8 +4,10 @@ import Home from "@/components/home"
 import Community from "@/components/community"
 import Publish from "@/components/publish"
 import Shop from "@/components/shop"
-import My from "@/components/my"
-import Fans from "@/components/my/components/fans"
+import My from "@/components/my"                        //我的页面
+import Fans from "@/components/my/components/fans"      //跳转到粉丝
+import Dell from "@/components/my/components/dell"      //跳转到动态
+import ShopList from "@/components/shop/shopList"
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -126,9 +128,27 @@ var router = new Router({
       }
     },
     {
+      path:"/shopList",
+      name:"shopList",
+      component:ShopList,
+      meta:{
+        requireAuth:false,
+        flag:false
+      }
+    },
+    {
       path: "/my/components",//我的页面跳转到粉丝页面
       name: "fans",
       component: Fans,
+    },
+    {
+      path: "/my/components/dell",//我的页面跳转到动态页面
+      name: "Dell",
+      component: Dell,
+      meta: {
+        requireAuth: true,
+        flag: false,
+      }
     },
     {
       path: "/my",
