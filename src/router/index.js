@@ -151,52 +151,6 @@ var router = new Router({
       }
     },
     {
-      path: "/my",
-      name: "my",
-      component: My,
-      meta: {
-        requireAuth: true,
-        flag: true
-      }
-    },
-    {
-      path:"/home",
-      name:"home",
-      component:Home,
-      meta:{
-        requireAuth:true,
-        flag:true
-        
-      }
-    },
-    {
-      path:"/community",
-      name:"community",
-      component:Community,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
-      path:"/publish",
-      name:"publish",
-      component:Publish,
-      meta:{
-        requireAuth:true,
-        flag:false
-      }
-    },
-    {
-      path:"/shop",
-      name:"shop",
-      component:Shop,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
       path:"/my",
       name:"my",
       component:My,
@@ -204,7 +158,7 @@ var router = new Router({
         requireAuth:true,
         flag:true
       },
-      children: [
+    },
         {
           path: "/my/article",
           name: "article",
@@ -257,15 +211,6 @@ var router = new Router({
                 requireAuth:true
               },      
             },
-          
-        
-      ],
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: Login,
-    },
     /*----------------喵圈路由 ----*/
     {
       path:"/login",//跳转到登陆页面

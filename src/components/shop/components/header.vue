@@ -12,7 +12,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     .header{
         position: fixed;
         top:0;
