@@ -7,7 +7,8 @@
 		</div>
 		<div class="dengl ">
 			<p class="oder">快捷登陆</p>
-			<p class="news">新用户注册</p>
+			<p class="news"><router-link to="/sign">新用户注册</router-link></p>
+			
 		</div>
 		
 		<!--账号-->
@@ -27,6 +28,11 @@
 
 
 <script>
+	export default{
+
+	}
+
+
 </script>
 
 
