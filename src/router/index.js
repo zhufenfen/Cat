@@ -1,8 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// 首页的路由
 import Home from "@/components/home"
+import HomeDetail from "@/components/home/components/detail"
+
 import Community from "@/components/community"
+// 发布文件的路由
 import Publish from "@/components/publish"
+import Post from "@/components/publish/components/post"
+import Photo from "@/components/publish/components/photo"
+import Dynamic from "@/components/publish/components/dynamic"
+
 import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
@@ -93,6 +101,33 @@ var router = new Router({
       meta: {
         requireAuth: true,
         flag: false
+      }
+    },
+    {
+      path:"/home",     //跳转到首页
+      name:"home",
+      component:Home,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
+      path:"/homedetail",     //跳转到文章详情页
+      name:"homedetail",
+      component:HomeDetail,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/community",
+      name:"community",
+      component:Community,
+      meta:{
+        requireAuth:true,
+        flag:true
       }
     },
     {
