@@ -18,13 +18,21 @@ import Discover from "@/components/community/component/discover"
 import MeowCircle from "@/components/community/component/meowCircle"
 
 import Article from "@/components/my/article"
+import Noarticle from "@/components/my/article/components/noarticle"
+import Nocollect from "@/components/my/article/components/nocollect"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
+<<<<<<< HEAD
 
 import Post from "@/components/publish/components/post"
 import Photo from "@/components/publish/components/photo"
 import Dynamic from "@/components/publish/components/dynamic"
 
+=======
+import Post from "@/components/publish/components/post"
+import Photo from "@/components/publish/components/photo"
+import Dynamic from "@/components/publish/components/dynamic"
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
 import Address from "@/components/login/componen/address_lnn"
 import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
@@ -34,6 +42,10 @@ import Moudifiress from "@/components/login/componen/moudifiress"
 
 
 
+<<<<<<< HEAD
+=======
+import PetChange from "@/components/my/pet/components/petchange"
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
 Vue.use(Router)
 
 var router = new Router({
@@ -92,7 +104,10 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -157,7 +172,11 @@ var router = new Router({
       meta: {
         requireAuth: true,
         flag: true
+<<<<<<< HEAD
 			}
+=======
+      }
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
     },
     {
       path:"/home",
@@ -203,7 +222,10 @@ var router = new Router({
       meta:{
         requireAuth:true,
         flag:true
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       },
       children: [
         {
@@ -213,6 +235,26 @@ var router = new Router({
           meta: {
             requireAuth: true
           },
+          children:[
+            {
+              path:"/my/article/noarticle",
+              name:"noarticle",
+              component:Noarticle,
+              meta:{
+                requireAuth:true
+              },
+              
+            },
+            {
+              path:"/my/article/nocollect",
+              name:"nocollect",
+              component:Nocollect,
+              meta:{
+                requireAuth:true
+              },
+              
+            },
+          ]
         },
         {
           path: "/my/collect",
@@ -229,17 +271,34 @@ var router = new Router({
           meta: {
             requireAuth: true
           },
-        }
+        },
+            {
+              path:"/my/pet/petchange",
+              name:"change",
+              component:PetChange,
+              meta:{
+                requireAuth:true
+              },      
+            },
+          
+        
       ],
     },
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       path: "/login",
       name: "login",
       component: Login,
     },
     /*----------------喵圈路由 ----*/
+<<<<<<< HEAD
 		{
+=======
+    {
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       path:"/login",//跳转到登陆页面
       name:"login",
       component:Login,
@@ -290,7 +349,10 @@ var router = new Router({
     
     
     
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
     {
       path: "/details",
       name: "details",

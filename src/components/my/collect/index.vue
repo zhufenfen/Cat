@@ -14,6 +14,8 @@ export default {
 </script>
 
 
-<style lang="sass">
-    
+<style lang="scss" scrped>
+    div{
+        height: 100%;
+    }
 </style>
