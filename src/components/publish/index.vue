@@ -1,5 +1,8 @@
 <template>
+<<<<<<< HEAD
 
+=======
+>>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
     <div id="publish">
         <div class="day">
             <div>
@@ -127,6 +130,9 @@ export default {
             font-size: .64rem
         }
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
 </style>

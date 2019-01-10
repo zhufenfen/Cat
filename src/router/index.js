@@ -1,13 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// 首页的路由
 import Home from "@/components/home"
+import HomeDetail from "@/components/home/components/detail"
+
 import Community from "@/components/community"
+// 发布文件的路由
 import Publish from "@/components/publish"
+import Post from "@/components/publish/components/post"
+import Photo from "@/components/publish/components/photo"
+import Dynamic from "@/components/publish/components/dynamic"
+
 import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import Dell from "@/components/my/components/dell"      //跳转到动态
+
+/* ----------商城路由----------- */
 import ShopList from "@/components/shop/shopList"
+import GoodDetail from "@/components/shop/goodDetail"
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -105,9 +116,39 @@ var router = new Router({
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
+=======
+      path:"/home",     //跳转到首页
+      name:"home",
+      component:Home,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
+      path:"/homedetail",     //跳转到文章详情页
+      name:"homedetail",
+      component:HomeDetail,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/community",
+      name:"community",
+      component:Community,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
+>>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -134,7 +175,7 @@ var router = new Router({
       }
     },
     {
-      path: "/shop",
+      path: "/shop",//商城页面
       name: "shop",
       component: Shop,
       meta: {
@@ -143,9 +184,18 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList",
+      path:"/shopList",//商品详情页面
       name:"shopList",
       component:ShopList,
+      meta:{
+        requireAuth:false,
+        flag:false
+      }
+    },
+    {
+      path:"/goodDetail",
+      name:"goodDetail",
+      component:GoodDetail,
       meta:{
         requireAuth:false,
         flag:false
@@ -166,6 +216,7 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/my",
       name: "my",
       component: My,
@@ -216,6 +267,8 @@ var router = new Router({
       }
     },
     {
+=======
+>>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
       path:"/my",
       name:"my",
       component:My,
@@ -227,7 +280,7 @@ var router = new Router({
 =======
 >>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       },
-      children: [
+    },
         {
           path: "/my/article",
           name: "article",
@@ -280,6 +333,7 @@ var router = new Router({
                 requireAuth:true
               },      
             },
+<<<<<<< HEAD
           
         
       ],
@@ -293,6 +347,8 @@ var router = new Router({
       name: "login",
       component: Login,
     },
+=======
+>>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
     /*----------------喵圈路由 ----*/
 <<<<<<< HEAD
 		{

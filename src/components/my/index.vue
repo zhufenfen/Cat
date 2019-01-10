@@ -3,7 +3,7 @@
         <Header-com></Header-com>
         <router-view></router-view>
         <Main-com></Main-com>
-    <div>
+
         <router-view/>
         
     </div>

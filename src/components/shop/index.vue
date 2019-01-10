@@ -18,6 +18,8 @@ export default {
 </script>
 
 
-<style lang="scss">
-   
+<style lang="scss" scoped>
+   #shop{
+       overflow: hidden;
+   }
 </style>
