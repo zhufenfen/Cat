@@ -20,11 +20,11 @@ import MeowCircle from "@/components/community/component/meowCircle"
 import Article from "@/components/my/article"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
-<<<<<<< HEAD
+
 import Post from "@/components/publish/components/post"
 import Photo from "@/components/publish/components/photo"
 import Dynamic from "@/components/publish/components/dynamic"
-=======
+
 import Address from "@/components/login/componen/address_lnn"
 import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
@@ -33,7 +33,7 @@ import Moudifiress from "@/components/login/componen/moudifiress"
 
 
 
->>>>>>> LNN
+
 Vue.use(Router)
 
 var router = new Router({
@@ -92,7 +92,7 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
+
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -157,7 +157,9 @@ var router = new Router({
       meta: {
         requireAuth: true,
         flag: true
-=======
+			}
+    },
+    {
       path:"/home",
       name:"home",
       component:Home,
@@ -201,7 +203,7 @@ var router = new Router({
       meta:{
         requireAuth:true,
         flag:true
->>>>>>> LNN
+
       },
       children: [
         {
@@ -231,13 +233,13 @@ var router = new Router({
       ],
     },
     {
-<<<<<<< HEAD
+
       path: "/login",
       name: "login",
       component: Login,
     },
     /*----------------喵圈路由 ----*/
-=======
+		{
       path:"/login",//跳转到登陆页面
       name:"login",
       component:Login,
@@ -288,7 +290,7 @@ var router = new Router({
     
     
     
->>>>>>> LNN
+
     {
       path: "/details",
       name: "details",
