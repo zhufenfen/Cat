@@ -1,19 +1,24 @@
 <template>
     <div class="header">
-        <!-- <img src="static/imgs/jiao_03.jpg" alt=""> -->
-        <span>商城</span>
+        <img src="static/imgs/jiao_03.jpg" @click="handleBack">
+        <span>喵喵潮服</span>
     </div>
 </template>
 
 <script>
 export default {
-    
+    methods: {
+        handleBack(){
+            this.$router.back();
+        }
+    },
 }
 </script>
 
 
 <style lang="scss" scoped>
     .header{
+        z-index: 2;
         position: fixed;
         top:0;
         display: flex;
@@ -22,10 +27,10 @@ export default {
         width:100%;
         height:1.1rem;
         background:#FDDD62;
-        /* img{
+        img{
             position: absolute;
             left:.29rem;
-        } */
+        }
         span{
             font-size:.36rem;
             color:#202020;
