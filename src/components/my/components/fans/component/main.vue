@@ -1,47 +1,37 @@
 <template>
   <div class="main">
-    <div class="mainC">
-      <div class="center">
-        <router-link :to="{name:'It'}">
-          <div class="head">
-            <img src="static/myImgs/fans/1.png" alt>
-          </div>
-        </router-link>
-        <p>仙女</p>
-        <span class="clear"></span>
-        <span class="Not">已关注</span>
-      </div>
+    <div class="center">
+      <a>
+        <img src="static/myImgs/fans/1.png" alt>
+      </a>
+      <p>仙女与</p>
+      <span>已关注</span>
       <b></b>
     </div>
-
-     <div class="mainC">
-      <div class="center">
-        <router-link :to="{name:'It'}">
-          <div class="head">
-            <img src="static/myImgs/fans/1.png" alt>
-          </div>
-        </router-link>
-        <p>仙女</p>
-        <span class="clear"></span>
-        <span class="Not">已关注</span>
-      </div>
+    <div class="center">
+      <a>
+        <img src="static/myImgs/fans/2.png" alt>
+      </a>
+      <p>喵星人盟主</p>
+      <span>已关注</span>
       <b></b>
     </div>
-
-   <div class="mainC">
-      <div class="center">
-        <router-link :to="{name:'It'}">
-          <div class="head">
-            <img src="static/myImgs/fans/1.png" alt>
-          </div>
-        </router-link>
-        <p>仙女</p>
-        <span class="clear"></span>
-        <span class="Not">已关注</span>
-      </div>
+    <div class="center">
+      <a>
+        <img src="static/myImgs/fans/3.png" alt>
+      </a>
+      <p>仙女与</p>
+      <span>已关注</span>
       <b></b>
     </div>
-
+    <div class="center">
+      <a>
+        <img src="static/myImgs/fans/4.png" alt>
+      </a>
+      <p>仙女</p>
+      <span>已关注</span>
+      <b></b>
+    </div>
   </div>
 </template>
 <script>
@@ -51,46 +41,40 @@ export default {};
 .main {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-.mainC{
-  width:100%;
-  height: 1.66rem;
-   b {
-      display: block;
-      margin-left:.32rem;
-      width: 6.86rem;
-      height: .02rem;
-      background: rgba(241, 241, 241, 1);
-    }
-}
-  .center {
-    width: 100%;
-    height: 1.66rem;
-    line-height: 1.66rem;
-    padding-left: 0.32rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    .head {
+    flex-direction: column;
+  .center {
+    margin-top: 0.24rem;
+    margin-left: 0.32rem;
+    height: 1.66rem;
+    width: 100%;
+    position: relative;
+    a {
+      display: block;
       width: 1.28rem;
       height: 1.28rem;
+      float: left;
       img {
         width: 100%;
       }
     }
     p {
+      float: left;
+      margin-top: 0.54rem;
+      margin-left: 0.22rem;
       font-size: 0.36rem;
       font-family: PingFang-SC-Regular;
       font-weight: 400;
       color: rgba(32, 32, 32, 1);
     }
-    .Not {
+    span {
+      float: left;
+      position:absolute;
+     top:.58rem;
+     left:5.76rem;
       width: 1.2rem;
       height: 0.45rem;
       line-height: 0.45rem;
-      margin-right: 0.32rem;
       text-align: center;
       background: rgba(253, 221, 98, 1);
       border-radius: 0.12rem;
@@ -99,10 +83,13 @@ export default {};
       font-weight: 400;
       color: rgba(32, 32, 32, 1);
     }
-    .clear {
-      width: 2.75rem;
+    b {
+      display: block;
+      margin-top:1.7rem;
+      width: 686px;
+      height: 1px;
+      background: rgba(241, 241, 241, 1);
     }
-   
   }
 }
 </style>

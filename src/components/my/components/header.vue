@@ -12,12 +12,10 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="{name:'Not'}">
           <p>
             关注
             <span>11</span>
           </p>
-          </router-link>
         </li>
         <li>
           <router-link :to="{name:'Dell'}">
