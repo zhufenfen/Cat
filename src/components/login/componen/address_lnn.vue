@@ -2,12 +2,10 @@
 	<div class="address_ln">
 		<!--头部地址管理-->
 		<div class="header_ln">
-			<p>编辑管理</p>
-			<div @click="address_btn2"><img src="../../../../static/img_ln/jiao.jpg"/></div>
+			<p>编辑地址</p><p class="add_save">保存</p>
 			
-		</div>
-		
-		
+			<div @click="address_btn2"><img src="../../../../static/img_ln/jiao.jpg"/></div>
+		</div>		
 		<!--地址列表-->
 		<div class="main_ln">
 			<ul>
@@ -17,13 +15,6 @@
 			</ul>
 			
 		</div>	
-		
-		
-		<!--添加地址-->
-		<div class="footer_ln">
-			
-
-		</div>
 	</div>
 </template>
 
@@ -31,7 +22,6 @@
 	export default{
 		methods:{
 			address_btn2(){
-				
 				this.$router.go(-1);
 			}
 		}
@@ -58,16 +48,27 @@
 				font-size: 0.36rem;
 				text-align: center;
 				line-height: 1.47rem;
-				
+				// display: inline-block;
 			}
-			
+/*头部  返回角*/			
 			img{
 				width:0.19rem;
-				height:0.31rem;
+				height:0.32rem;
 				position: absolute;
 				top:0.67rem;
-				left:0.20rem;	
+				left:0.20rem;
+				
 			}
+		
+/*头部  保存*/
+		.add_save{
+			font-size:0.24rem;
+			position: absolute;
+			top:0;
+			left:6.05rem;
+			
+			//display: inline-block;	
+			}	
 		}
 /*地址列表*/	
 	.main_ln{
@@ -76,15 +77,11 @@
 		left:0;
 		bottom:0;
 		right: 0;
-		margin: auto;
-		background:red;
 		overflow: auto;
 	}
 	
 	
 /*增加地址*/	
-	.footer_ln{
-		
-		}	
+	
 	}
 </style>
