@@ -7,7 +7,10 @@ import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import Dell from "@/components/my/components/dell"      //跳转到动态
+
+/* ----------商城路由----------- */
 import ShopList from "@/components/shop/shopList"
+import GoodDetail from "@/components/shop/goodDetail"
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -119,7 +122,7 @@ var router = new Router({
       }
     },
     {
-      path: "/shop",
+      path: "/shop",//商城页面
       name: "shop",
       component: Shop,
       meta: {
@@ -128,9 +131,18 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList",
+      path:"/shopList",//商品详情页面
       name:"shopList",
       component:ShopList,
+      meta:{
+        requireAuth:false,
+        flag:false
+      }
+    },
+    {
+      path:"/goodDetail",
+      name:"goodDetail",
+      component:GoodDetail,
       meta:{
         requireAuth:false,
         flag:false
