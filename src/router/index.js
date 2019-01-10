@@ -118,9 +118,6 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
-      path: "/my/components/fans",//我的页面跳转到粉丝页面
-=======
       path:"/shopList",
       name:"shopList",
       component:ShopList,
@@ -131,7 +128,6 @@ var router = new Router({
     },
     {
       path: "/my/components",//我的页面跳转到粉丝页面
->>>>>>> zff
       name: "fans",
       component: Fans,
     },
