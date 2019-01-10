@@ -7,6 +7,9 @@ import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import Dell from "@/components/my/components/dell"      //跳转到动态
+import ShopList from "@/components/shop/shopList"
+import My from "@/components/my"
+import Fans from "@/components/my/components/fans"
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -115,7 +118,20 @@ var router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/my/components/fans",//我的页面跳转到粉丝页面
+=======
+      path:"/shopList",
+      name:"shopList",
+      component:ShopList,
+      meta:{
+        requireAuth:false,
+        flag:false
+      }
+    },
+    {
+      path: "/my/components",//我的页面跳转到粉丝页面
+>>>>>>> zff
       name: "fans",
       component: Fans,
     },
