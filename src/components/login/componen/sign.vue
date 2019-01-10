@@ -1,77 +1,48 @@
 <template>
-	<div class="login_ln">
-
-		<!--logo-->
-		<div class="log_ln">
-			<img src="../../../static/img_ln/login.jpg"/>
+	<div class="sign_ln">
+		<!--注册-->
+		<div class="welcom_ln">
+			<p class="p_ln">欢迎加入喵圈！</p>
+			
 		</div>
-		<div class="dengl ">
-			<p class="oder">快捷登陆</p>
-			<p class="news">新用户注册</p>
-		</div>
-		
-		<!--账号-->
+		<!--手机-->
 		<div class="uname_ln">
 			<input type="number"  placeholder="请输入手机号" class="tex1_ln"/>
 			<input type="number"  placeholder="请输入验证码" class="tex2_ln"/>
 			<div class="ver_ln">获取验证码</div>
 		</div>
-		<!--登陆-->
+		<!--注册-->
 		<div class="dl_ln">
-			登陆
+			注册
 		</div>
 	</div>
-	
 </template>
 
-
-
 <script>
+	export default{
+		
+	}
 </script>
 
-
-
 <style lang="scss">
-/*主页面*/	
-	.login_ln{   
-		width: 100%;
-		height: 100%;
-		
-/*图片*/		
-	.log_ln{
+	
+/*注册*/ 
+	.sign_ln{
+		width:100%;
+		height:100%;
+		.welcom_ln{
+			.p_ln{
+				margin-top: 2.56rem;
+				margin-left: 2.50rem;
+				font-size:0.36rem;
+				
+			}
 			
-			img{
-				width:2.04rem;
-				height:2.04rem;
-				margin-top:1.59rem ;
-				margin-left:2.69rem;
 			
 		}
-	}
-		
-/*登陆注册按钮*/		
-	.dengl{
-		margin-top:1.12rem;
-		margin-left:2.3rem;
-			.oder{
-				
-					font-size: 0.3rem;
-					color:#202020;
-					display: inline-block;
-					border-bottom: 0.02rem solid #000;
-				
-				}
-			.news{
-				font-size: 0.3rem;
-				color:#ccc;
-				display: inline-block;
-				margin-left:0.36rem;
-			}		
-		}
-			
-/*input 用户名*/			
+/*用户名手机号*/		
 	.uname_ln{
-	/*用户名*/	
+	/*手机号*/	
 			.tex1_ln{
 				width:4.54rem;
 				height:0.48rem;
@@ -107,8 +78,9 @@
 				
 				}	
 				
-			}
-	/*登陆*/		
+			}	
+			
+	/*注册*/		
 			.dl_ln{
 				width:4.53rem;
 				height:0.6rem;
@@ -121,5 +93,6 @@
 				margin-left:1.64rem;
 			}
 		
-}
+	}
+	
 </style>

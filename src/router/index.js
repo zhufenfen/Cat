@@ -10,6 +10,14 @@ import Login from "@/components/login"
 import Article from "@/components/my/article"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
+import Address from "@/components/login/componen/address_lnn"
+import Sign from "@/components/login/componen/sign"
+import Noneress from "@/components/login/componen/noneress"
+import Moudifiress from "@/components/login/componen/moudifiress"
+
+
+
+
 Vue.use(Router)
 
 var router = new Router({
@@ -23,7 +31,9 @@ var router = new Router({
       name:"home",
       component:Home,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
+        
       }
     },
     {
@@ -31,7 +41,8 @@ var router = new Router({
       name:"community",
       component:Community,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
       }
     },
     {
@@ -39,7 +50,8 @@ var router = new Router({
       name:"publish",
       component:Publish,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:false
       }
     },
     {
@@ -47,7 +59,8 @@ var router = new Router({
       name:"shop",
       component:Shop,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
       }
     },
     {
@@ -55,7 +68,8 @@ var router = new Router({
       name:"my",
       component:My,
       meta:{
-        requireAuth:true
+        requireAuth:true,
+        flag:true
       },
       children:[
         {
@@ -85,10 +99,56 @@ var router = new Router({
       ],
     },
     {
-      path:"/login",
+      path:"/login",//跳转到登陆页面
       name:"login",
       component:Login,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
     },
+    {
+      path:"/address",//跳转到增加地址页面
+      name:"address",
+      component:Address,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    {
+      path:"/sign",//跳转到注册页面
+      name:"sign",
+      component:Sign,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    {
+      path:"/noneress",//跳转到注册页面
+      name:"noneress",
+      component:Noneress,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    {
+      path:"/moudifiress",//跳转到注册页面
+      name:"moudifiress",
+      component:Moudifiress,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    
+    
+    
     {
       path:"**",
       component:Err
