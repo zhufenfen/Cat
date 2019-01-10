@@ -33,17 +33,6 @@ import Noarticle from "@/components/my/article/components/noarticle"
 import Nocollect from "@/components/my/article/components/nocollect"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
-<<<<<<< HEAD
-
-import Post from "@/components/publish/components/post"
-import Photo from "@/components/publish/components/photo"
-import Dynamic from "@/components/publish/components/dynamic"
-
-=======
-import Post from "@/components/publish/components/post"
-import Photo from "@/components/publish/components/photo"
-import Dynamic from "@/components/publish/components/dynamic"
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
 import Address from "@/components/login/componen/address_lnn"
 import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
@@ -53,10 +42,7 @@ import Moudifiress from "@/components/login/componen/moudifiress"
 
 
 
-<<<<<<< HEAD
-=======
 import PetChange from "@/components/my/pet/components/petchange"
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
 Vue.use(Router)
 
 var router = new Router({
@@ -115,12 +101,6 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
-=======
       path:"/home",     //跳转到首页
       name:"home",
       component:Home,
@@ -148,7 +128,6 @@ var router = new Router({
       }
     },
     {
->>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -216,69 +195,12 @@ var router = new Router({
       }
     },
     {
-<<<<<<< HEAD
-      path: "/my",
-      name: "my",
-      component: My,
-      meta: {
-        requireAuth: true,
-        flag: true
-<<<<<<< HEAD
-			}
-=======
-      }
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
-    },
-    {
-      path:"/home",
-      name:"home",
-      component:Home,
-      meta:{
-        requireAuth:true,
-        flag:true
-        
-      }
-    },
-    {
-      path:"/community",
-      name:"community",
-      component:Community,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
-      path:"/publish",
-      name:"publish",
-      component:Publish,
-      meta:{
-        requireAuth:true,
-        flag:false
-      }
-    },
-    {
-      path:"/shop",
-      name:"shop",
-      component:Shop,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
-=======
->>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
       path:"/my",
       name:"my",
       component:My,
       meta:{
         requireAuth:true,
         flag:true
-<<<<<<< HEAD
-
-=======
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       },
     },
         {
@@ -333,28 +255,8 @@ var router = new Router({
                 requireAuth:true
               },      
             },
-<<<<<<< HEAD
-          
-        
-      ],
-    },
-    {
-<<<<<<< HEAD
-
-=======
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
-      path: "/login",
-      name: "login",
-      component: Login,
-    },
-=======
->>>>>>> cd445030b33734022cad45b9bd22be67a5dc9ab1
     /*----------------喵圈路由 ----*/
-<<<<<<< HEAD
-		{
-=======
     {
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
       path:"/login",//跳转到登陆页面
       name:"login",
       component:Login,
@@ -405,10 +307,6 @@ var router = new Router({
     
     
     
-<<<<<<< HEAD
-
-=======
->>>>>>> ebc63617bd77406e1bf689f4d6bc8587a724581b
     {
       path: "/details",
       name: "details",
