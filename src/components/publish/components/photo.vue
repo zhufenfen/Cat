@@ -47,16 +47,17 @@ export default {
 
 <style lang="scss" scoped>
     #photo{
-        background: rgb(253, 221, 98);
+        
         width: 100%;
         height: 100%;
         overflow: hidden;
         .topPhoto{
             width: 100%;
-            height: .9rem;
+            height: 1.58rem;
             font-size: .34rem;
             font-family: MicrosoftYaHei;
-            margin-top: .68rem;
+            padding-top: .68rem;
+            background: rgb(253, 221, 98);
             img{
                 display: inline-block;
                 margin-left: .16rem;

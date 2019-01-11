@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Mint from 'mint-ui';
+import "../node_modules/mint-ui/lib/style.css"
+Vue.use(Mint);
 import store from "./store"
 import "../node_modules/swiper/dist/css/swiper.min.css"
 import "./common/css/reset.css"

@@ -66,6 +66,7 @@ export default {
         bottom:0;
         width:100%;
         height:0.98rem;
+        background: #fff;
         ul{
             display: flex;
             justify-content: space-around;
@@ -80,6 +81,14 @@ export default {
                     flex-direction: column;
                     justify-content: center;
                     height:100%;
+                    img{
+                        width:.63rem;
+                        height:.48rem;
+                    }
+                }
+                &:nth-child(3) img{
+                    width:.76rem;
+                    height:.76rem;
                 }
             }
         }
