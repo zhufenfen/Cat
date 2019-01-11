@@ -1,5 +1,7 @@
 <template>
-  <div class="main">
+<div class="myMain">
+
+ <div class="mainFans">
     <div class="mainC">
       <div class="center">
         <router-link :to="{name:'It'}">
@@ -42,13 +44,35 @@
       <b></b>
     </div>
 
+
+    
+    <div class="mainPey">
+      <div class="mainC">
+        <div class="center">
+          <router-link :to="{name:'It'}">
+            <div class="head">
+              <img src="static/myImgs/fans/1.png" alt>
+           </div>
+          </router-link>
+          <p>仙女</p>
+          <span class="clear"></span>
+          <span class="Not">已关注</span>
+        </div>
+          <b></b>
+      </div>
+    </div>
+
+    
+
   </div>
+</div>
+ 
 </template>
 <script>
 export default {};
 </script>
 <style lang="scss" scoped>
-.main {
+.mainFans {
   width: 100%;
   height: 100%;
   display: flex;
