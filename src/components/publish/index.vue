@@ -1,4 +1,5 @@
 <template>
+
     <div id="publish">
         <div class="day">
             <div>
@@ -126,4 +127,6 @@ export default {
             font-size: .64rem
         }
     }
-</style>
+
+
+</style> 
