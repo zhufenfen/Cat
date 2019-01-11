@@ -7,18 +7,28 @@
 		</div>
 		<!--地址列表-->
 		<div class="main_ln">
-			<ul> 
-				<li v-for="n in 100">
-					{{n}}
+			<ul>
+				<li>
+					<p class="name">楚子峰<span class="tel">18809767654</span>
+					<p class="site"><span class="def">【默认】</span>北京市昌平区天苑路</p>
 				</li>
+				<li>
+					<p class="name">楚子峰<span class="tel">18809767654</span>
+					<p class="site"><span class="def"></span>北京市昌平区天苑路</p>
+				</li>
+
+<li>
+					<p class="name">楚子峰<span class="tel">18809767654</span>
+					<p class="site"><span class="def"></span>北京市昌平区天苑路</p>
+				</li>
+
+
 			</ul>
 			
 		</div>
 		<!--无地址-->
 		<div class="footer_ln">
-			
 			<p><router-link to="/address">+增加地址</router-link></p>
-			
 		</div>
 	</div>
 </template>
@@ -27,7 +37,6 @@
 	export default{
 		methods:{
 			address_btn(){
-				
 				this.$router.go(-1);
 			}
 		}
@@ -67,6 +76,36 @@
 		right: 0;
 		margin: auto;
 		overflow: auto;
+
+		ul{
+			width:100%;
+			li{
+					
+				height:1.30rem;
+				width:7.50rem;
+				margin-left:0.50rem;
+				font-size: 0.24rem;
+				color:#202020;
+				border-bottom: 0.01rem solid #e5e5e5;
+					.name{
+					font-size:0.27rem;
+					margin-top:0.20rem;
+					}	
+					.tel{
+						margin-left:2.75rem;
+					}	
+					.site{
+						padding-top:0.40rem;
+					}
+					.def{
+						color:#ff7878;
+					}
+					.site{
+						margin-lift:0.09rem;
+					}
+				}		
+			}
+		
 	}
 	
 /*增加地址*/	
@@ -79,9 +118,10 @@
 			p{
 				font-size: 0.36rem;
 				text-align:center;
-				line-height: 1.27rem;
+				line-height: 1.27rem;	
 				
 			}
+			
 		}
 		
 	}

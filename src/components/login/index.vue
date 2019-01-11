@@ -18,7 +18,7 @@
 			<div class="ver_ln">获取验证码</div>
 		</div>
 		<!--登陆-->
-		<div class="dl_ln">
+		<div class="dl_ln" @click="gohome()">
 			登陆
 		</div>
 	</div>
@@ -29,7 +29,11 @@
 
 <script>
 	export default{
-
+		methods:{
+			gohome(){
+				this.$router.push("/home")
+			}
+		}
 	}
 
 
