@@ -101,7 +101,7 @@
 						color:#ff7878;
 					}
 					.site{
-						margin-lift:0.09rem;
+						margin-left:0.09rem;
 					}
 				}		
 			}
