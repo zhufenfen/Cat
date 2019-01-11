@@ -9,9 +9,11 @@
 		<!--地址列表-->
 		<div class="main_ln">
 			<ul>
-				<li v-for="n in 100">
-					{{n}}
-				</li>
+				<li>收货人姓名</li>
+				<li>手机号</li>
+				<li>省/市/行政区</li>
+				<li>详细地址</li>
+				<li class="list_li"><input type="radio" name="">设为默认地址</li>
 			</ul>
 			
 		</div>	
@@ -78,6 +80,31 @@
 		bottom:0;
 		right: 0;
 		overflow: auto;
+
+		ul{
+			width:100%;
+			
+			li{
+				height:0.88rem;
+				line-height:0.88rem;
+				font-size: 0.24rem;
+				color:#8f8f8f;
+				padding-left:0.18rem;
+				border-bottom: 0.01rem solid #cccccc;
+				input{
+					width:0.22rem;
+					height:0.22rem;
+					margin-left:0.07rem;
+					}
+				li:last-child{
+					border: onoe;	
+				}	
+			}
+			
+			
+		}
+
+
 	}
 	
 	
