@@ -2,7 +2,7 @@
   <div class="header">
     <div class="top">
       <div class="top-v">
-        <div class="lt">
+        <div class="lt" @click="getBack()">
           <img src="static/myImgs/left.png">
         </div>
         <div class="pic">
@@ -36,7 +36,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    getBack(){
+      this.$router.back();
+    }
+  },
+};
 </script>
 <style lang="scss" scoped>
 .header {

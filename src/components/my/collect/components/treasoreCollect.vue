@@ -76,14 +76,19 @@ export default {
 
 <style lang="scss" scoped>
     .treasore{
-         z-index: 9;
+        font-family: PingFang-SC-Regular;
         padding: 1px;
-       font-size: 0.30rem;
+        width:334px;
+        height:28px;
+        font-size:28px;
+        font-family:PingFang-SC-Regular;
+        font-weight:400;
+        color:rgba(32,32,32,1);
        height: 100%;
        width: 7.5rem;
        margin: 0 auto;
        .prodect{
-            width: 100%;
+          width: 100%;
           height:100%;
           display: flex;
           flex-wrap: wrap;

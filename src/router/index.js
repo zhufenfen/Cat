@@ -1,16 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// 首页的路由
 import Home from "@/components/home"
+import HomeDetail from "@/components/home/components/detail"
+
 import Community from "@/components/community"
+// 发布文件的路由
 import Publish from "@/components/publish"
+import Post from "@/components/publish/components/post"
+import Photo from "@/components/publish/components/photo"
+import Dynamic from "@/components/publish/components/dynamic"
+
 import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
+import It from "@/components/my/components/it"          //跳转到他人主页
 import Dell from "@/components/my/components/dell"      //跳转到动态
 
 /* ----------商城路由----------- */
 import ShopList from "@/components/shop/shopList"
 import GoodDetail from "@/components/shop/goodDetail"
+import Not from "@/components/my/components/not"        //跳转到无数据页面
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -25,9 +35,6 @@ import Noarticle from "@/components/my/article/components/noarticle"
 import Nocollect from "@/components/my/article/components/nocollect"
 import Pet from "@/components/my/pet"
 import Collect from "@/components/my/collect"
-import Post from "@/components/publish/components/post"
-import Photo from "@/components/publish/components/photo"
-import Dynamic from "@/components/publish/components/dynamic"
 import Address from "@/components/login/componen/address_lnn"
 import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
@@ -96,6 +103,33 @@ var router = new Router({
       }
     },
     {
+      path:"/home",     //跳转到首页
+      name:"home",
+      component:Home,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
+      path:"/homedetail",     //跳转到文章详情页
+      name:"homedetail",
+      component:HomeDetail,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/community",
+      name:"community",
+      component:Community,
+      meta:{
+        requireAuth:true,
+        flag:true
+      }
+    },
+    {
       path: "/post",   //发布页面跳转到发帖页面
       name: "post",
       component: Post,
@@ -108,6 +142,12 @@ var router = new Router({
       path: "/photo",   //发布页面跳转到相册页面
       name: "photo",
       component: Photo,
+    },
+    {
+    
+      path: "/post",   //发布页面跳转到发帖页面
+      name: "post",
+      component: Post,
       meta: {
         requireAuth: true,
         flag: false
@@ -154,21 +194,36 @@ var router = new Router({
       component: Fans,
     },
     {
+      path: "/my/components/it",//粉丝页面跳转到他人主页
+      name: "It",
+      component: It,
+    },
+    {
+      path: "/my/components/not",//关注页面跳转到无数据页面
+      name: "Not",
+      component: Not,
+    },
+
+    {
       path: "/my/components/dell",//我的页面跳转到动态页面
       name: "Dell",
       component: Dell,
-      meta: {
-        requireAuth: true,
-        flag: false,
-      }
     },
     {
-      path:"/my",
-      name:"my",
-      component:My,
-      meta:{
-        requireAuth:true,
-        flag:true
+      path: "/my",//my主页面
+      name: "my",
+      component: My,
+      meta: {
+        requireAuth: true,
+        flag: true
+      },
+    },
+    {
+      path: "/my/article",//my信息页面
+      name: "article",
+      component: Article,
+      meta: {
+        requireAuth: true
       },
     },
         {

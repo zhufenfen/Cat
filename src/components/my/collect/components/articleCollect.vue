@@ -98,7 +98,10 @@ export default {
 </script>
 <style lang="scss" scoped>
     .treasore{
-        z-index: 9;
+        font-size:28px;
+        font-family:PingFang-SC-Regular;
+        font-weight:400;
+        color:rgba(32,32,32,1);
         padding: 1px;
        font-size: 0.30rem;
        height: 100%;
@@ -113,28 +116,40 @@ export default {
           li{ 
               background: white;
               width: 3.28rem;
-              padding: 0.05rem;
+              overflow: hidden;
               border-radius:10px; 
               margin:0.05rem;
+              height: max-content;
+              p{
+                  height: 0.4rem;
+                  float: left;
+                  font-size: 0.25rem;
+              }
               img{
+                  height: 2.7rem;
                   width: 3.23rem;
               }
               .bottom{
-                  height: 0.8rem;
+                  display: flex;
+                  justify-content: space-around;
+                  float: left;
+                  height: 1rem;
                   width: 100%;
+                  padding-top: 0.4rem;
                   .photo{
-                      line-height: 0.8rem;
-                      height: 0.64rem;
-                      width: 0.64rem;
+                      height: 0.56rem;
+                      width: 0.56rem;
                       background: pink;
                       border-radius: 50px;
                       float: left;
                   }
                   span{
                       line-height: 0.8rem;
-                      font-size: 0.28rem;
+                      font-size: 0.26rem;
+                      margin-bottom: 0.2rem;
                   }
                   img{
+                      margin-top: 0.3rem;
                       height: 0.2rem;
                       width: 0.3rem
                   }
