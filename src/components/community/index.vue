@@ -1,9 +1,9 @@
 <template>
   <div class="communitys">
     <div class="communityT">
-      
-      <span  class="cover" :class="a==2?'':'active'" @click="$router.push('/community/discover')">发现</span>
-      <span  :class="a==1?'':'active'" @click="$router.push('/community/meowCircle')">喵圈</span>
+      <!-- <span :class="flag?'active':''"></span> -->
+      <span class="cover"@click="$router.push('/community/discover')">发现</span>
+      <span @click="$router.push('/community/meowCircle')">喵圈</span>
       <!-- <component :a="a" :is="comName"></component> -->
       <router-view></router-view>
     </div>
@@ -21,20 +21,17 @@ export default {
   },
   data() {
     return {
-      a:1,
-      // comName: "Discover-com"
+      flag:true,
     };
   },
   methods: {
-    handleDis(val) {
-      if (val == 1) {
-        // this.comName = "Discover-com";
-        this.a = 1;
-      } else {
-        // this.comName = "MeowCircle-com";
-        this.a = 2;
-      }
-    }
+    // handleDis(val) {
+    //   if (val == 1) {
+    //     this.a = 1;
+    //   } else {
+    //     this.a = 2;
+    //   }
+    // }
   },
   watch:{
     $router(newVal,oldVal){
