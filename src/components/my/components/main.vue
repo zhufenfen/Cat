@@ -1,20 +1,23 @@
-<template>
+<template> 
   <div class="main">
     <div class="main-m">
       <div class="message">
-        <a>
+        <div class="pic">
           <img src="static/myImgs/message.png">
-        </a>
-        <p>宠物信息</p>
+        </div>
+
+         <router-link :to="{name:'article'}">
+          <p>宠物信息</p>
+         </router-link>
+
         <b>
           <img src="static/myImgs/right2.png">
         </b>
-       
       </div>
       <div class="news">
-        <a>
+         <div class="pic">
           <img src="static/myImgs/news.png">
-        </a>
+        </div>
         <p>我的消息</p>
         <b>
           <img src="static/myImgs/right2.png">
@@ -22,10 +25,12 @@
         
       </div>
       <div class="collect">
-        <a>
+          <div class="pic">
           <img src="static/myImgs/message.png">
-        </a>
+        </div >
+        <router-link :to="{name:'collect'}">
         <p>我的收藏</p>
+        </router-link>
         <b>
           <img src="static/myImgs/right2.png">
         </b>
@@ -34,9 +39,9 @@
     </div>
     <div class="main-m">
       <div class="message">
-        <a>
+          <div class="pic">
           <img src="static/myImgs/order.png">
-        </a>
+        </div>
         <p>我的订单</p>
          <b>
           <img src="static/myImgs/right2.png">
@@ -44,9 +49,9 @@
         
       </div>
       <div class="news">
-        <a class="car">
+        <div class="pic">
           <img src="static/myImgs/car.png">
-        </a>
+        </div>
         <p>购物车</p>
          <b>
           <img src="static/myImgs/right2.png">
@@ -54,9 +59,9 @@
         
       </div>
       <div class="collect">
-        <a>
+          <div class="pic">
           <img src="static/myImgs/site.png">
-        </a>
+        </div>
         <p>我的地址</p>
          <b>
           <img src="static/myImgs/right2.png">
@@ -96,7 +101,7 @@ export default {};
     position: relative;
     float:left;
     margin-top:.55rem;
-    a{
+    .pic{
       display: block;
       float:left;
       width:.28rem;
@@ -108,13 +113,14 @@ export default {};
     }
     }
     p {
+      display: block;
       margin-top:.38rem;
-      margin-left:.1rem;
+      margin-left:1rem;
       font-size: 0.28rem;
       font-family: PingFang-SC-Regular;
       font-weight: 400;
       color: rgba(32, 32, 32, 1);
-      float: left;
+     
     }
     b { 
       margin-top:-.28rem;
