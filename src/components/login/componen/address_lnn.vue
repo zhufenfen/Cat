@@ -8,15 +8,16 @@
 		</div>		
 		<!--地址列表-->
 		<div class="main_ln">
-			<ul>
-				<li>收货人姓名</li>
-				<li>手机号</li>
-				<li>省/市/行政区</li>
-				<li>详细地址</li>
-				<li class="list_li"><input type="radio" name="">设为默认地址</li>
-			</ul>
-			
-		</div>	
+		<ul>
+			<li><input type="text" placeholder="收货人姓名" class="cood"></li>
+			<li><input type="number" placeholder="手机号码" class="cood"></li>
+			<li><input type="number" placeholder="邮编（选填）" class="cood"></li>
+			<li><input type="text" placeholder="省/市/行政区" class="cood"></li>
+			<li><input type="text" placeholder="详细地址" class="cood"></li>
+			<li><input type="text" placeholder="默认地址" class="cood"></li>
+			<li><input type="text" placeholder="收货人姓名" class="cood"></li>
+		</ul>	
+		</div>
 	</div>
 </template>
 
@@ -80,31 +81,20 @@
 		bottom:0;
 		right: 0;
 		overflow: auto;
-
-		ul{
-			width:100%;
-			
-			li{
-				height:0.88rem;
-				line-height:0.88rem;
-				font-size: 0.24rem;
-				color:#8f8f8f;
-				padding-left:0.18rem;
-				border-bottom: 0.01rem solid #cccccc;
-				input{
-					width:0.22rem;
-					height:0.22rem;
-					margin-left:0.07rem;
+			ul{
+				li{
+					width:100%;
+					height:0.89rem;
+					border-bottom: 0.01rem solid #ccc;
+						.cood{
+							width:100%;
+							height:0.88rem;
+							border:none;
+							font-size:0.24rem;
+							padding-left:0.34rem;
 					}
-				li:last-child{
-					border: onoe;	
-				}	
-			}
-			
-			
-		}
-
-
+				}
+			}	
 	}
 	
 	
