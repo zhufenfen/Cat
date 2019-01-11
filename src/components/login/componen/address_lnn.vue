@@ -14,8 +14,10 @@
 			<li><input type="number" placeholder="邮编（选填）" class="cood"></li>
 			<li><input type="text" placeholder="省/市/行政区" class="cood"></li>
 			<li><input type="text" placeholder="详细地址" class="cood"></li>
-			<li><input type="text" placeholder="默认地址" class="cood"></li>
-			<li><input type="text" placeholder="收货人姓名" class="cood"></li>
+			<li>
+				<input type="radio" class="odd_a">
+				<input type="text" placeholder="设为默认地址" class="cood"></li>
+			
 		</ul>	
 		</div>
 	</div>
@@ -92,7 +94,12 @@
 							border:none;
 							font-size:0.24rem;
 							padding-left:0.34rem;
-					}
+							}
+						.odd_a{
+							width:0.22rem;
+							height: 0.22rem;
+						}
+						
 				}
 			}	
 	}
