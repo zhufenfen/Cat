@@ -1,5 +1,5 @@
 <template>
-    <div id="goodDetail">
+    <div id="shopCart">
         <Header-com></Header-com>
         <Main-com></Main-com>
         <Footer-com></Footer-com>
@@ -21,7 +21,7 @@ export default {
 
 
 <style lang="scss" scoped>
-    #goodDetail{
+    #shopCart{
         height:100%;
         background:#f0f2f5;
     }

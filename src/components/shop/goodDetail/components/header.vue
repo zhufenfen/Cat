@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <img src="static/imgs/jiao_03.jpg" @click="handleBack">
-        <span>喵喵潮服</span>
+        <span>详情</span>
     </div>
 </template>
 

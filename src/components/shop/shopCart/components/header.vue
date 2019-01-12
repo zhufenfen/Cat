@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <img src="static/imgs/jiao_03.jpg" @click="handleBack">
-        <span>喵喵潮服</span>
+        <span>购物车</span>
     </div>
 </template>
 
@@ -37,6 +37,5 @@ export default {
             font-size:.36rem;
             color:#202020;
         }
-
     }
 </style>
