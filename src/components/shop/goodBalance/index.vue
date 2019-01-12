@@ -1,27 +1,24 @@
 <template>
-    <div id="goodDetail">
+    <div id="goodBalance">
         <Header-com></Header-com>
         <Main-com></Main-com>
-        <Footer-com></Footer-com>
     </div>
 </template>
 
 <script>
 import Header from "./components/header"
 import Main from "./components/main"
-import Footer from "./components/footer"
 export default {
     components:{
         "Header-com":Header,
-        "Main-com":Main,
-        "Footer-com":Footer
+        "Main-com":Main
     },
 }
 </script>
 
 
 <style lang="scss" scoped>
-    #goodDetail{
+    #goodBalance{
         height:100%;
         background:#f0f2f5;
     }

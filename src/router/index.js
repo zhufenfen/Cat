@@ -11,6 +11,8 @@ import Dell from "@/components/my/components/dell"      //跳转到动态
 /* ----------商城路由----------- */
 import ShopList from "@/components/shop/shopList"
 import GoodDetail from "@/components/shop/goodDetail"
+import ShopCart from "@/components/shop/shopCart"
+import GoodBalance from "@/components/shop/goodBalance"
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -119,7 +121,7 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList",//商品详情页面
+      path:"/shopList",
       name:"shopList",
       component:ShopList,
       meta:{
@@ -128,11 +130,29 @@ var router = new Router({
       }
     },
     {
-      path:"/goodDetail",
+      path:"/goodDetail",//商品详情页面
       name:"goodDetail",
       component:GoodDetail,
       meta:{
         requireAuth:false,
+        flag:false
+      }
+    },
+    {
+      path:"/shopCart",//购物车页面
+      name:"shopCart",
+      component:ShopCart,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/goodBalance",
+      name:"goodBalance",
+      component:GoodBalance,
+      meta:{
+        requireAuth:true,
         flag:false
       }
     },
