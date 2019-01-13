@@ -8,18 +8,14 @@
 		<!--地址列表-->
 		<div class="main_ln">
 			<ul>
-				<li>
+				<!-- <li>
 					<p class="name">楚子峰<span class="tel">18809767654</span>
 					<p class="site"><span class="def">【默认】</span>北京市昌平区天苑路</p>
-				</li>
-				<li>
-					<p class="name">楚子峰<span class="tel">18809767654</span>
-					<p class="site"><span class="def"></span>北京市昌平区天苑路</p>
-				</li>
+				</li> -->
+				<li v-for="item in list_l">
 
-<li>
-					<p class="name">楚子峰<span class="tel">18809767654</span>
-					<p class="site"><span class="def"></span>北京市昌平区天苑路</p>
+				<p class="name">{{item.name}}<span class="tel">{{item.tel}}</span>
+				<p class="site"><span class="def" v-if="item.flag">【默认】</span>{{item.side}}</p>
 				</li>
 
 
@@ -35,6 +31,30 @@
 
 <script>
 	export default{
+		data(){
+			return{
+				list_l:[
+					{
+						name:"楚子峰",
+						tel:18830892765,
+						side:"北京市昌平区天苑路",
+						flag:true
+
+					},{
+						name:"楚子峰",
+						tel:17899087654,
+						side:"北京市昌平区天苑路",
+						flag:false
+					},{
+						name:"楚子峰",
+						tel:18967548907,
+						side:"北京市昌平区天苑路",
+						flag:false
+
+					}
+				]
+			}
+		},
 		methods:{
 			address_btn(){
 				this.$router.go(-1);
@@ -86,6 +106,7 @@
 				margin-left:0.50rem;
 				font-size: 0.24rem;
 				color:#202020;
+				box-sizing: border-box;
 				border-bottom: 0.01rem solid #e5e5e5;
 					.name{
 					font-size:0.27rem;
@@ -105,7 +126,6 @@
 					}
 				}		
 			}
-		
 	}
 	
 /*增加地址*/	

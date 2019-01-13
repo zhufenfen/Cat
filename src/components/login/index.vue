@@ -13,8 +13,11 @@
 		
 		<!--账号-->
 		<div class="uname_ln">
-			<input type="number"  placeholder="请输入手机号" class="tex1_ln"/>
-			<input type="number"  placeholder="请输入验证码" class="tex2_ln"/>
+			<input type="number" v-model="userName" @blur="userTest" placeholder="请输入手机号" class="tex1_ln"/> 
+			<span class="phoneTest"></span>
+
+
+			<input type="number" v-model="passWord" placeholder="请输入验证码" class="tex2_ln"/>
 			<div class="ver_ln">获取验证码</div>
 		</div>
 		<!--登陆-->
@@ -24,23 +27,40 @@
 	</div>
 	
 </template>
-
-
-
 <script>
 	export default{
+		data(){
+			return{
+				userName:"",
+				passWord:""	,
+				flag:true
+			}
+		},
 		methods:{
 			gohome(){
-				this.$router.push("/home")
+				if(this.flag){
+					this.$router.push("/home")
+				}else{
+					alert("请输入正确的手机号")
+				}
+				
+			},
+			userTest(){
+				var reg=/^1(3|4|5|7|8)\d{9}$/;
+				if(!reg.test(this.userName)){
+					$(".phoneTest").html("123");
+					this.flag=false;
+					//this.$refs.phoneTest.innerHTML("请输入正确的手机号")
+				}else{
+						$(".phoneTest").html("")
+							this.flag=true;
+				}
 			}
 		}
 	}
 
 
 </script>
-
-
-
 <style lang="scss">
 /*主页面*/	
 	.login_ln{   
@@ -90,6 +110,7 @@
 				margin-top:0.58rem;
 				margin-left:1.64rem;
 				border:none;
+				outline: none;
 				border-bottom: 0.01rem solid #000;
 				}
 	/*验证码*/			
@@ -101,6 +122,7 @@
 				margin-top:0.85rem;
 				margin-left:1.64rem;
 				border:none;
+				outline: none;
 				display: inline-block;
 				border-bottom: 0.01rem solid #000;
 				}
