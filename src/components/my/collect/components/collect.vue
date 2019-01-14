@@ -1,7 +1,7 @@
 <template>
     <div class="out">
         <div class="header">
-           <span><router-link :to="{name:name}">〈</router-link></span>
+           <span><router-link :to="{name:name}"><img src="../../../../../static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li @click="handleToggle(1)">
                      宝贝收藏
@@ -55,7 +55,7 @@ export default {
         height:100%;
         color: black;
         width:7.85rem;
-        background: #eae6e6;
+         background:#f0f2f5;
         .content{
             width: 100%;
             height: 100%;
@@ -66,15 +66,19 @@ export default {
             width: 100%;
             margin-bottom: 0.2rem;
             span{
+                img{
+                    height: 0.32rem;
+                    width: 0.18rem;
+                }
+                margin-left: 0.3rem;
                 height: 0.56rem;
                 width: 0.3rem;
                 font-size: 0.3rem;
                 float: left;
                 line-height: 0.8rem;
-                margin-left:0.66rem; 
             }
             ul{
-                margin-left:1rem; 
+                margin-left:1.46rem; 
                 height: 0.8rem;
                 width: 4.0rem;
                 float: left;

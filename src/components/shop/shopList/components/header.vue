@@ -30,6 +30,8 @@ export default {
         img{
             position: absolute;
             left:.29rem;
+            width:.18rem;
+            height:.32rem;
         }
         span{
             font-size:.36rem;

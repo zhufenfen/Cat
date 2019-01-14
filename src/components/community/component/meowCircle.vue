@@ -40,7 +40,55 @@
         </li>
       </ul>
     </div>
-    <div class="communityD">
+    <!-- <div class="auto">
+     <div v-for="(item,index) in arr" class="communityD" @click="$router.push('/catDetail')">
+      <div class="top">
+        <div class="img1">
+          <img :src="item.catPortrait" alt>
+        </div>
+        <ul class="tops">
+          <li class="one">{{item.catName}}</li>
+          <li class="two">{{item.catDate}}&nbsp;&nbsp;&nbsp;{{item.catTime}}</li>
+        </ul>
+      </div>
+      <div class="middle">
+        <img :src="item.catPhoto" alt>
+      </div>
+      <p>{{item.catContent}}</p>
+      <p>
+        <span>
+          <div>
+            <img src="../../../../static/communityImg/icon-pl-mq-hei@2x.png" alt>
+          </div>
+          <i class="i">56</i>
+        </span>
+        <span>
+          <div>
+            <img src="../../../../static/communityImg/icon-xq-xin-hei@2x.png" alt>
+          </div>
+          <i>74</i>
+        </span>
+      </p>
+      
+      <p class="catitem.reviewList[0].reviewPer}}:{{item.reviewList[0].reviewCon}">{{}</p>
+      <p class="cat">{{item.reviewList[1].reviewPer}}:{{item.reviewList[1].reviewCon}}</p>
+      <p class="last">显示全部评论</p>
+      <ul class="lastOne">
+        <li>
+          <img src="../../../../static/communityImg/icon-xin-3@2x.png" alt>
+        </li>
+        <li>
+          <img src="../../../../static/communityImg/icon-pl@2x.png" alt>
+        </li>
+      </ul>
+    </div></div> -->
+
+    
+  </div>
+</template>
+<script>
+  /*
+  <div class="communityD">
       <div class="top">
         <div class="img1">
           <img src="../../../../static/communityImg/touxiang-mq-2@2x.png" alt>
@@ -53,11 +101,21 @@
       <div class="middles">
         <div class="left"></div>
       </div>
-    </div>
-  </div>
-</template>
-<script>
-export default {};
+    </div>*/
+import axios from "axios";
+export default {
+  data(){
+    return{
+      arr:[]
+    }
+  },
+  mounted() {
+      axios.get("/cat/mock/5c370de4f93efc493ce9c7af/example/meowCircle#!method=get").then(({data})=>{
+          console.log(data);
+          this.arr=data.data;
+      })
+    },
+};
 </script>
 <style lang="scss" scoped>
 body,
@@ -71,8 +129,12 @@ img {
   width: 100%;
   height: 100%;
   text-align: left;
+  // .auto{
+  //  height: 1000px;
+  // overflow-y: auto;
   .communityD {
     width: 6.87rem;
+    //height: 8rem;
     min-height: 3.86rem;
     background: #fff;
     border-radius: 0.12rem;

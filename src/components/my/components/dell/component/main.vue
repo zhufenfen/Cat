@@ -11,7 +11,7 @@
           <div class="right">
             <p>温柔小眼神</p>
             <div class="pic">
-              <img src="static/myImgs/dell/pic1.png">
+              <img src="static/myImgs/dell/pic5.png">
             </div>
           </div>
         </div>
@@ -79,7 +79,24 @@
           <div class="right">
             <p>温柔小眼神</p>
             <div class="pic">
-              <img src="static/myImgs/dell/pic2.png">
+              <img src="static/myImgs/dell/pic5.png">
+              <img src="static/myImgs/dell/pic6.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="top">
+          <b></b>
+          <span>12-25</span>
+        </div>
+        <div class="middle">
+          <b class="wire"></b>
+          <div class="right">
+            <p>温柔小眼神</p>
+            <div class="pic">
+              <img src="static/myImgs/dell/pic4.png">
               <img src="static/myImgs/dell/pic3.png">
             </div>
           </div>
@@ -88,16 +105,18 @@
     </div>
   </div>
 </template>
+
 <script>
 import BScroll from "better-scroll";
 export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.mainWrapper);
-    console.log(this.scroll);
   }
 };
 </script>
-<style lang="scss" scoped>
+
+
+<style lang="scss" scoped>//动态页面中间内容样式
 .main {
   width: 100%;
   height: 11.37rem;

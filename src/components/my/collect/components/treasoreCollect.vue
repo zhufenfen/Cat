@@ -76,19 +76,25 @@ export default {
 
 <style lang="scss" scoped>
     .treasore{
-         z-index: 9;
+        font-family: PingFang-SC-Regular;
         padding: 1px;
-       font-size: 0.30rem;
+        width:334px;
+        height:28px;
+        font-size:28px;
+        font-family:PingFang-SC-Regular;
+        font-weight:400;
+        color:rgba(32,32,32,1);
        height: 100%;
        width: 7.5rem;
        margin: 0 auto;
+        background:#f0f2f5;
        .prodect{
-            width: 100%;
+          width: 100%;
           height:100%;
           display: flex;
           flex-wrap: wrap;
           height: max-content;
-          background:  #eae6e6;
+           background:#f0f2f5;
           li{   
                 margin:0.05rem; 
                 display: flex;
@@ -105,18 +111,26 @@ export default {
                     }
                 }
                 .right{
+                    color: black;
                     height: 1.6rem;
-                    width: 4.0rem;
+                    width: 5.2rem;
                     h3{
+                        font-family:PingFang-SC-Regular;
+                        font-weight:400;
+                        color:rgba(32,32,32,1);
                         font-size: 0.26rem;
                         padding-bottom: 0.15rem;
+                        font-weight: 100;
                     }
                     p{
-                        font-size: 0.22rem;
-                        padding-bottom: 0.4rem;
+                        font-size: 0.24rem;
+                        padding-bottom: 0.35rem;
+                        font-family:PingFang-SC-Regular;
+                        font-weight:400;
+                        color:rgba(88,88,88,1);
                     }
                     span{
-                        color: red;
+                        color: gray;
                     }
                 }
           }

@@ -12,8 +12,8 @@
 			
 			<img src="../../../../static/img_ln/none.jpg"/>
 			<ul>
-				<li v-for="n in 100">
-					{{n}}
+				<li>
+					
 					
 				</li>
 			</ul>	

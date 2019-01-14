@@ -12,7 +12,7 @@
 			<div class="ver_ln">获取验证码</div>
 		</div>
 		<!--注册-->
-		<div class="dl_ln">
+		<div class="dl_ln" @click="signgohome()">
 			注册
 		</div>
 	</div>
@@ -20,7 +20,11 @@
 
 <script>
 	export default{
-		
+		methods:{
+			signgohome(){
+				this.$router.push("/home")
+			}
+		}
 	}
 </script>
 
@@ -34,11 +38,8 @@
 			.p_ln{
 				margin-top: 2.56rem;
 				margin-left: 2.50rem;
-				font-size:0.36rem;
-				
-			}
-			
-			
+				font-size:0.36rem;	
+			}	
 		}
 /*用户名手机号*/		
 	.uname_ln{

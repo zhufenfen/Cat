@@ -75,9 +75,10 @@ export default {
     },
     data(){
         return{
-            commentsIsShow:false
+            commentsIsShow:false,
         }
     },
+    
     // updated() {
     //     console.log(this.commentsIsShow)
     // },

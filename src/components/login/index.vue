@@ -7,7 +7,8 @@
 		</div>
 		<div class="dengl ">
 			<p class="oder">快捷登陆</p>
-			<p class="news">新用户注册</p>
+			<p class="news"><router-link to="/sign">新用户注册</router-link></p>
+			
 		</div>
 		
 		<!--账号-->
@@ -17,7 +18,7 @@
 			<div class="ver_ln">获取验证码</div>
 		</div>
 		<!--登陆-->
-		<div class="dl_ln">
+		<div class="dl_ln" @click="gohome()">
 			登陆
 		</div>
 	</div>
@@ -27,6 +28,15 @@
 
 
 <script>
+	export default{
+		methods:{
+			gohome(){
+				this.$router.push("/home")
+			}
+		}
+	}
+
+
 </script>
 
 

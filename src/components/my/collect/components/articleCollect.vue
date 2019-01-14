@@ -7,13 +7,15 @@
                 <div class="bottom">
                     <div class="photo">
                     </div>
-                    <span class="title">
-                        瞄圈公众号
-                    </span>
-                    <img src="../../../../../static/hrj_img/icon-chakan.png" alt="">
-                    <span>
-                        {{item.num}}
-                    </span>
+                    <div class="commit">
+                        <span class="title">
+                            瞄圈公众号
+                        </span>
+                        <img src="../../../../../static/hrj_img/icon-chakan.png" alt="">
+                        <span>
+                            {{item.num}}
+                        </span>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -98,45 +100,69 @@ export default {
 </script>
 <style lang="scss" scoped>
     .treasore{
-        z-index: 9;
+        font-size:28px;
+        font-family:PingFang-SC-Regular;
+        font-weight:400;
+        color:rgba(32,32,32,1);
         padding: 1px;
        font-size: 0.30rem;
        height: 100%;
        width: 7.5rem;
        margin: 0 auto;
        ul{
+          background:#f0f2f5;
           width: 100%;
           height:100%;
           display: flex;
           flex-wrap: wrap;
           height: max-content;
           li{ 
-              background: white;
+              overflow: hidden;
+              background:#f0f2f5;
               width: 3.28rem;
-              padding: 0.05rem;
+              overflow: hidden;
               border-radius:10px; 
               margin:0.05rem;
+              height: max-content;
+              p{
+                  height: 0.8rem;
+                  float: left;
+                  font-size: 0.25rem;
+              }
               img{
+                  height: 2.7rem;
                   width: 3.23rem;
               }
               .bottom{
-                  height: 0.8rem;
+                  float: left;
+                  height: 0.6rem;
                   width: 100%;
+                  overflow: hidden;
                   .photo{
-                      line-height: 0.8rem;
-                      height: 0.64rem;
-                      width: 0.64rem;
+                      height: 0.56rem;
+                      width: 0.56rem;
                       background: pink;
                       border-radius: 50px;
                       float: left;
                   }
-                  span{
-                      line-height: 0.8rem;
-                      font-size: 0.28rem;
-                  }
-                  img{
-                      height: 0.2rem;
-                      width: 0.3rem
+                  .commit{
+                            margin-left: 0.15rem;
+                            display: flex;
+                            justify-content: space-around;
+                            height: 0.4rem;
+                            line-height: 0.4rem;
+                            width: 2.4rem;
+                            float: left;
+                            span{
+                                line-height: 0.56rem;
+                                font-size: 0.26rem;
+                                padding-bottom: 0.2rem;
+                            }
+                            img{
+                                margin-top: 0.2rem;
+                                height: 0.2rem;
+                                width: 0.3rem
+                            }
                   }
               }
           }
