@@ -100,9 +100,10 @@ export default {
     font-family: MicrosoftYaHei;
     .top{
         width: 100%;
-        height: 1.58rem;
-        font-size: .34rem;
-        padding-top: .68rem;
+        height: 1.1rem;
+        font-size: .36rem;
+        color: #202020;
+        line-height: 1.2rem;
         background: rgb(253, 221, 98);
         text-align: center;
         font-weight: 500;
@@ -112,9 +113,9 @@ export default {
     }
     .content{
         overflow:auto;
-        margin-top: 1.58rem;
+        margin-top: 1.1rem;
         width: 100%;
-        height: 10.78rem;
+        height: 11.26rem;
         .banner{
             width: 100%;
             height: 2.25rem;
