@@ -19,7 +19,7 @@
 			<input type="text" placeholder="设为默认地址" class="cood"></li> -->
 				<li v-for="item in list_ln">
 						<input :type="item.type"
-								:placeholder="item.plac"/>
+							:placeholder="item.plac"/>
 								
 				</li>
 		</ul>	

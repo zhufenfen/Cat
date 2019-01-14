@@ -3,7 +3,9 @@
 		<!--头部-->
 		<div class="header_ln">
 			<p>修改地址</p>
-			<div @click="address_btn"><img src="../../../../static/img_ln/jiao.jpg"/></div>
+			<div @click="address_btn">
+				<img src="../../../../static/img_ln/jiao.jpg"/>
+			</div>
 		</div>
 		<!--地址列表-->
 		<div class="main_ln">
@@ -14,17 +16,19 @@
 				</li> -->
 				<li v-for="item in list_l">
 
-				<p class="name">{{item.name}}<span class="tel">{{item.tel}}</span>
+				<p class="name">{{item.name}}
+					<span class="tel">{{item.tel}}</span>
+					<span class="prc_bj"></span>
+				</p>
 				<p class="site"><span class="def" v-if="item.flag">【默认】</span>{{item.side}}</p>
 				</li>
-
 
 			</ul>
 			
 		</div>
 		<!--无地址-->
 		<div class="footer_ln">
-			<p><router-link to="/address">+增加地址</router-link></p>
+			<p><router-link to="/address">添加新地址</router-link></p>
 		</div>
 	</div>
 </template>
@@ -36,18 +40,18 @@
 				list_l:[
 					{
 						name:"楚子峰",
-						tel:18830892765,
+						tel:18837133244,
 						side:"北京市昌平区天苑路",
 						flag:true
-
+						
 					},{
 						name:"楚子峰",
-						tel:17899087654,
+						tel:13476809874,
 						side:"北京市昌平区天苑路",
 						flag:false
 					},{
 						name:"楚子峰",
-						tel:18967548907,
+						tel:1576997327,
 						side:"北京市昌平区天苑路",
 						flag:false
 
@@ -108,22 +112,30 @@
 				color:#202020;
 				box-sizing: border-box;
 				border-bottom: 0.01rem solid #e5e5e5;
+
 					.name{
 					font-size:0.27rem;
 					margin-top:0.20rem;
-					}	
+					color:#202020;
+		
+					}
+					.true_ln{
+						background:url("../../../../static/img_ln/true.jpg") no-repeat;
+						width:10rem;
+						height:10rem;
+						}	
 					.tel{
 						margin-left:2.75rem;
 					}	
 					.site{
 						padding-top:0.40rem;
+						font-size: 0.20rem;
+						color:#202020;
 					}
 					.def{
 						color:#ff7878;
 					}
-					.site{
-						margin-left:0.09rem;
-					}
+					
 				}		
 			}
 	}
@@ -138,7 +150,8 @@
 			p{
 				font-size: 0.36rem;
 				text-align:center;
-				line-height: 1.27rem;	
+				line-height: 1.27rem;
+				color:#000000;	
 				
 			}
 			

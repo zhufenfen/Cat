@@ -9,8 +9,10 @@
 		
 		<!--地址列表-->
 		<div class="main_ln">
+			<div class="none_bj">
+				<!--<img src="../../../../static/img_ln/none.jpg"/>-->
+			</div>
 			
-			<img src="../../../../static/img_ln/none.jpg"/>
 			<ul>
 				<li>
 					
@@ -71,13 +73,17 @@
 		right: 0;
 		margin: auto;
 		overflow: auto;
-	
-		img{
+		
+		.none_bj{
+			background:url("../../../../static/img_ln/none.jpg") no-repeat;
+
+		}
+		/*img{
 			width:2.93rem;
 			height:4.10rem;
 			margin-top:2.30rem;
 			margin-left:2.30rem;
-		}
+		}*/
 	}
 	
 	
