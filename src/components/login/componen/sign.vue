@@ -63,6 +63,7 @@
 				margin-top:0.85rem;
 				margin-left:1.64rem;
 				border:none;
+				outline: none;
 				display: inline-block;
 				border-bottom: 0.01rem solid #000;
 				}
@@ -74,6 +75,7 @@
 				text-align:center;
 				line-height: 0.6rem;
 				background:#fddd62;
+				outline: none;
 				border-radius: 0.15rem;
 				display: inline-block;
 				
