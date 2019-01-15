@@ -11,15 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/cat":{
-        target:"https://www.easy-mock.com",
+      "/miaoquan":{
+        target:'https://www.easy-mock.com',
         changeOrigin:true,
         pathRewrite:{
-          "^/cat":""
+          "^/miaoquan":""
         }
       }
     },
-
+    
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

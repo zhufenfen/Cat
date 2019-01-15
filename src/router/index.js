@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // 首页的路由
 import Home from "@/components/home"
 import HomeDetail from "@/components/home/components/detail"
+import Information from "@/components/home/components/information"
 
 import Community from "@/components/community"
 // 发布文件的路由
@@ -56,7 +57,7 @@ var router = new Router({
       redirect: "/home"
     },
     {
-      path: "/home",
+      path: "/home",     //跳转到首页
       name: "home",
       component: Home,
       meta: {
@@ -105,15 +106,6 @@ var router = new Router({
       }
     },
     {
-      path:"/home",     //跳转到首页
-      name:"home",
-      component:Home,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
       path:"/homedetail",     //跳转到文章详情页
       name:"homedetail",
       component:HomeDetail,
@@ -123,12 +115,12 @@ var router = new Router({
       }
     },
     {
-      path:"/community",
-      name:"community",
-      component:Community,
+      path:"/information",     //跳转到我的消息
+      name:"information",
+      component:Information,
       meta:{
         requireAuth:true,
-        flag:true
+        flag:false
       }
     },
     {
