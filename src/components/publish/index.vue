@@ -23,10 +23,12 @@
             </div>
         </div>
         <div class="exit" @click="go()">×</div>
+        
     </div>
 </template>
 
 <script>
+
 export default {
     created(){
         // this.$http.get("http://localhost:3000/publish").then((res)=>{
