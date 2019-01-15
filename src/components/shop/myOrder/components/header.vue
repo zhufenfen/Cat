@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <img src="static/imgs/jiao_03.jpg" @click="handleBack">
-        <span>确认订单</span>
+        <span>我的订单</span>
     </div>
 </template>
 
