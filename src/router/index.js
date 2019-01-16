@@ -67,6 +67,15 @@ var router = new Router({
       }
     },
     {
+      path: "/information",     //跳转到我的消息
+      name: "information",
+      component: Information,
+      meta: {
+        requireAuth: true,
+        flag: false
+      }
+    },
+    {
       path: "/community",
       name: "community",
       component: Community,
