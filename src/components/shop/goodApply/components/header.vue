@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <img src="static/imgs/jiao_03.jpg" @click="handleBack">
-        <span>确认订单</span>
+        <span>订单信息</span>
     </div>
 </template>
 
@@ -37,5 +37,6 @@ export default {
             font-size:.36rem;
             color:#202020;
         }
+
     }
 </style>
