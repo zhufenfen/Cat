@@ -119,6 +119,10 @@ export default {
         .banner{
             width: 100%;
             height: 2.25rem;
+            img{
+                width: 100%;
+                height: 2.25rem;
+            }
         }
         .star{
             padding: 0 .3rem;
@@ -192,7 +196,8 @@ export default {
                 }
                 img{
                     margin: .2rem 0 .2rem .22rem;
-                    
+                    width: 1.6rem;
+                    height: 1.8rem;
                 }
             }
         }
