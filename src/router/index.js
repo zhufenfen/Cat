@@ -156,18 +156,20 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList",//商品列表页面
+      path:"/shopList/:id/:message",//商品列表页面
       name:"shopList",
       component:ShopList,
+      props:true,
       meta:{
         requireAuth:false,
         flag:false
       }
     },
     {
-      path:"/goodDetail",//商品详情页面
+      path:"/goodDetail/:classifyId/:shopId",//商品详情页面
       name:"goodDetail",
       component:GoodDetail,
+      props:true,
       meta:{
         requireAuth:false,
         flag:false

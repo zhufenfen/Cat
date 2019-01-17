@@ -20,12 +20,18 @@
 
 <script>
 import Vue from "vue";
-import {Toast} from "mint-ui"
+import Vuex from "vuex";
+import {Toast} from "mint-ui";
 export default {
     data(){
         return{
             img1Url:"static/imgs/shopDetail/icon-xq-xin.png",
         }
+    },
+    computed: {
+        ...Vuex.mapState({
+            goodDetail:state=>state.goodDetail.goodDetail
+        })
     },
     methods: {
         handleClick(){
@@ -36,12 +42,19 @@ export default {
             }
         },
         handleAdd(){
-            Toast({
-                message: '已成功添加到购物车',
-                duration:1500,
-                // className:"gwc",
-                // position:"bottom"
-            });
+            this.$axios.post("/addCart", {
+                goodItem:this.goodDetail
+            }).then(data=>{
+                if(data.flag){
+                    Toast({
+                        message: '已成功添加到购物车',
+                        duration:1500,
+                        // className:"gwc",
+                        // position:"bottom"
+                    })
+                }
+            })
+            
         },
         shopCart(){
             this.$router.push({name:"shopCart"});

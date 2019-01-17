@@ -1,6 +1,6 @@
 <template>
     <div class="goods">
-        <div class="goodItem" v-for="(item, index) in goodsList" @click="shopList">
+        <div class="goodItem" v-for="(item, index) in goodsList" @click="shopList(index, item.span1)">
             <img class="img1" :src="item.img1">
             <div>
                 <img class="img2" :src="item.img2">
@@ -48,8 +48,9 @@ export default {
         }
     },
     methods: {
-        shopList(){
-            this.$router.push("/shopList");
+        shopList(index, mes){
+            // this.$router.push("/shopList");
+            this.$router.push({name:'shopList',params:{id:index, message:mes}});
         }
     }
 }

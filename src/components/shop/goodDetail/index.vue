@@ -1,7 +1,7 @@
 <template>
     <div id="goodDetail">
         <Header-com></Header-com>
-        <Main-com></Main-com>
+        <Main-com :classifyId="classifyId" :shopId="shopId"></Main-com>
         <Footer-com></Footer-com>
     </div>
 </template>
@@ -11,11 +11,12 @@ import Header from "./components/header"
 import Main from "./components/main"
 import Footer from "./components/footer"
 export default {
+    props:["classifyId", "shopId"],
     components:{
         "Header-com":Header,
         "Main-com":Main,
         "Footer-com":Footer
-    },
+    }
 }
 </script>
 
