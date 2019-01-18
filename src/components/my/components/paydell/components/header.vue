@@ -22,55 +22,37 @@
           <span>别低头，皇冠会掉</span>
           <div class="mesNum">
             <div>
-              <span>{{payNum}}</span>
+              <span>666</span>
               <p>关注</p>
             </div>
             <div>
-              <span>{{fansNum}}</span>
+              <span>111</span>
               <p>粉丝</p>
             </div>
           </div>
         </div>
         <div class="pay">
-          <span @click="handleAdd(),handle()">{{uword}}</span>
+          <span @click="handleIt()">{{uword}}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import Vuex from "vuex";
-
 export default {
-  created() {
-   // this.handleAdd();
-  },
   data() {
     return {
-      uword:"关注",
-      payNum:11
+      uword:"已关注"
     }
-  },
-  computed: {
-    ...Vuex.mapState({
-     fansNum:state=>state.it.fansNum,
-     
-    })
   },
   methods: {
-     ...Vuex.mapMutations({
-      handleAdd:"it/handleAdd"
-    }),
     getBack(){
-      this.$router.back()
+      this.$router.back();
     },
-    handle(){
-      this.uword="已关注"
+    handleIt(){
+     this.uword="关注"
     }
-     
   },
-
-  
 };
 </script>
 <style lang="scss">

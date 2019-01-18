@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <div class="lt" @click="getBack()"><img src="static/myImgs/left.png"></div>
-      <p>粉丝</p>
+      <p>关注</p>
       <span> </span>
     </div>
   </div>
