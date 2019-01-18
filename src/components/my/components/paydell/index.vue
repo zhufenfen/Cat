@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Header from './component/header';
-import Main from './component/main';
+import Header from './components/header';
+import Main from './components/main';
 export default {
     components:{
         "Header-com":Header,
@@ -19,5 +19,11 @@ export default {
 
 
 <style lang="scss" scoped>
-    
+    .my{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction: column;
+        background:rgba(241,241,241,1);
+    }
 </style>

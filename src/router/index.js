@@ -16,7 +16,8 @@ import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import It from "@/components/my/components/it"          //跳转到他人主页
 import Dell from "@/components/my/components/dell"      //跳转到动态
-import Not from "@/components/my/components/not"        //跳转到无数据页面
+import Not from "@/components/my/components/not"        //跳转到关注页面
+import Paydell from "@/components/my/components/paydell"        //关注跳转到他人主页
 
 /* ----------商城路由----------- */
 import ShopList from "@/components/shop/shopList"
@@ -197,6 +198,11 @@ var router = new Router({
       path: "/my/components/it",//粉丝页面跳转到他人主页
       name: "It",
       component: It,
+    },
+    {
+      path: "/my/components/paydell",//关注页面跳转到他人主页
+      name: "Paydell",
+      component: Paydell,
     },
     {
       path: "/my/components/not",//关注页面跳转到无数据页面

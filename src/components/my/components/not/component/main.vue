@@ -2,16 +2,16 @@
   <div class="wrapper myMain" ref="mainWrapper">
     <div class="content mainInside" v-show="flag == 1">
       <div class="mainFans">
-        <div class="mainC" v-for="(item,index) in goodsList">
+        <div class="mainC" v-for="(item,index) in notList">
           <div class="center">
-            <router-link :to="{name:'It'}">
+            <router-link :to="{name:'Paydell'}">
               <div class="head">
                 <img :src="item.imgUrl">
               </div>
             </router-link>
             <p>{{item.name}}</p>
             <span class="clear"></span>
-            <span class="Not">未关注</span>
+            <span class="Not">已关注</span>
           </div>
           <b></b>
         </div>
@@ -42,7 +42,7 @@ export default {
       click: true
     });
     setTimeout(() => {
-      if (!!this.goodsList) {
+      if (!!this. notList) {
         this.flag = 1;
       } else {
         this.flag = 2;
@@ -51,7 +51,7 @@ export default {
   },
   computed: {
     ...Vuex.mapState({
-      goodsList: state => state.myMhm.goodsList
+       notList: state => state.myMhm. notList
     })
   },
   methods: {
