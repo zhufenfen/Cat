@@ -48,8 +48,7 @@ import Noneress from "@/components/login/componen/noneress"
 import Moudifiress from "@/components/login/componen/moudifiress"
 
 
-import Err from "@/components/error"
-import Login from "@/components/login"
+
 
 
 import PetChange from "@/components/my/pet/components/petchange"
