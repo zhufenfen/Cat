@@ -5,6 +5,7 @@ import goodDetail from "./goodDetail"
 import myMhm from "./my/myMhm"
 import dell from "./my/dell"
 import it from "./my/it"
+import home from "./home"
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -13,7 +14,8 @@ const store = new Vuex.Store({
         goodDetail,
         myMhm,
         dell,
-        it
+        it,
+        information,home
     }
 })
 
