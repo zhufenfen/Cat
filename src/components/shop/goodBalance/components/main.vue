@@ -11,21 +11,21 @@
         <span>喵星市喵星小区五号楼一单元</span>
       </div>
     </div>
-    <div class="shopMessage">
-      <img src="/static/imgs/goodBalance/img-qrdd.png">
+    <div class="shopMessage" v-for="(item, index) in goodCheck">
+      <img :src="item.goodImage">
       <div class="message">
-        <div class="title">猫用品猫玩具猫咪兔毛球老鼠型逗猫棒逗猫杆</div>
+        <div class="title">{{item.goodTitle}}</div>
         <div class="color">
           颜色分类：
-          <span>花色[七彩球逗猫棒]</span>
+          <span>{{item.goodColor}}</span>
         </div>
         <div class="size">
           尺寸：
-          <span>M</span>
+          <span>{{item.goodSize}}</span>
         </div>
         <div class="priceNum">
-          <span class="price">￥128</span>
-          <span class="num">×1</span>
+          <span class="price">{{item.goodPrice | price}}</span>
+          <span class="num">×{{item.num}}</span>
         </div>
       </div>
     </div>
@@ -41,8 +41,23 @@
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
-
+  computed: {
+    ...Vuex.mapState({
+      goodCheck:state=>{
+        var arr = state.shopCart.shopList.filter((item, index) => {
+          return item.flag == true;
+        })
+        return arr;
+      }
+    })
+  },
+  filters:{
+    price(n){
+      return "￥" + n + ".00";
+    }
+  }
 }
 </script>
 
@@ -68,6 +83,8 @@ export default {
       height: 2.5rem;
     }
     .message {
+      position: relative;
+      width:3.8rem;
       .title {
         line-height: 0.45rem;
         color: #202020;
@@ -77,10 +94,12 @@ export default {
         margin-top: 0.3rem;
       }
       .priceNum {
+        position:absolute;
+        bottom:.1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 0.35rem;
+        width:100%;
         .price {
           color: #ff5757;
           font-size: 0.24rem;

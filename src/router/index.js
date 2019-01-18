@@ -169,7 +169,7 @@ var router = new Router({
       }
     },
     {
-      path:"/goodDetail/:classifyId/:shopId",//商品详情页面
+      path:"/goodDetail/:shopId",//商品详情页面
       name:"goodDetail",
       component:GoodDetail,
       props:true,
@@ -379,9 +379,10 @@ var router = new Router({
   ]
 })
 // 全局守卫（登录验证）
-/* router.beforeEach((to, from, next) => {
+/* import store from "@/store"
+router.beforeEach((to, from, next) => {
   if(to.meta.requireAuth){
-    if(token){
+    if(store.state.token){
       next();
     }else{
       next("/login");

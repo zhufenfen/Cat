@@ -1,19 +1,30 @@
 <template>
     <div class="footer">
         <div>
-            合计：<span class="price">￥3.5</span>
+            合计：<span class="price">{{result.sumPrice | price}}</span>
         </div>
         <button @click="handleApply">提交订单</button>
     </div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
+    computed: {
+        ...Vuex.mapGetters({
+            result:"shopCart/result"
+        })
+    },
     methods: {
         handleApply(){
             this.$router.push({name:"goodApply"});
         }
     },
+    filters:{
+        price(n){
+            return "￥" + n + ".00";
+        }
+    }
 }
 </script>
 
@@ -30,6 +41,7 @@ export default {
         height:.8rem;
         font-size:.28rem;
         color:#202020;
+        background:#fff;
         .price{
             color:#FF7878;
         }

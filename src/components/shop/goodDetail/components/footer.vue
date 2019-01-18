@@ -35,28 +35,44 @@ export default {
     },
     methods: {
         handleClick(){
-            if(this.img1Url == "static/imgs/shopDetail/icon-xq-xin.png"){
-                this.img1Url = "static/imgs/shopDetail/icon-love.png";
-            }else{
-                this.img1Url = "static/imgs/shopDetail/icon-xq-xin.png";
-            }
-        },
-        handleAdd(){
-            this.$axios.post("/addCart", {
-                goodItem:this.goodDetail
+            /* this.$axios({
+                method:"post",
+                url:"http://localhost:3000/shopCollection",
+                data:this.goodDetail.shopId
             }).then(data=>{
                 if(data.flag){
+                    if(this.img1Url == "static/imgs/shopDetail/icon-xq-xin.png"){
+                        this.img1Url = "static/imgs/shopDetail/icon-love.png";
+                    }else{
+                        this.img1Url = "static/imgs/shopDetail/icon-xq-xin.png";
+                    }
+                }
+            }) */
+        },
+        handleAdd(){
+            /* this.$axios({
+                method:"post",
+                url:"http://localhost:3000/shopCart",
+                data:{
+                    shopId:this.goodDetail.shopId,
+                    num:this.goodDetail.num,
+                    goodColor:this.goodDetail.goodColor[this.goodDetail.colorFlag],
+                    goodSize:this.goodDetail.goodSize[this.goodDetail.sizeFlag]
+                }
+            }).then(data=>{
+                // console.log(data);
+                // if(data.flag){
                     Toast({
                         message: '已成功添加到购物车',
                         duration:1500,
                         // className:"gwc",
                         // position:"bottom"
                     })
-                }
-            })
-            
+                // }
+            })        */ 
         },
         shopCart(){
+            // 还需要传用户id
             this.$router.push({name:"shopCart"});
         }
     },
