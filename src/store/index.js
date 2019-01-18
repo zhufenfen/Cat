@@ -9,7 +9,6 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     modules:{
-        namespaced: true,
         information,
         goodDetail,
         myMhm,
