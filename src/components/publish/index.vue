@@ -115,6 +115,10 @@ export default {
             div{
                 display: flex;
                 flex-direction: column;
+                img{
+                    width: .99rem;
+                    height: .99rem;
+                }
                 span{
                     margin-top: .3rem;
                     font-size: 28px;
