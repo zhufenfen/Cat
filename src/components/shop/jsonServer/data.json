@@ -1,0 +1,250 @@
+{
+  "shopCart": [
+    {
+      "id": 0,
+      "goodsName": "三只松鼠",
+      "price": 88,
+      "num": 1,
+      "img": "static/img/1.jpg"
+    },
+    {
+      "id": 1,
+      "goodsName": "旺仔牛奶",
+      "price": 66.6,
+      "num": 1,
+      "img": "static/img/2.jpg"
+    },
+    {
+      "id": 2,
+      "goodsName": "哇哈哈",
+      "price": 45,
+      "num": 1,
+      "img": "static/img/3.jpg"
+    },
+    {
+      "id": 3,
+      "goodsName": "营养快线",
+      "price": 33,
+      "num": 1,
+      "img": "static/img/4.jpg"
+    },
+    {
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 87,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "证同做存。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 4
+    },
+    {
+      "classifyId": 0,
+      "shopId": 18,
+      "shopTitle": "111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodMessage": {
+        "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+        "goodPrice": 16,
+        "goodColor": [
+          "黑色",
+          "红色"
+        ],
+        "goodSize": [
+          "S号（1-3斤）",
+          "M号（4-5.5斤）",
+          "L号（适合6-8斤）"
+        ],
+        "goodTitle": "么立说方构。",
+        "colorFlag": 0,
+        "sizeFlag": 0,
+        "num": 1
+      },
+      "id": 5
+    },
+    {
+      "classifyId": 0,
+      "shopId": 8,
+      "shopTitle": "111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 84,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "较图矿确。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 6
+    },
+    {
+      "classifyId": 0,
+      "shopId": 8,
+      "shopTitle": "11",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 82,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "事华约此交国党。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 7
+    },
+    {
+      "classifyId": 1,
+      "shopId": 8,
+      "shopTitle": "11",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 70,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "大走展区包千。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 8
+    },
+    {
+      "classifyId": 0,
+      "shopId": 8,
+      "shopTitle": "111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 83,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "五子各成任。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 9
+    },
+    {
+      "classifyId": 0,
+      "shopId": 8,
+      "shopTitle": "111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 83,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "五子各成任。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 10
+    },
+    {
+      "classifyId": 0,
+      "shopId": 10,
+      "shopTitle": "111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 164,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "亲价周相候的花。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 11
+    },
+    {
+      "classifyId": 2,
+      "shopId": 10,
+      "shopTitle": "1111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 97,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "西己值格处。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 12
+    },
+    {
+      "classifyId": 1,
+      "shopId": 10,
+      "shopTitle": "1111",
+      "shopImg": "http://dummyimage.com/340x280/666/ffffff&text=Hello World",
+      "goodImage": "http://dummyimage.com/750x480/666/ffffff&text=shopDetail",
+      "goodPrice": 182,
+      "goodColor": [
+        "黑色",
+        "红色"
+      ],
+      "goodSize": [
+        "S号（1-3斤）",
+        "M号（4-5.5斤）",
+        "L号（适合6-8斤）"
+      ],
+      "goodTitle": "情就意方平做第。",
+      "colorFlag": 0,
+      "sizeFlag": 0,
+      "num": 1,
+      "id": 13
+    }
+  ]
+}

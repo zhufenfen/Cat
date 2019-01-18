@@ -4,7 +4,7 @@ export default{
         axios.post("/goodDetail", {
             shopId:params
         }).then(data=>{
-            commit("handleGoodDetail", data.goodMessage);
+            commit("handleGoodDetail", data);
         })
     }
 }

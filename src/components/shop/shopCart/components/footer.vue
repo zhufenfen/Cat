@@ -1,38 +1,47 @@
 <template>
     <div class="footer">
         <div>
-            <div @click="checkAll">
-                <input v-show="false" type="checkbox">
-                <span :class="flag?'active':''"></span>
+            <div @click="handleCheckAll">
+                <span :class="checkAll?'active':''"></span>
                 全选
             </div>
-            总计：<span class="price">129</span>
+            总计：<span class="price">{{result.sumPrice | price}}</span>
         </div>
         <button @click="balance">结算</button>
     </div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default {
-    data(){
-        return{
-            flag:true
-        }
+    computed: {
+        ...Vuex.mapState({
+            checkAll:state=>state.shopCart.checkAll
+        }),
+        ...Vuex.mapGetters({
+            result:"shopCart/result"
+        })
     },
     methods: {
-        checkAll(){
-            this.flag = !this.flag;
-        },
+        ...Vuex.mapMutations({
+            handleCheckAll:"shopCart/handleCheckAll"
+        }),
         balance(){
             this.$router.push({name:"goodBalance"});
         }
     },
+    filters:{
+        price(n){
+            return "￥" + n + ".00";
+        }
+    }
 }
 </script>
 
 
 <style lang="scss" scoped>
     .footer{
+        z-index: 2;
         position: fixed;
         bottom:0;
         display: flex;
@@ -43,6 +52,7 @@ export default {
         height:.8rem;
         font-size:.28rem;
         color:#202020;
+        background:#fff;
         div{
             div{
                 display: inline-block;
