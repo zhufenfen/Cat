@@ -57,8 +57,8 @@ export default {
         }
     },
     methods: {
-        goodDetail(classifyId, shopId){
-            this.$router.push({name:"goodDetail", params:{classifyId:classifyId, shopId:shopId}});
+        goodDetail(shopId){
+            this.$router.push({name:"goodDetail", params:{shopId:shopId}});
         }
     }
 }

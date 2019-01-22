@@ -1,27 +1,27 @@
 <template>
     <div id="main">
         <div class="img">
-            <img :src="goodMessage.goodImage">
+            <img :src="good.goodImage">
         </div>
         <div class="message">
-            <div class="price">{{goodMessage.goodPrice | price}}</div>
-            <div class="title">{{goodMessage.goodTitle}}</div>
+            <div class="price">{{good.goodPrice | price}}</div>
+            <div class="title">{{good.goodTitle}}</div>
             <div class="classify">颜色分类</div>
             <div class="color">
-                <span v-for="(item, index) in goodMessage.goodColor" @click="handleColor(index, item)" :class="goodMessage.colorFlag==index?'active':''">
+                <span v-for="(item, index) in good.goodColor" @click="handleColor(index, item)" :class="good.colorFlag==index?'active':''">
                     {{item}}
                 </span>
             </div>
             <div class="classify">尺码</div>
             <div class="size">
-                <span v-for="(item, index) in goodMessage.goodSize" @click="handleSize(index, item)" :class="goodMessage.sizeFlag==index?'active':''">
+                <span v-for="(item, index) in good.goodSize" @click="handleSize(index, item)" :class="good.sizeFlag==index?'active':''">
                     {{item}}
                 </span>
             </div>
             <div class="classify">购买数量</div>
             <div class="num">
                 <span class="oper" @click="handleReduce">-</span>
-                <span class="number">{{goodMessage.num}}</span>
+                <span class="number">{{good.num}}</span>
                 <span class="oper" @click="handleAdd">+</span>
             </div>
         </div>
@@ -31,13 +31,13 @@
 <script>
 import Vuex from "vuex";
 export default {
-    props:["classifyId", "shopId"],
+    props:["shopId"],
     created() {
         this.$store.dispatch("goodDetail/handleGoodDetail", this.shopId);
     },
     computed:{
         ...Vuex.mapState({
-            goodMessage:state=>state.goodDetail.goodDetail
+            good:state=>state.goodDetail.goodDetail
         })
     },
     methods: {
