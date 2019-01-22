@@ -16,7 +16,9 @@ import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import It from "@/components/my/components/it"          //跳转到他人主页
 import Dell from "@/components/my/components/dell"      //跳转到动态
-import Not from "@/components/my/components/not"        //跳转到无数据页面
+import Not from "@/components/my/components/not"        //跳转到关注页面
+import Paydell from "@/components/my/components/paydell"        //关注跳转到他人主页
+
 /* ----------商城路由----------- */
 import Shop from "@/components/shop/goodClassify"
 import ShopList from "@/components/shop/shopList"
@@ -26,6 +28,8 @@ import GoodBalance from "@/components/shop/goodBalance"
 import GoodApply from "@/components/shop/goodApply"
 import MyOrder from "@/components/shop/myOrder"
 
+import Err from "@/components/error"
+import Login from "@/components/login"
 
 /* ---------喵圈路由-------------*/
 import Details from "@/components/community/component/details"
@@ -44,8 +48,7 @@ import Noneress from "@/components/login/componen/noneress"
 import Moudifiress from "@/components/login/componen/moudifiress"
 
 
-import Err from "@/components/error"
-import Login from "@/components/login"
+
 
 
 import PetChange from "@/components/my/pet/components/petchange"
@@ -156,18 +159,20 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList",//商品列表页面
+      path:"/shopList/:id/:message",//商品列表页面
       name:"shopList",
       component:ShopList,
+      props:true,
       meta:{
         requireAuth:false,
         flag:false
       }
     },
     {
-      path:"/goodDetail",//商品详情页面
+      path:"/goodDetail/:shopId",//商品详情页面
       name:"goodDetail",
       component:GoodDetail,
+      props:true,
       meta:{
         requireAuth:false,
         flag:false
@@ -218,6 +223,11 @@ var router = new Router({
       path: "/my/components/it",//粉丝页面跳转到他人主页
       name: "It",
       component: It,
+    },
+    {
+      path: "/my/components/paydell",//关注页面跳转到他人主页
+      name: "Paydell",
+      component: Paydell,
     },
     {
       path: "/my/components/not",//关注页面跳转到无数据页面
@@ -369,9 +379,10 @@ var router = new Router({
   ]
 })
 // 全局守卫（登录验证）
-/* router.beforeEach((to, from, next) => {
+/* import store from "@/store"
+router.beforeEach((to, from, next) => {
   if(to.meta.requireAuth){
-    if(token){
+    if(store.state.token){
       next();
     }else{
       next("/login");

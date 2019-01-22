@@ -1,26 +1,27 @@
 <template>
     <div id="main">
         <div class="img">
-            <img src="static/imgs/shopDetail/img-maomii.png">
+            <img :src="good.goodImage">
         </div>
         <div class="message">
-            <div class="price">￥88.88</div>
-            <div class="title">宠物背心英短蓝猫布偶加菲小猫衣服</div>
+            <div class="price">{{good.goodPrice | price}}</div>
+            <div class="title">{{good.goodTitle}}</div>
             <div class="classify">颜色分类</div>
             <div class="color">
-                <span :class="colorFlag?'active':''" @click="handleColor(1)">黑色</span>
-                <span :class="colorFlag?'':'active'" @click="handleColor(2)">粉红色</span>
+                <span v-for="(item, index) in good.goodColor" @click="handleColor(index, item)" :class="good.colorFlag==index?'active':''">
+                    {{item}}
+                </span>
             </div>
             <div class="classify">尺码</div>
             <div class="size">
-                <span :class="sizeFlag==1?'active':''" @click="handleSize(1)">S号（1-3斤）</span>
-                <span :class="sizeFlag==2?'active':''" @click="handleSize(2)">M号（4-5.5斤）</span>
-                <span :class="sizeFlag==3?'active':''" @click="handleSize(3)">L号（适合6-8斤）</span>
+                <span v-for="(item, index) in good.goodSize" @click="handleSize(index, item)" :class="good.sizeFlag==index?'active':''">
+                    {{item}}
+                </span>
             </div>
             <div class="classify">购买数量</div>
             <div class="num">
                 <span class="oper" @click="handleReduce">-</span>
-                <span class="number">{{num}}</span>
+                <span class="number">{{good.num}}</span>
                 <span class="oper" @click="handleAdd">+</span>
             </div>
         </div>
@@ -28,41 +29,32 @@
 </template>
 
 <script>
-
+import Vuex from "vuex";
 export default {
-    data(){
-        return{
-            colorFlag:true,
-            sizeFlag:1,
-            num:1
-        }
+    props:["shopId"],
+    created() {
+        this.$store.dispatch("goodDetail/handleGoodDetail", this.shopId);
+    },
+    computed:{
+        ...Vuex.mapState({
+            good:state=>state.goodDetail.goodDetail
+        })
     },
     methods: {
-        handleColor(val){
-            if(val == 1){
-                this.colorFlag = true;
-            }else if(val == 2){
-                this.colorFlag = false;
-            }
-        },
-        handleSize(val){
-            this.sizeFlag = val;
-        },
-        handleReduce(){
-            if(this.num >= 2){
-                this.num--;
-            }else{
-                this.num = 1;
-            }
-        },
-        handleAdd(){
-            this.num++;
-        }
+        ...Vuex.mapMutations({
+            handleColor:"goodDetail/handleGoodColor",
+            handleSize:"goodDetail/handleGoodSize",
+            handleReduce:"goodDetail/handleGoodReduce",
+            handleAdd:"goodDetail/handleGoodAdd"
+        })
     },
+    filters:{
+        price(p){
+            return "￥"+p;
+        }
+    }
 }
 </script>
-
-
 <style lang="scss" scoped>
     #main{
         margin-top:1.1rem;
