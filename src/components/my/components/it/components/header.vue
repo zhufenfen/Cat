@@ -5,7 +5,7 @@
         <div class="lt" @click="getBack()">
           <img src="static/myImgs/left.png">
         </div>
-        <p>Noodle</p>
+        <p>{{itList && itList.myName}}</p>
         <span></span>
       </div>
       <div class="box">
@@ -14,7 +14,7 @@
         </div>
         <div class="message">
           <div class="messageC">
-            <p>Noodle</p>
+            <p>{{itList && itList.myName}}</p>
             <a>
               <img src="static/myImgs/it/ico1.png">
             </a>
@@ -26,13 +26,13 @@
               <p>关注</p>
             </div>
             <div>
-              <span>{{fansNum}}</span>
+              <span>{{fansNums}}</span>
               <p>粉丝</p>
             </div>
           </div>
         </div>
         <div class="pay">
-          <span @click="handleAdd(),handle()">{{uword}}</span>
+          <span @click="handleAdd()">{{uword}}</span>
         </div>
       </div>
     </div>
@@ -43,41 +43,39 @@ import Vuex from "vuex";
 
 export default {
   created() {
-   // this.handleAdd();
+    this.handleGetIt();
   },
   data() {
     return {
-      uword:"关注",
-      payNum:11
-    }
+      payNum: 11,
+      itName: "",
+    };
   },
   computed: {
     ...Vuex.mapState({
-     fansNum:state=>state.it.fansNum,
-     
+      uword:state=>state.myMhm.uword,
+      fansNums: state => state.myMhm.fansNums,
+      itList: state => state.myMhm.itList
     })
   },
   methods: {
-     ...Vuex.mapMutations({
-      handleAdd:"it/handleAdd"
+    ...Vuex.mapMutations({
+      handleAdd: "myMhm/handleAdd",
     }),
-    getBack(){
-      this.$router.back()
+    ...Vuex.mapActions({
+      handleGetIt: "myMhm/handleGetIt"
+    }),
+    getBack() {
+      this.$router.back();
     },
-    handle(){
-      this.uword="已关注"
-    }
-     
-  },
-
-  
+  }
 };
 </script>
 <style lang="scss">
 .header {
   width: 100%;
   display: flex;
-  z-index:5;
+  z-index: 5;
   .headerM {
     width: 100%;
     height: 4rem;
@@ -90,11 +88,11 @@ export default {
       justify-content: space-between;
       .lt {
         margin-left: 0.36rem;
-        width:.18rem;
-        height:.28rem;
-        img{
-          width:100%;
-          height:100%;
+        width: 0.18rem;
+        height: 0.28rem;
+        img {
+          width: 100%;
+          height: 100%;
         }
       }
       p {
@@ -160,7 +158,7 @@ export default {
           width: 1.58rem;
           display: flex;
           justify-content: space-between;
-          font-size: .28rem;
+          font-size: 0.28rem;
           font-family: PingFang-SC-Bold;
           font-weight: bold;
           color: rgba(0, 0, 0, 1);

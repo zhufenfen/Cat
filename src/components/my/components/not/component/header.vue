@@ -49,5 +49,9 @@ export default {
     color: rgba(32, 32, 32, 1);
     float:left;
   }
+  span{
+    display:block;
+    width:.44rem;
+  }
 }
 </style>

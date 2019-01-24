@@ -7,7 +7,7 @@
           <router-link :to="{name:'fans'}">
             <p>
               粉丝
-              <span>11</span>
+              <span>{{fansNum}}</span>
             </p>
           </router-link>
         </li>
@@ -38,11 +38,19 @@
 import Vuex from "vuex";
 
 export default {
-  //  computed: {
-  //    ...Vuex.mapState({
-  //      myMhm:state=>state.myMhm.myMhm
-  //    })
-  //  },
+  created() {
+    this.handleFans();
+  },
+   computed: {
+     ...Vuex.mapState({
+       fansNum:state=>state.myMhm.fansNum
+     })
+   },
+   methods: {
+     ...Vuex.mapActions({
+       handleFans:"myMhm/handleFans"
+     })
+   },
 };
 </script>
 <style lang="scss" scoped>

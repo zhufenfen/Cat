@@ -6,7 +6,7 @@
           <div class="pic">
             <img src="static/myImgs/message.png">
           </div>
-          <router-link :to="{name:'article'}">
+          <router-link :to="{name:'pet'}">
             <p>宠物信息</p>
           </router-link>
 
@@ -18,7 +18,10 @@
           <div class="pic">
             <img src="static/myImgs/news.png">
           </div>
+          <router-link :to="{name:'information'}">
           <p>我的消息</p>
+          </router-link>
+
           <b>
             <img src="static/myImgs/right2.png">
           </b>
@@ -40,7 +43,10 @@
           <div class="pic">
             <img src="static/myImgs/order.png">
           </div>
+         
+           <router-link :to="{name:' myOrder'}">
           <p>我的订单</p>
+          </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>
@@ -49,7 +55,9 @@
           <div class="pic">
             <img src="static/myImgs/car.png">
           </div>
+           <router-link :to="{name:'shopCart'}">
           <p>购物车</p>
+            </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>
@@ -58,7 +66,9 @@
           <div class="pic">
             <img src="static/myImgs/site.png">
           </div>
+           <router-link :to="{name:' address'}">
           <p>我的地址</p>
+          </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>

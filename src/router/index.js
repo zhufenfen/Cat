@@ -47,11 +47,6 @@ import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
 import Moudifiress from "@/components/login/componen/moudifiress"
 
-
-import Err from "@/components/error"
-import Login from "@/components/login"
-
-
 import PetChange from "@/components/my/pet/components/petchange"
 Vue.use(Router)
 
@@ -120,12 +115,12 @@ var router = new Router({
       }
     },
     {
-      path:"/homedetail",     //跳转到文章详情页
-      name:"homedetail",
-      component:HomeDetail,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/homedetail",     //跳转到文章详情页
+      name: "homedetail",
+      component: HomeDetail,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
@@ -160,59 +155,59 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList/:id/:message",//商品列表页面
-      name:"shopList",
-      component:ShopList,
-      props:true,
-      meta:{
-        requireAuth:false,
-        flag:false
+      path: "/shopList/:id/:message",//商品列表页面
+      name: "shopList",
+      component: ShopList,
+      props: true,
+      meta: {
+        requireAuth: false,
+        flag: false
       }
     },
     {
-      path:"/goodDetail/:classifyId/:shopId",//商品详情页面
-      name:"goodDetail",
-      component:GoodDetail,
-      props:true,
-      meta:{
-        requireAuth:false,
-        flag:false
+      path: "/goodDetail/:classifyId/:shopId",//商品详情页面
+      name: "goodDetail",
+      component: GoodDetail,
+      props: true,
+      meta: {
+        requireAuth: false,
+        flag: false
       }
     },
     {
-      path:"/shopCart",//购物车页面
-      name:"shopCart",
-      component:ShopCart,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/shopCart",//购物车页面
+      name: "shopCart",
+      component: ShopCart,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
-      path:"/goodBalance",//结算页面
-      name:"goodBalance",
-      component:GoodBalance,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/goodBalance",//结算页面
+      name: "goodBalance",
+      component: GoodBalance,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
-      path:"/goodApply",//支付完成页面
-      name:"goodApply",
-      component:GoodApply,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/goodApply",//支付完成页面
+      name: "goodApply",
+      component: GoodApply,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
-      path:"/myOrder",//我的订单页面
-      name:"myOrder",
-      component:MyOrder,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/myOrder",//我的订单页面
+      name: "myOrder",
+      component: MyOrder,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
@@ -250,110 +245,110 @@ var router = new Router({
         flag: true
       },
     },
+    {
+      path: "/my/article",
+      name: "article",
+      component: Article,
+      meta: {
+        requireAuth: true
+      },
+      children: [
         {
-          path: "/my/article",
-          name: "article",
-          component: Article,
+          path: "/my/article/noarticle",
+          name: "noarticle",
+          component: Noarticle,
           meta: {
             requireAuth: true
           },
-          children:[
-            {
-              path:"/my/article/noarticle",
-              name:"noarticle",
-              component:Noarticle,
-              meta:{
-                requireAuth:true
-              },
-              
-            },
-            {
-              path:"/my/article/nocollect",
-              name:"nocollect",
-              component:Nocollect,
-              meta:{
-                requireAuth:true
-              },
-              
-            },
-          ]
+
         },
         {
-          path: "/my/collect",
-          name: "collect",
-          component: Collect,
+          path: "/my/article/nocollect",
+          name: "nocollect",
+          component: Nocollect,
           meta: {
             requireAuth: true
           },
+
         },
-        {
-          path: "/my/pet",
-          name: "pet",
-          component: Pet,
-          meta: {
-            requireAuth: true
-          },
-        },
-            {
-              path:"/my/pet/petchange",
-              name:"change",
-              component:PetChange,
-              meta:{
-                requireAuth:true
-              },      
-            },
+      ]
+    },
+    {
+      path: "/my/collect",
+      name: "collect",
+      component: Collect,
+      meta: {
+        requireAuth: true
+      },
+    },
+    {
+      path: "/my/pet",
+      name: "pet",
+      component: Pet,
+      meta: {
+        requireAuth: true
+      },
+    },
+    {
+      path: "/my/pet/petchange",
+      name: "change",
+      component: PetChange,
+      meta: {
+        requireAuth: true
+      },
+    },
     /*----------------喵圈路由 ----*/
     {
-      path:"/login",//跳转到登陆页面
-      name:"login",
-      component:Login,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/login",//跳转到登陆页面
+      name: "login",
+      component: Login,
+      meta: {
+        requireAuth: true,
+        flag: false
       },
     },
     {
-      path:"/address",//跳转到增加地址页面
-      name:"address",
-      component:Address,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/address",//跳转到增加地址页面
+      name: "address",
+      component: Address,
+      meta: {
+        requireAuth: true,
+        flag: false
       },
     },
-    
+
     {
-      path:"/sign",//跳转到注册页面
-      name:"sign",
-      component:Sign,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/sign",//跳转到注册页面
+      name: "sign",
+      component: Sign,
+      meta: {
+        requireAuth: true,
+        flag: false
       },
     },
-    
+
     {
-      path:"/noneress",//跳转到注册页面
-      name:"noneress",
-      component:Noneress,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/noneress",//跳转到注册页面
+      name: "noneress",
+      component: Noneress,
+      meta: {
+        requireAuth: true,
+        flag: false
       },
     },
-    
+
     {
-      path:"/moudifiress",//跳转到注册页面
-      name:"moudifiress",
-      component:Moudifiress,
-      meta:{
-        requireAuth:true,
-        flag:false
+      path: "/moudifiress",//跳转到注册页面
+      name: "moudifiress",
+      component: Moudifiress,
+      meta: {
+        requireAuth: true,
+        flag: false
       },
     },
-    
-    
-    
+
+
+
     {
       path: "/details",
       name: "details",
