@@ -7,6 +7,7 @@ import myMhm from "./my/myMhm"
 import dell from "./my/dell"
 import it from "./my/it"
 import home from "./home"
+import articleCollect from "./my_hrj"
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
         myMhm,
         dell,
         it,
-        home
+        home,
+        articleCollect,
     }
 })
 export default store;
