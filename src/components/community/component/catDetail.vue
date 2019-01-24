@@ -32,10 +32,10 @@
           <img src="../../../../static/communityImg/icon-pl-2@2x.png" alt>
         </div>&nbsp;&nbsp;
         <span>98</span>
-        <div class="xin">
+        <div class="xin" @click="()=>{num++}">
           <img src="../../../../static/communityImg/icon-xin-2@2x.png" alt>
         </div>&nbsp;&nbsp;
-        <span>28</span>
+        <span>{{num}}</span>
       </div>
     </div>
     <h4 v-if="commentsIsShow">评论</h4>
@@ -56,16 +56,17 @@ export default {
   components: {
     "comments-com": comments
   },
+  data() {
+    return {
+      commentsIsShow: false,
+      num:12
+    }
+  },
   methods: {
     handelComments() {
       this.commentsIsShow = !this.commentsIsShow;
     }
   },
-  data() {
-    return {
-      commentsIsShow: false
-    };
-  }
 };
 </script>
 <style lang="scss" scoped>
