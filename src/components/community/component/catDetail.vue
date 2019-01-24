@@ -42,17 +42,6 @@
     <div class="comments">
       <comments-com v-if="commentsIsShow"/>
     </div>
-
-    <!-- <div class="comments">
-      <div class="img1">
-        <img src="../../../../static/communityImg/icon-hui@2x.png" alt>
-      </div>
-      <ul class="tops">
-        <li class="one">仙女鱼</li>
-        <li class="two">沙发</li>
-      </ul>
-      <li class="thr">2小时前</li>
-    </div>-->
     <div class="foot">
       <input type="text" placeholder="添加评论">
       <span>
@@ -77,10 +66,6 @@ export default {
       commentsIsShow: false
     };
   }
-
-  // updated() {
-  //     console.log(this.commentsIsShow)
-  // },
 };
 </script>
 <style lang="scss" scoped>
@@ -196,7 +181,7 @@ img {
   h4 {
     font-weight: 500;
     font-size: 0.28rem;
-    margin: 0.5rem 0 0.2rem 0.3rem;
+    margin: 0.5rem 0 0.4rem 0.3rem;
   }
   .foot {
     width: 100%;
