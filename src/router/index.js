@@ -39,7 +39,7 @@ import Address from "@/components/login/componen/address_lnn"
 import Sign from "@/components/login/componen/sign"
 import Noneress from "@/components/login/componen/noneress"
 import Moudifiress from "@/components/login/componen/moudifiress"
-
+import Quit from "@/components/login/componen/quit"
 
 
 
@@ -322,6 +322,15 @@ var router = new Router({
       path:"/moudifiress",//跳转到注册页面
       name:"moudifiress",
       component:Moudifiress,
+      meta:{
+        requireAuth:true,
+        flag:false
+      },
+    },
+    {
+      path:"/quit",//跳转到注册页面
+      name:"quit",
+      component:Quit,
       meta:{
         requireAuth:true,
         flag:false

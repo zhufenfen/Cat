@@ -10,7 +10,7 @@
 		<!--地址列表-->
 		<div class="main_ln">
 			<div class="none_bj">
-				<!--<img src="../../../../static/img_ln/none.jpg"/>-->
+				<img src="../../../../static/img_ln/none.jpg"/>
 			</div>
 			
 			<ul>

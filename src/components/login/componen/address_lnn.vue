@@ -2,48 +2,56 @@
 	<div class="address_ln">
 		<!--头部地址管理-->
 		<div class="header_ln">
-			<p class="add_p">{{eimge}}</p><p class="add_save">保存</p>
+			<p class="add_p" >{{eimge}}</p><p class="add_save" @click="add">保存</p>
 			
 			<div @click="address_btn2"><img src="../../../../static/img_ln/jiao.jpg"/></div>
 		</div>		
 		<!--地址列表-->
 		<div class="main_ln">
 		<ul>
-			<!-- <li><input type="text" placeholder="收货人姓名" class="cood"></li>
-			<li><input type="number" placeholder="手机号码" class="cood"></li>
-			<li><input type="number" placeholder="邮编（选填）" class="cood"></li>
-			<li><input type="text" placeholder="省/市/行政区" class="cood"></li>
-			<li><input type="text" placeholder="详细地址" class="cood"></li>
+			<li><input type="text" v-model="name" placeholder="收货人姓名" class="cood"></li>
+			<li><input type="number" v-model="photo" placeholder="手机号码" class="cood" ></li>
+			<li><input type="number" v-model="code" placeholder="邮编（选填）" class="cood"></li>
+			<li><input type="text" v-model="ress" placeholder="省/市/行政区" class="cood"></li>
+			<li><input type="text" v-model="details" placeholder="详细地址" class="cood"></li>
 			<li>
 			<input type="radio" class="odd_a">
-			<input type="text" placeholder="设为默认地址" class="cood"></li> -->
-				<li v-for="item in list_ln">
-						<input :type="item.type"
-							:placeholder="item.plac"/>
-								
-				</li>
+			<input type="text" placeholder="设为默认地址" class="cood"></li> 
+			
 		</ul>	
 		</div>
 	</div>
 </template>
 
 <script>
+import axios from "axios"
 	export default{
 		data(){
 			return{
 				eimge:"编辑地址",
-				list_ln:[
-					{typel:"text",plac:"收货人姓名"},
-					{typel:"number",plac:"18837287657"},
-					{typel:"namber",plac:"编码"},
-					{typel:"text",plac:"省/市/行政区"},
-					{typel:"text",plac:"详细地址"}
-				]
+				name:"",
+				photo:"",
+				code:"",
+				ress:"",
+				details:""	
 			}
+		},
+		created(){
+			
+			console.log(this.$route.query._id)
 		},
 		methods:{
 			address_btn2(){
 				this.$router.go(-1);
+			},
+			add(){
+				let {name,code,photo,ress,details} = this
+				axios.post("http://localhost:3000/address",{
+					sj: {name:this.name}
+				}).then((data)=>{
+					console.log(1)
+				})
+//				console.log({name,code,photo,ress,details})
 			}
 		}
 	}
@@ -63,6 +71,7 @@
 			position:fixed;
 			top:0;
 			left:0;
+			
 			p{
 				
 				font-size: 0.36rem;
@@ -90,7 +99,7 @@
 			top:0;
 			left:6.05rem;
 			
-			//display: inline-block;	
+			display: inline-block;	
 			}	
 		}
 /*地址列表*/	

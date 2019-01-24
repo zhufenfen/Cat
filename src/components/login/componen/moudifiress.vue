@@ -10,17 +10,14 @@
 		<!--地址列表-->
 		<div class="main_ln">
 			<ul>
-				<!-- <li>
-					<p class="name">楚子峰<span class="tel">18809767654</span>
-					<p class="site"><span class="def">【默认】</span>北京市昌平区天苑路</p>
-				</li> -->
-				<li v-for="item in list_l">
+		
+				<li v-for="item in list_l" @click="m_btn(item.id)">
 
 				<p class="name">{{item.name}}
-					<span class="tel">{{item.tel}}</span>
+					<span class="tel">{{item.photo}}</span>
 					<span class="prc_bj"></span>
 				</p>
-				<p class="site"><span class="def" v-if="item.flag">【默认】</span>{{item.side}}</p>
+				<p class="site"><span class="def" v-if="item.flag">【默认】</span>{{item.ress}}</p>
 				</li>
 
 			</ul>
@@ -34,34 +31,32 @@
 </template>
 
 <script>
+		import axios from "axios"
 	export default{
 		data(){
 			return{
-				list_l:[
-					{
-						name:"楚子峰",
-						tel:18837133244,
-						side:"北京市昌平区天苑路",
-						flag:true
-						
-					},{
-						name:"楚子峰",
-						tel:13476809874,
-						side:"北京市昌平区天苑路",
-						flag:false
-					},{
-						name:"楚子峰",
-						tel:1576997327,
-						side:"北京市昌平区天苑路",
-						flag:false
-
-					}
-				]
+				list_l:""
+				
+				
 			}
+		},
+		
+		created(){
+			this.getdata()
 		},
 		methods:{
 			address_btn(){
 				this.$router.go(-1);
+			},
+			m_btn(id){
+				this.$router.push({ path: 'address', query: { _id: id } })	
+			},
+			getdata(){
+				axios.get("http://localhost:3000/address")
+					.then((data)=>{
+						console.log(data.data)
+						this.list_l=data.data
+				})
 			}
 		}
 	}

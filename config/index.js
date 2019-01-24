@@ -11,12 +11,20 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/cat":{
-        target:"https://www.easy-mock.com",
+      // "/cat":{
+      //   target:"https://www.easy-mock.com",
+      //   changeOrigin:true,
+      //   pathRewrite:{
+      //     "^/cat":""
+      //   }
+      "/api":{
+        target:"http://localhost:3000",
         changeOrigin:true,
         pathRewrite:{
-          "^/cat":""
+          "^/api":""
         }
+
+
       }
     },
 

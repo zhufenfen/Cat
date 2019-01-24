@@ -15,8 +15,6 @@
 		<div class="uname_ln">
 			<input type="number" v-model="userName" @blur="userTest" placeholder="请输入手机号" class="tex1_ln"/> 
 			<span class="phoneTest"></span>
-
-
 			<input type="number" v-model="passWord" placeholder="请输入验证码" class="tex2_ln"/>
 			<div class="ver_ln">获取验证码</div>
 		</div>
@@ -28,32 +26,63 @@
 	
 </template>
 <script>
+
+	import Vuex from "vuex"
+	
 	export default{
 		data(){
 			return{
-				userName:"",
-				passWord:""	,
-				flag:true
+				userName:"13460988521",
+				passWord:"123456",
+				flag:true,
+			}
+
+		},
+		computed: {
+			...Vuex.mapState({
+				token:state => state.login.token
+			})
+		},
+		watch: {		
+			token(newVal, oldVal){
+				console.log(1)
+				this.$router.push("/home");
 			}
 		},
-		methods:{
+		methods: {
+
+			...Vuex.mapActions({
+				handleGetData:"login/handleGetData"
+			}),
+		
+
 			gohome(){
-				if(this.flag){
+				/*if(this.flag){
 					this.$router.push("/home")
 				}else{
 					alert("请输入正确的手机号")
-				}
+				}*/
+				
+				let info ={
+					userName:this.userName,
+					passWord:this.passWord
+				};
+				
+				this.handleGetData(info)
+
+
 			},
 			userTest(){
-				var reg=/^1(3|4|5|7|8)\d{9}$/;
+
+				/*var reg=/^1(3|4|5|7|8)\d{9}$/;
 				if(!reg.test(this.userName)){
-					$(".phoneTest").html("123");
+					
 					this.flag=false;
 					//this.$refs.phoneTest.innerHTML("请输入正确的手机号")
 				}else{
 						$(".phoneTest").html("")
 							this.flag=true;
-				}
+				}*/
 			}
 		}
 	}

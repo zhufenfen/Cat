@@ -20,6 +20,7 @@
 
 <script>
 	export default{
+		
 		methods:{
 			signgohome(){
 				this.$router.push("/home")
@@ -51,6 +52,7 @@
 				color: #a5a5a5;
 				margin-top:0.58rem;
 				margin-left:1.64rem;
+				outline:none;
 				border:none;
 				border-bottom: 0.01rem solid #000;
 				}
