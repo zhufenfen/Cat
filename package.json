@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "mint-ui": "^2.2.13",
-<<<<<<< HEAD
     "mock": "^0.1.1",
-=======
->>>>>>> ac8dcfc2714ae781ff94e869bac41dcff6c82cd7
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

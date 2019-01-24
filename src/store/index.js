@@ -17,8 +17,7 @@ const store = new Vuex.Store({
         myMhm,
         dell,
         it,
+        home
     }
-
-
-
+})
 export default store;

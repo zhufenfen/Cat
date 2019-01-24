@@ -37,6 +37,7 @@
             </div>
             <div class="sift">
                 <p>精选</p>
+                {{homedata}}
                 <div v-for="(item,index) in homedata" :key="index" @click="goDetail()">
                     <img :src="item.photo" alt="">
                     <div>
@@ -71,7 +72,7 @@ export default {
     },
     methods:{
         goDetail(){
-            console.log(this.homeData(),   对方水电费)
+            console.log(this.homeData())
             // this.$router.push("/homedetail")
         },
         ...Vuex.mapActions({
