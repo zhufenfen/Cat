@@ -6,7 +6,7 @@
           <div class="pic">
             <img src="static/myImgs/message.png">
           </div>
-          <router-link :to="{name:'article'}">
+          <router-link :to="{name:'pet'}">
             <p>宠物信息</p>
           </router-link>
 

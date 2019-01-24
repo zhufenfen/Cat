@@ -96,7 +96,8 @@ export default {
        width: 7.5rem;
        margin: 0 auto;
         background:#f0f2f5;
-        margin-top: 0.8rem;
+        padding-top: 1rem;
+        margin-left:0.3rem;
        .prodect{
           width: 100%;
           height:100%;
@@ -133,12 +134,13 @@ export default {
                     }
                     p{
                         font-size: 0.24rem;
-                        padding-bottom: 0.35rem;
+                        padding-bottom: 0.3rem;
                         font-family:PingFang-SC-Regular;
                         font-weight:400;
                         color:rgba(88,88,88,1);
                     }
                     span{
+                        font-size: 0.26rem;
                         color: gray;
                     }
                 }

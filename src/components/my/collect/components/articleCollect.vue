@@ -117,7 +117,8 @@ export default {
        height: 100%;
        width: 7.5rem;
        margin: 0 auto;
-       margin-top: 0.8rem;
+       padding-top: 1rem;
+       margin-left:0.3rem;
        ul{
           background:#f0f2f5;
           width: 100%;
@@ -133,7 +134,8 @@ export default {
               border-radius:10px; 
               margin:0.05rem;
               height: max-content;
-              p{
+              p{  
+                  padding-top:0.1rem; 
                   height: 0.8rem;
                   float: left;
                   font-size: 0.25rem;
