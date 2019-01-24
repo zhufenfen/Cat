@@ -71,8 +71,8 @@ export default {
     },
     methods:{
         goDetail(){
-            console.log(this.homeData())
-            // this.$router.push("/homedetail")
+            // console.log(this.homeData())
+            this.$router.push("/homedetail")
         },
         ...Vuex.mapActions({
             homeData:"home/homeData"
