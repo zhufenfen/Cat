@@ -7,9 +7,6 @@ import myMhm from "./my/myMhm"
 import dell from "./my/dell"
 import home from "./home"
 import articleCollect from "./my_hrj"
-=======
-import it from "./my/it"
->>>>>>> lijipeng
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
