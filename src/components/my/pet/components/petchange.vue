@@ -45,7 +45,7 @@ export default {
              comName: "TreasoreCollect-com",
              path:"/my/pet",
              name:"pet",
-             pic:require("../../../../../static/hrj_img/touxiang-xinxi.png"),
+             pic:"/static/hrj_img/touxiang-xinxi.png",
              petnametrue:"",
              sextrue:"",
              birthdaytrue:"",
