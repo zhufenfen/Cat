@@ -1,18 +1,18 @@
 <template>
   <div class="wrapper main" ref="mainWrapper">
     <div class="content mainInside">
-      <div class="center" v-for="(item,index) in dellList">
+      <div class="center"  v-for="(item,index) in List" >
         <div class="top">
-          <span>{{item.time}}</span>
+          <span>{{item && item.time}}</span>
           <b></b>
         </div>
         <div class="middle">
           <b class="wire"></b>
           <div class="right">
             <div class="pic">
-              <img :src="item.imgUrl">
+              <img :src="item && item.myImg">
             </div>
-            <p>{{item.txt}}</p>
+            <p>{{item && item.txt}}</p>
           </div>
         </div>
       </div>
@@ -27,17 +27,19 @@ export default {
     this.scroll = new BScroll(this.$refs.mainWrapper);
   },
   created() {
-    this.handleDell();
+    this.handleGetIt();
   },
+  
   computed: {
     ...Vuex.mapState({
-      dellList: state => state.dell.dellList
-    })
+     List: state =>state.myMhm.itList && state.myMhm.itList.itMessage
+    }),
   },
   methods: {
     ...Vuex.mapActions({
-      handleDell: "dell/handleDell"
-    })
+      handleGetIt:"myMhm/handleGetIt"
+    }),
+    
   }
 };
 </script>

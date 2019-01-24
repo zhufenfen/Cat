@@ -2,14 +2,14 @@
   <div class="wrapper myMain" ref="mainWrapper">
     <div class="content mainInside" v-show="flag == 1">
       <div class="mainFans">
-        <div class="mainC" v-for="(item,index) in goodsList">
+        <div class="mainC" v-for="(item,index) in goodsList" >
           <div class="center">
-            <router-link :to="{name:'It'}">
+            <router-link :to="{name:'It',params:{name:item.myName,}}">
               <div class="head">
-                <img :src="item.imgUrl">
+                <img :src="item.myImg" @click="handlePostId(item.myId)">
               </div>
             </router-link>
-            <p>{{item.name}}</p>
+            <p>{{item.myName}}</p>
             <span class="clear"></span>
             <span class="Not">未关注</span>
           </div>
@@ -29,13 +29,14 @@
 import Vuex from "vuex";
 import BScroll from "better-scroll";
 export default {
+  created() {
+    this.handlegetFans();
+    this.handlePostId();
+  },
   data() {
     return {
       flag: 0
     };
-  },
-  created() {
-    this.handleGoods();
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.mainWrapper, {
@@ -56,8 +57,12 @@ export default {
   },
   methods: {
     ...Vuex.mapActions({
-      handleGoods: "myMhm/handleGoods"
-    })
+      handlegetFans: "myMhm/handlegetFans",
+       handlePostId: "myMhm/handlePostId"
+    }),
+     
+      
+     
   }
 };
 </script>
