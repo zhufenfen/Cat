@@ -177,7 +177,14 @@ export default {
                 display: flex;
                 
                 justify-content: space-between;
+                img{
+                    margin: .2rem 0 .2rem .22rem;
+                    width: 1.6rem;
+                    height: 1.8rem;
+                }
                 div{
+                    width: 100%;
+                    height: 100%;
                     display: flex;
                     flex-direction: column;
                     h3{
@@ -202,11 +209,6 @@ export default {
                         padding: 0 .3rem;
                         text-align: right;
                     }
-                }
-                img{
-                    margin: .2rem 0 .2rem .22rem;
-                    width: 1.6rem;
-                    height: 1.8rem;
                 }
             }
         }

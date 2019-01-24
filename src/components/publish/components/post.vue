@@ -9,15 +9,15 @@
             <div>
                 添加封面
             </div>
-            <input type="text" placeholder="标题">
-            <input type="text" placeholder="副标题">
-            <textarea placeholder="正文" name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="标题" v-model="title">
+            <input type="text" placeholder="副标题" v-model="title2">
+            <textarea placeholder="正文" name="" id="" cols="30" rows="10" v-model="area"></textarea>
         </div>
-        <div class="publisBtn">
+        <div class="publisBtn" @click="publish()">
             发表
         </div>
         <!-- 蒙版 -->
-        <div class="templatePost" v-show="!flag">
+        <div class="templatePost" @click="doThis" v-show="!flag">
             <div>
                 <p>将此次编辑保留</p>
                 <span @click="noreserve()">不保留</span>
@@ -28,21 +28,50 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 export default {
     data(){
         return{
-            flag:"true"
+            flag:"true",
+            title:"",
+            title2:"",
+            area:""
         }
     },
+    // beforeRouteEnter(to,from,next){
+    //     if(sessionStorage.getItem != ""){
+    //         console.log(1111)
+    //         this.title = JSON.parse(sessionStorage.getItem("title"))
+    //         console.log(this.title)
+    //     }
+    // },
     methods:{
-        showPost(){             //点击×，返回上一个页面
+        showPost(){           //点击×，返回上一个页面
+            this.flag = !this.flag
+        },
+        doThis(){
             this.flag = !this.flag
         },
         noreserve(){
             this.$router.go(-2)
         },
         reserve(){
+              
+            let title = this.title
+            let title2 = this.title2
+            let area = this.area
+            sessionStorage.setItem("title",title)
+            sessionStorage.setItem("title2",title2)
+            sessionStorage.setItem("area",area)
             this.$router.go(-2)
+        },
+        publish(){
+            Toast({
+                message: '发表成功',
+                position: 'middle',
+                duration: 3000,
+                calssName:"backgroung:'red'"
+            });
         }
     }
 }
@@ -61,6 +90,8 @@ export default {
             font-family: PingFang-SC-Regular;
             margin-top: .68rem;
             img{
+                width:.24rem;
+                height:.42rem;
                 display: inline-block;
                 margin-left: .16rem;
             }
