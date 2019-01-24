@@ -37,7 +37,6 @@
             </div>
             <div class="sift">
                 <p>精选</p>
-                {{homedata}}
                 <div v-for="(item,index) in homedata" :key="index" @click="goDetail()">
                     <img :src="item.photo" alt="">
                     <div>
@@ -72,8 +71,8 @@ export default {
     },
     methods:{
         goDetail(){
-            console.log(this.homeData())
-            // this.$router.push("/homedetail")
+            // console.log(this.homeData())
+            this.$router.push("/homedetail")
         },
         ...Vuex.mapActions({
             homeData:"home/homeData"
@@ -182,6 +181,8 @@ export default {
                     display: flex;
                     flex-direction: column;
                     h3{
+                        width: 100%;
+                        height: 100%;
                         height: .7rem;
                         line-height: .8rem;
                         text-indent: .3rem;
