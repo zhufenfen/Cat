@@ -237,7 +237,7 @@ html {
             }
             .last {
               display: inline-block;
-              font-size: 0.14rem;
+              font-size: 0.16rem;
               height: 0.64rem;
               line-height: 0.64rem;
               margin-left: 0.2rem;
@@ -304,7 +304,7 @@ html {
             }
             .last {
               display: inline-block;
-              font-size: 0.14rem;
+              font-size: 0.16rem;
               height: 0.64rem;
               line-height: 0.64rem;
               margin-left: 0.2rem;
@@ -375,7 +375,7 @@ html {
             }
             .last {
               display: inline-block;
-              font-size: 0.14rem;
+              font-size: 0.16rem;
               height: 0.64rem;
               line-height: 0.64rem;
               margin-left: 0.2rem;
@@ -443,7 +443,7 @@ html {
             }
             .last {
               display: inline-block;
-              font-size: 0.14rem;
+              font-size: 0.16rem;
               height: 0.64rem;
               line-height: 0.64rem;
               margin-left: 0.2rem;

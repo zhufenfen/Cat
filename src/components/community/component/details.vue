@@ -29,6 +29,9 @@ export default {
 body{
     font-family: PingFang-SC-Regular;
 }
+img{
+    vertical-align: top;
+}
     .details{
         width: 100%;
         height: 100%;
@@ -43,10 +46,23 @@ body{
             letter-spacing: 0.025rem;
             color:  #202020 ;
             .left{
-                padding-left: 0.25rem;
+                margin-left: 0.25rem;
+                width: 0.15rem;
+                height: 0.28rem;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .right{
-                padding-right: 0.2rem;
+                margin-right: 0.2rem;
+                width: 0.3rem;
+                height: 0.29rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
         .center{
@@ -103,6 +119,12 @@ body{
         .last{
             margin-left: 6.68rem;
             margin-top: 1.5rem;
+            width: 0.4rem;
+            height: 0.35rem;
+            img{
+                width:100%;
+                height: 100%;
+            }
         }
     }
 </style>
