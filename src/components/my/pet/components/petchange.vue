@@ -1,7 +1,7 @@
 <template>
     <div class="outside">
         <div class="header">
-           <span><router-link :to="{name:name}">〈</router-link></span>
+           <span><router-link :to="{name:name}"><img src="/static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li>
                      <h2>资料</h2>
@@ -14,17 +14,17 @@
         <img :src=pic alt="哎呀，图片走丢了" class="head">
         </div>
         <div class="list">
-              <p>昵称<input type="text" name="" id="" placeholder="输入宠物昵称" ></p>
+              <p>昵称<input type="text"  placeholder="输入宠物昵称" :value="petnametrue"></p>
               <!-- :value="petname" -->
-              <p>性别<input type="text" name="" id="" placeholder="输入性别"></p>
+              <p>性别<input type="text"  placeholder="输入性别" :value="sextrue"></p>
                <!-- :value="sex" -->
-              <p>生日<input type="text" name="" id="" placeholder="输入生日"></p>
+              <p>生日<input type="text"  placeholder="输入生日" :value="birthdaytrue"></p>
                <!-- :value="birthday" -->
-              <p>血统<input type="text" name="" id="" placeholder="输入血统"></p>
+              <p>血统<input type="text"  placeholder="输入血统" :value="bloodtrue"></p>
                <!-- :value="blood" -->
-              <p>品种<input type="text" name="" id="" placeholder="输入品种"></p>
+              <p>品种<input type="text"  placeholder="输入品种" :value="kindtrue"></p>
                <!-- :value="kind" -->
-              <p>状态<input type="text" name="" id="" placeholder="输入状态"></p>
+              <p>状态<input type="text"  placeholder="输入状态" :value="settrue"></p>
                <!-- :value="set" -->
         </div>
         <div class="bottom">
@@ -45,7 +45,13 @@ export default {
              comName: "TreasoreCollect-com",
              path:"/my/pet",
              name:"pet",
-             pic:require("../../../../../static/hrj_img/touxiang-xinxi.png"),
+             pic:"/static/hrj_img/touxiang-xinxi.png",
+             petnametrue:"",
+             sextrue:"",
+             birthdaytrue:"",
+             bloodtrue:"",
+             kindtrue:"",
+             settrue:"",
          }
      }
 }
@@ -67,7 +73,13 @@ export default {
                 font-size: 0.3rem;
                 float: left;
                 line-height: 0.8rem;
-                margin-left:0.66rem; 
+                margin-left:0.46rem; 
+                img{
+                    height: 0.4rem;
+                    width: 0.2rem;
+                    float: left;
+                    margin-top: 0.2rem;
+                }
             }
              ul{
                 float: left;
@@ -78,9 +90,6 @@ export default {
                     margin:0 auto;
                     line-height: 0.8rem;
                     text-align: center;
-                    h2{
-                        font-weight:100;
-                    }
                 }
             }
         }
@@ -90,7 +99,7 @@ export default {
             .pic{
                     height: 3rem;
                     width: 7.5rem;
-                    background: url(../../../../../static/hrj_img/touxiang-xinxi.png) no-repeat;
+                    background: url(/static/hrj_img/touxiang-xinxi.png) no-repeat;
                     background-size: 8rem;
                     background-position: -0.25rem -2rem; 
                     opacity: 0.5; 
