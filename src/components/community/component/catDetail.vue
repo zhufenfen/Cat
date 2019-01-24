@@ -38,7 +38,7 @@
         <span>28</span>
       </div>
     </div>
-    <h4  v-if="commentsIsShow">评论</h4>
+    <h4 v-if="commentsIsShow">评论</h4>
     <div class="comments">
       <comments-com v-if="commentsIsShow"/>
     </div>
@@ -52,8 +52,7 @@
         <li class="two">沙发</li>
       </ul>
       <li class="thr">2小时前</li>
-    </div> -->
-
+    </div>-->
     <div class="foot">
       <input type="text" placeholder="添加评论">
       <span>
@@ -65,23 +64,23 @@
 <script>
 import comments from "./comments";
 export default {
-    components:{
-        "comments-com":comments
-    },
-    methods: {
-        handelComments(){
-            this.commentsIsShow=!this.commentsIsShow
-        }
-    },
-    data(){
-        return{
-            commentsIsShow:false,
-        }
-    },
-    
-    // updated() {
-    //     console.log(this.commentsIsShow)
-    // },
+  components: {
+    "comments-com": comments
+  },
+  methods: {
+    handelComments() {
+      this.commentsIsShow = !this.commentsIsShow;
+    }
+  },
+  data() {
+    return {
+      commentsIsShow: false
+    };
+  }
+
+  // updated() {
+  //     console.log(this.commentsIsShow)
+  // },
 };
 </script>
 <style lang="scss" scoped>
@@ -106,7 +105,14 @@ img {
     letter-spacing: 0.025rem;
     color: #202020;
     .left {
-      padding-left: 0.25rem;
+      margin-left: 0.25rem;
+      width: 0.15rem;
+      height: 0.28rem;
+      img {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+      }
     }
   }
   .center {
