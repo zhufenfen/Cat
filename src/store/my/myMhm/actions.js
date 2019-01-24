@@ -1,12 +1,30 @@
 import axios from "../../../lib";
 export default{
-     handleGoods({commit}){
-        axios({
-            method:"post",
-            url:"/miaoquan/mock/5c383f1a29ea8d24177b81ae/api/api",
-        })
+    handlegetFans({commit}){
+        axios.post("/getFans")
         .then((data)=>{
-            commit("handleGoods",data.goods);
+            commit("handlegetFans",data); 
         })
+     },
+    handlePostId({commit},params){
+        //将id传给后端
+        axios.post("/getIt", {
+            myId:params
+        })//接收后端返回的数据
+        .then((data) => {
+            commit("handleGetIt", data); 
+        })      
+    },
+    handleGetIt(){
+    },
+   
+
+     handleFans({commit}){
+         axios.post("/getFans", {
+
+         })
+             .then((data) => {
+                 commit("handleFans", data)
+             })
      }
 }

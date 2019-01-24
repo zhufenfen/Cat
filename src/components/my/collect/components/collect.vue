@@ -1,7 +1,7 @@
 <template>
     <div class="out">
         <div class="header">
-           <span><router-link :to="{name:name}"><img src="../../../../../static/hrj_img/left.png" alt=""></router-link></span>
+           <span><router-link :to="{name:name}"><img src="/static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li @click="handleToggle(1)">
                      宝贝收藏
@@ -61,6 +61,10 @@ export default {
             height: 100%;
         }
         .header{
+             background:#f0f2f5;
+            position: fixed;
+            top: 0;
+            left: 0;
             z-index: 999;
             height: 0.8rem;
             width: 100%;
