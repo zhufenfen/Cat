@@ -117,6 +117,7 @@ export default {
        height: 100%;
        width: 7.5rem;
        margin: 0 auto;
+       margin-top: 0.8rem;
        ul{
           background:#f0f2f5;
           width: 100%;
