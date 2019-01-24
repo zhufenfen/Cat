@@ -5,7 +5,7 @@ export default{
             method:"post",
             url:"/miaoquan/mock/5c35a4f7ce7b4303bd93fc09/example/home"
         }).then((data)=>{
-            commit("homeData",data.data.data)
+            commit("homeData",data.data)
         })
     }
 }
