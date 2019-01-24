@@ -15,10 +15,14 @@
                 <span @click="reservePhoto()">保留</span>
             </div>
         </div>
+
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import {Popup} from 'mint-ui';
+Vue.component(Popup.name, Popup);
 export default {
     data(){
         return{

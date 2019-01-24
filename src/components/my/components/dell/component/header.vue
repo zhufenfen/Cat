@@ -57,14 +57,19 @@ export default {
     padding-left: 0.31rem;
     display: flex;
     flex-direction: column;
+    background:#fff;
     .top-v {
       height: 1.6rem;
       display: flex;
       justify-content: space-between;
       .lt {
-        width: 0.15rem;
-        height: 0.28rem;
+        width: 0.18rem;
+        height: 0.32rem;
         margin-top: 0.08rem;
+        img{
+          width:100%;
+          height: 100%;
+        }
       }
       .pic {
         width: 1.6rem;

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // 首页的路由
 import Home from "@/components/home"
 import HomeDetail from "@/components/home/components/detail"
+import Information from "@/components/home/components/information"
 
 import Community from "@/components/community"
 // 发布文件的路由
@@ -11,16 +12,22 @@ import Post from "@/components/publish/components/post"
 import Photo from "@/components/publish/components/photo"
 import Dynamic from "@/components/publish/components/dynamic"
 
-import Shop from "@/components/shop"
 import My from "@/components/my"                        //我的页面
 import Fans from "@/components/my/components/fans"      //跳转到粉丝
 import It from "@/components/my/components/it"          //跳转到他人主页
 import Dell from "@/components/my/components/dell"      //跳转到动态
+import Not from "@/components/my/components/not"        //跳转到关注页面
+import Paydell from "@/components/my/components/paydell"        //关注跳转到他人主页
 
 /* ----------商城路由----------- */
+import Shop from "@/components/shop/goodClassify"
 import ShopList from "@/components/shop/shopList"
 import GoodDetail from "@/components/shop/goodDetail"
-import Not from "@/components/my/components/not"        //跳转到无数据页面
+import ShopCart from "@/components/shop/shopCart"
+import GoodBalance from "@/components/shop/goodBalance"
+import GoodApply from "@/components/shop/goodApply"
+import MyOrder from "@/components/shop/myOrder"
+
 import Err from "@/components/error"
 import Login from "@/components/login"
 
@@ -54,12 +61,21 @@ var router = new Router({
       redirect: "/home"
     },
     {
-      path: "/home",
+      path: "/home",     //跳转到首页
       name: "home",
       component: Home,
       meta: {
         requireAuth: true,
         flag: true
+      }
+    },
+    {
+      path: "/information",     //跳转到我的消息
+      name: "information",
+      component: Information,
+      meta: {
+        requireAuth: true,
+        flag: false
       }
     },
     {
@@ -103,30 +119,12 @@ var router = new Router({
       }
     },
     {
-      path:"/home",     //跳转到首页
-      name:"home",
-      component:Home,
-      meta:{
-        requireAuth:true,
-        flag:true
-      }
-    },
-    {
       path:"/homedetail",     //跳转到文章详情页
       name:"homedetail",
       component:HomeDetail,
       meta:{
         requireAuth:true,
         flag:false
-      }
-    },
-    {
-      path:"/community",
-      name:"community",
-      component:Community,
-      meta:{
-        requireAuth:true,
-        flag:true
       }
     },
     {
@@ -142,16 +140,6 @@ var router = new Router({
       path: "/photo",   //发布页面跳转到相册页面
       name: "photo",
       component: Photo,
-    },
-    {
-    
-      path: "/post",   //发布页面跳转到发帖页面
-      name: "post",
-      component: Post,
-      meta: {
-        requireAuth: true,
-        flag: false
-      }
     },
     {
       path: "/dynamic",   //相册页面跳转到发布动态页面
@@ -171,20 +159,58 @@ var router = new Router({
       }
     },
     {
-      path:"/shopList",//商品详情页面
+      path:"/shopList/:id/:message",//商品列表页面
       name:"shopList",
       component:ShopList,
+      props:true,
       meta:{
         requireAuth:false,
         flag:false
       }
     },
     {
-      path:"/goodDetail",
+      path:"/goodDetail/:shopId",//商品详情页面
       name:"goodDetail",
       component:GoodDetail,
+      props:true,
       meta:{
         requireAuth:false,
+        flag:false
+      }
+    },
+    {
+      path:"/shopCart",//购物车页面
+      name:"shopCart",
+      component:ShopCart,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/goodBalance",//结算页面
+      name:"goodBalance",
+      component:GoodBalance,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/goodApply",//支付完成页面
+      name:"goodApply",
+      component:GoodApply,
+      meta:{
+        requireAuth:true,
+        flag:false
+      }
+    },
+    {
+      path:"/myOrder",//我的订单页面
+      name:"myOrder",
+      component:MyOrder,
+      meta:{
+        requireAuth:true,
         flag:false
       }
     },
@@ -197,6 +223,11 @@ var router = new Router({
       path: "/my/components/it",//粉丝页面跳转到他人主页
       name: "It",
       component: It,
+    },
+    {
+      path: "/my/components/paydell",//关注页面跳转到他人主页
+      name: "Paydell",
+      component: Paydell,
     },
     {
       path: "/my/components/not",//关注页面跳转到无数据页面
@@ -216,14 +247,6 @@ var router = new Router({
       meta: {
         requireAuth: true,
         flag: true
-      },
-    },
-    {
-      path: "/my/article",//my信息页面
-      name: "article",
-      component: Article,
-      meta: {
-        requireAuth: true
       },
     },
         {
@@ -356,9 +379,10 @@ var router = new Router({
   ]
 })
 // 全局守卫（登录验证）
-/* router.beforeEach((to, from, next) => {
+/* import store from "@/store"
+router.beforeEach((to, from, next) => {
   if(to.meta.requireAuth){
-    if(token){
+    if(store.state.token){
       next();
     }else{
       next("/login");

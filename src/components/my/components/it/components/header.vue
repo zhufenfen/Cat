@@ -22,29 +22,55 @@
           <span>别低头，皇冠会掉</span>
           <div class="mesNum">
             <div>
-              <span>666</span>
+              <span>{{payNum}}</span>
               <p>关注</p>
             </div>
             <div>
-              <span>111</span>
+              <span>{{fansNum}}</span>
               <p>粉丝</p>
             </div>
           </div>
         </div>
         <div class="pay">
-          <span>关注</span>
+          <span @click="handleAdd(),handle()">{{uword}}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import Vuex from "vuex";
+
 export default {
-  methods: {
-    getBack(){
-      this.$router.back();
+  created() {
+   // this.handleAdd();
+  },
+  data() {
+    return {
+      uword:"关注",
+      payNum:11
     }
   },
+  computed: {
+    ...Vuex.mapState({
+     fansNum:state=>state.it.fansNum,
+     
+    })
+  },
+  methods: {
+     ...Vuex.mapMutations({
+      handleAdd:"it/handleAdd"
+    }),
+    getBack(){
+      this.$router.back()
+    },
+    handle(){
+      this.uword="已关注"
+    }
+     
+  },
+
+  
 };
 </script>
 <style lang="scss">
@@ -64,6 +90,12 @@ export default {
       justify-content: space-between;
       .lt {
         margin-left: 0.36rem;
+        width:.18rem;
+        height:.28rem;
+        img{
+          width:100%;
+          height:100%;
+        }
       }
       p {
         font-size: 0.38rem;

@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="big">
+    <!-- <div class="big">
       <div class="lefts">
         <div class="left">
           <div class="up">
@@ -155,7 +155,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -171,6 +171,7 @@ html {
   height: 100vh;
   padding-top: 0.2rem;
   flex-wrap: wrap;
+  overflow-y: auto;
   .big {
     width: 100%;
     display: flex;
