@@ -1,13 +1,13 @@
 <template>
     <div class="outside">
         <div class="header">
-           <span><router-link :to="{name:name}">〈</router-link></span>
+           <span><router-link :to="{name:name}"><img src="/static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li>
                      <h2>爱宠信息</h2>
                </li>
            </ul>
-           <router-link to="/my/pet/petchange"><img src="../../../../../static/hrj_img/icon-bxi.png" alt=""></router-link>
+           <router-link to="/my/pet/petchange"><img src="/static/hrj_img/icon-bxi.png" alt=""></router-link>
         </div>
          <div class="main" v-for="(item,index) in message">
               <img :src=item.src1 alt="">
@@ -30,7 +30,7 @@ export default {
              name:"my",
              message:[
                     {
-                  src1:require("../../../../../static/hrj_img/touxiang-guanzhu-5.png"),
+                  src1:"/static/hrj_img/touxiang-guanzhu-5.png",
                   name:"艾琪儿",
                   birthday:"2017-10-20",
                   sex:"MM",
@@ -51,6 +51,7 @@ export default {
         width:7.85rem;
         background: #eae6e6;
         .main{
+             padding-left:0.3rem; 
             margin: 0.1rem;
             width: 7.3rem;
             height: 12.30rem;
@@ -92,7 +93,12 @@ export default {
                 font-size: 0.3rem;
                 float: left;
                 line-height: 0.8rem;
-                margin-left:0.66rem; 
+                margin-left:0.46rem; 
+                img{
+                    height: 0.4rem;
+                    width: 0.2rem;
+                    float: left;
+                }
             }
             ul{
                 float: left;
