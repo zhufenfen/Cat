@@ -96,6 +96,7 @@ export default {
        width: 7.5rem;
        margin: 0 auto;
         background:#f0f2f5;
+        margin-top: 0.8rem;
        .prodect{
           width: 100%;
           height:100%;
