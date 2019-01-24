@@ -31,12 +31,10 @@ export default {
     getMark() {
       axios
         .get(
-          "/miaoquan/mock/5c49554628a69b32a72d2834/example_copy/catDetails#!method=get"
+          "/miaoquan/mock/5c49554628a69b32a72d2834/example_copy/catDietils#!method=get"
         )
         .then(data => {
-          console.log(data);
           this.catDetArr = data.data;
-          console.log(this.catDetArr[0].catDetContent);
         });
     }
   },

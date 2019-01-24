@@ -92,7 +92,7 @@ import BScroll from "better-scroll";
 export default {
   data() {
     return {
-      arr: []
+      arr: [],
     };
   },
   methods: {
