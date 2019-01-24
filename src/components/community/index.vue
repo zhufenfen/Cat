@@ -1,10 +1,8 @@
 <template>
   <div class="communitys">
     <div class="communityT">
-      <!-- <span :class="flag?'active':''"></span> -->
       <span :class="flag?'active':''" class="cover" @click="handleDis()">发现</span>
       <span :class="flag?'':'active'"@click="handleClick()">喵圈</span>
-      <!-- <component :a="a" :is="comName"></component> -->
       <router-view></router-view>
     </div>
   </div>
@@ -54,17 +52,17 @@ img {
     text-align: center;
     padding-top: 0.4rem;
     font-weight: 400;
-    height: 0.6rem;
-  }
-  span {
+    height: 1.2rem; 
+    span {
     display: inline-block;
     height: 0.6rem;
     font-size: 0.36rem;
-    // color: rgba(32, 32, 32, 1);
   }
   .cover {
     margin-right: 0.47rem;
   }
+  }
+ 
 }
 .active{
   color:rgba(255,120,120,1);
