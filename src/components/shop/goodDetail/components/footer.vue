@@ -48,6 +48,11 @@ export default {
                     }
                 }
             }) */
+            if(this.img1Url == "static/imgs/shopDetail/icon-xq-xin.png"){
+                this.img1Url = "static/imgs/shopDetail/icon-love.png";
+            }else{
+                this.img1Url = "static/imgs/shopDetail/icon-xq-xin.png";
+            }
         },
         handleAdd(){
             /* this.$axios({
@@ -70,6 +75,12 @@ export default {
                     })
                 // }
             })        */ 
+            Toast({
+                message: '已成功添加到购物车',
+                duration:1500,
+                // className:"gwc",
+                // position:"bottom"
+            })
         },
         shopCart(){
             // 还需要传用户id

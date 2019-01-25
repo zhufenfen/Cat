@@ -5,7 +5,7 @@
         <img src="static/imgs/goodApply/wancheng.png">
       </div>交易完成
     </div>
-    <div class="message">
+    <!-- <div class="message">
       <div class="shopMessage">
         <img src="/static/imgs/goodBalance/img-qrdd.png">
         <div class="message">
@@ -36,7 +36,7 @@
           交易时间
           <span class="time">2019.1.20</span>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
