@@ -14,16 +14,17 @@
     <!--账号-->
     <div class="uname_ln">
       <input type="number" v-model="userName" @blur="userTest" placeholder="请输入手机号" class="tex1_ln">
-      <span class="phoneTest"></span>
-      
-      <input type="number" v-model="passWord" placeholder="请输入验证码" class="tex2_ln">
-      <div class="ver_ln">获取验证码</div>
+      <!-- <span class="phoneTest"></span> -->
+      <input type="number" v-model="passWord" placeholder="请输入密码" class="tex1_ln">
+      <!-- <input type="number" v-model="passWord" placeholder="请输入验证码" class="tex2_ln">
+      <div class="ver_ln">获取验证码</div>-->
     </div>
     <!--登陆-->
     <div class="dl_ln" @click="gohome()">登陆</div>
   </div>
 </template>
 <script>
+import Vuex from "vuex";
 import axios from "../../lib";
 import { Toast } from "mint-ui";
 export default {
@@ -34,10 +35,24 @@ export default {
       flag: true
     };
   },
+  computed: {
+    ...Vuex.mapState({
+      token: state => state.login.token
+    })
+  },
+  watch: {
+    token() {
+      this.$router.push("/home");
+    }
+  },
+  // login/handleUserLogin
   methods: {
+    ...Vuex.mapActions({
+      handleLogin: "login/handleUserLogin"
+    }),
     gohome() {
       if (this.flag) {
-        axios
+        /* axios
           .post("/getLogin", {
             uname: this.userName,
             upwd: this.passWord
@@ -46,7 +61,6 @@ export default {
             if (data.status == 0) {
               this.$router.push("/home");
             } else {
-              console.log(data);
               let instance = Toast({
                 message: data.info,
                 className: "toast"
@@ -55,26 +69,37 @@ export default {
                 instance.close();
               }, 2000);
             }
-          });
+          }); */
+        let userInfo = {
+          uname: this.userName,
+          upwd: this.passWord
+        };
+        this.handleLogin(userInfo);
       } else {
-        alert("请输入正确的手机号");
+        let instance = Toast({
+          message: "请输入正确的手机号",
+          className: "toast"
+        });
+        setTimeout(() => {
+          instance.close();
+        }, 2000);
       }
     },
     userTest() {
       var reg = /^1(3|4|5|7|8)\d{9}$/;
       if (!reg.test(this.userName)) {
-        $(".phoneTest").html("123");
+        // $(".phoneTest").html("123");
         this.flag = false;
         //this.$refs.phoneTest.innerHTML("请输入正确的手机号")
       } else {
-        $(".phoneTest").html("");
+        // $(".phoneTest").html("");
         this.flag = true;
       }
     }
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 /*主页面*/
 .login_ln {
   width: 100%;
@@ -160,9 +185,9 @@ export default {
     margin-left: 1.64rem;
   }
 }
-.toast{
-	color:red;
-	background: white;
-	font-size:.36rem;
+.toast {
+  color: red;
+  background: white;
+  font-size: 0.36rem;
 }
 </style>

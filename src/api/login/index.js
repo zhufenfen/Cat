@@ -1,26 +1,28 @@
 // import Mock from "mockjs";
 const Mock = require("mockjs");
+const JWT = require("jsonwebtoken");
+import { setCookie } from "../../utils/auth"
 let data = Mock.mock({
    "data": [
       {
          "uid": "11",
-         "uname": "18812345670",
-         "upwd": "12345670"
+         "uname": "13598591209",
+         "upwd": "666"
       },
       {
          "uid": "12",
-         "uname": "18812345671",
-         "upwd": "12345671"
+         "uname": "13837670580",
+         "upwd": "666"
       },
       {
          "uid": "13",
-         "uname": "18812345672",
-         "upwd": "12345672"
+         "uname": "18738997071",
+         "upwd": "666"
       },
       {
          "uid": "14",
-         "uname": "18812345673",
-         "upwd": "12345673"
+         "uname": "18738981217",
+         "upwd": "666"
       }
    ]
 })
@@ -32,6 +34,15 @@ const Login = (config) => {
       if (body.uname != "") {
          if (userlist[index].uname == body.uname) {
             if (userlist[index].upwd == body.upwd) {
+               let payload = {
+                  user:userlist[index].uname
+               }
+              let secret = "bk1819";
+              let token = JWT.sign(payload, secret, {expiresIn:"1h"});
+              setCookie("X-Token", token);
+              setCookie("user", userlist[index].uname);
+              /* document.cookie="X-Token="+token;
+              document.cookie="user="+userlist[index].uname; */
                return {
                   status: 0,
                   info: "登录成功",

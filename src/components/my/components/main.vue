@@ -65,7 +65,7 @@
           <div class="pic">
             <img src="static/myImgs/site.png">
           </div>
-          <router-link :to="{name:'address'}">
+          <router-link :to="{name:'moudifiress'}">
           <p>我的地址</p>
           </router-link>
           <b>
