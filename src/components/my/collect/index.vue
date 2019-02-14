@@ -14,7 +14,7 @@ export default {
 </script>
 
 
-<style lang="scss" scrped>
+<style lang="scss" scoped>
     div{
         height: 100%;
     }

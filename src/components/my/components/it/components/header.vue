@@ -5,7 +5,7 @@
         <div class="lt" @click="getBack()">
           <img src="static/myImgs/left.png">
         </div>
-        <p>Noodle</p>
+        <p>{{itList && itList.myName}}</p>
         <span></span>
       </div>
       <div class="box">
@@ -14,7 +14,7 @@
         </div>
         <div class="message">
           <div class="messageC">
-            <p>Noodle</p>
+            <p>{{itList && itList.myName}}</p>
             <a>
               <img src="static/myImgs/it/ico1.png">
             </a>
@@ -22,36 +22,60 @@
           <span>别低头，皇冠会掉</span>
           <div class="mesNum">
             <div>
-              <span>666</span>
+              <span>{{payNum}}</span>
               <p>关注</p>
             </div>
             <div>
-              <span>111</span>
+              <span>{{fansNums}}</span>
               <p>粉丝</p>
             </div>
           </div>
         </div>
         <div class="pay">
-          <span>关注</span>
+          <span @click="handleAdd()">{{uword}}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import Vuex from "vuex";
+
 export default {
-  methods: {
-    getBack(){
-      this.$router.back();
-    }
+  created() {
+    this.handleGetIt();
   },
+  data() {
+    return {
+      payNum: 11,
+      itName: "",
+    };
+  },
+  computed: {
+    ...Vuex.mapState({
+      uword:state=>state.myMhm.uword,
+      fansNums: state => state.myMhm.fansNums,
+      itList: state => state.myMhm.itList
+    })
+  },
+  methods: {
+    ...Vuex.mapMutations({
+      handleAdd: "myMhm/handleAdd",
+    }),
+    ...Vuex.mapActions({
+      handleGetIt: "myMhm/handleGetIt"
+    }),
+    getBack() {
+      this.$router.back();
+    },
+  }
 };
 </script>
 <style lang="scss">
 .header {
   width: 100%;
   display: flex;
-  z-index:5;
+  z-index: 5;
   .headerM {
     width: 100%;
     height: 4rem;
@@ -64,6 +88,12 @@ export default {
       justify-content: space-between;
       .lt {
         margin-left: 0.36rem;
+        width: 0.18rem;
+        height: 0.28rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
       p {
         font-size: 0.38rem;
@@ -128,7 +158,7 @@ export default {
           width: 1.58rem;
           display: flex;
           justify-content: space-between;
-          font-size: .28rem;
+          font-size: 0.28rem;
           font-family: PingFang-SC-Bold;
           font-weight: bold;
           color: rgba(0, 0, 0, 1);

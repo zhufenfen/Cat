@@ -1,17 +1,26 @@
 <template>
     <div class="goods">
-        <div class="goodItem" v-for="(item, index) in goodsList" @click="goodDetail">
-            <img class="img1" :src="item.img1">
-            <p>{{item.span1}}</p>
+        <div class="goodItem" v-for="(item, index) in goodsList" @click="goodDetail(val, item.shopId)">
+            <img class="img1" :src="item.shopImg">
+            <p>{{item.shopTitle}}</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    props:["val"],
+    created() {
+        this.$axios.post("/getShop",{
+            classifyId:this.val
+        }).then(data=>{
+            this.goodsList = data;
+        })
+    },
     data(){
         return{
-            goodsList:[
+            goodsList:[]
+            /*goodsList:[
                 {
                     img1:"static/imgs/shopList/img-cf-1@2x.png",
                     span1:"纯棉印花"
@@ -44,12 +53,12 @@ export default {
                     img1:"static/imgs/shopList/img-cf-2@2x.png",
                     span1:"加绒舒适卫衣"
                 }
-            ]
+            ] */
         }
     },
     methods: {
-        goodDetail(){
-            this.$router.push("/goodDetail");
+        goodDetail(shopId){
+            this.$router.push({name:"goodDetail", params:{shopId:shopId}});
         }
     }
 }

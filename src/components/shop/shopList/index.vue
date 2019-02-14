@@ -1,9 +1,9 @@
 <template>
     <div id="shopList">
-        <Header-com></Header-com>
+        <Header-com :mes="message"></Header-com>
         <div class="wrapper" ref="listWrapper">
             <div class="content">
-                <Goods-com></Goods-com>
+                <Goods-com :val="id"></Goods-com>
             </div>
         </div>
     </div>
@@ -14,6 +14,7 @@ import Header from "./components/header"
 import Goods from "./components/goods"
 import Bscroll from "better-scroll"
 export default {
+    props:["id", "message"],
     components:{
         "Header-com":Header,
         "Goods-com":Goods

@@ -3,10 +3,10 @@
     <div id="publish">
         <div class="day">
             <div>
-                <p>26</p>
-                <p><span>星期一</span><span>03/2019</span></p>
+                <p>{{day}}</p>
+                <p><span>{{week}}</span><span>{{month}}/{{year}}</span></p>
             </div>
-            <p>北京：晴天 23°</p>
+            <p>{{city}}：{{weather}} {{temperature}}</p>
         </div>
         <div class="maxim">
             <p>不加思考的热情就像是一条随波逐流的船。</p>
@@ -23,15 +23,44 @@
             </div>
         </div>
         <div class="exit" @click="go()">×</div>
+        
     </div>
 </template>
 
 <script>
 export default {
+    data(){
+        return {
+            year:"",
+            month:"",
+            day:"",
+            week:"",
+            city:"",
+            weather:"",
+            temperature:""
+        }
+    },
     created(){
-        // this.$http.get("http://localhost:3000/publish").then((res)=>{
-        //     console.log(res)
-        // })
+        this.$axios.get("/tianqi/data/cityinfo/101010100.html").then((res)=>{
+            this.city = res.weatherinfo.city,
+            this.weather = res.weatherinfo.weather,
+            this.temperature = res.weatherinfo.temp1
+        })
+       let d = new Date()
+       this.year = d.getFullYear()
+       if((d.getMonth() + 1) / 10 < 1){
+           this.month = "" + d.getMonth() + 1
+       }
+       this.day = d.getDate()
+       switch(d.getDay()){
+           case 1 : this.week = "星期一";break;
+           case 2 : this.week = "星期二";break;
+           case 3 : this.week = "星期三";break;
+           case 4 : this.week = "星期四";break;
+           case 5 : this.week = "星期五";break;
+           case 6 : this.week = "星期六";break;
+           case 0 : this.week = "星期日";break;
+       }
     },
     methods:{
         go(){             //点击×，返回上一个页面
@@ -113,6 +142,10 @@ export default {
             div{
                 display: flex;
                 flex-direction: column;
+                img{
+                    width: .99rem;
+                    height: .99rem;
+                }
                 span{
                     margin-top: .3rem;
                     font-size: 28px;

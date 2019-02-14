@@ -7,7 +7,7 @@
           <router-link :to="{name:'fans'}">
             <p>
               粉丝
-              <span>11</span>
+              <span>{{fansNum}}</span>
             </p>
           </router-link>
         </li>
@@ -38,11 +38,19 @@
 import Vuex from "vuex";
 
 export default {
-  //  computed: {
-  //    ...Vuex.mapState({
-  //      myMhm:state=>state.myMhm.myMhm
-  //    })
-  //  },
+  created() {
+    this.handleFans();
+  },
+   computed: {
+     ...Vuex.mapState({
+       fansNum:state=>state.myMhm.fansNum
+     })
+   },
+   methods: {
+     ...Vuex.mapActions({
+       handleFans:"myMhm/handleFans"
+     })
+   },
 };
 </script>
 <style lang="scss" scoped>
@@ -53,15 +61,17 @@ export default {
   background: #fddd62;
   position: relative;
   display: flex;
-
+  
+ 
   .picFrame {
     width: 6.86rem;
     height: 3rem;
     background: rgba(255, 255, 255, 1);
-    border-radius: 12px;
+    border-radius: .18rem;
     position: absolute;
-    top: 1.81rem;
+    top: 1.51rem;
     left: 0.31rem;
+  z-index:9;
     h3 {
       width: 1.08rem;
       height: 0.34rem;
@@ -76,7 +86,7 @@ export default {
     .fans {
       position: absolute;
       width: 100%;
-      top: 2.05rem;
+      top: 1.88rem;
       display: flex;
       justify-content: space-between;
       padding-left: 0.93rem;
@@ -98,10 +108,11 @@ export default {
   }
   .head {
     width: 2.37rem;
-    height: 2.37rem;
+    height: 2.37rem; 
     position: absolute;
-    top: 0.65rem;
+    top: 0.35rem;
     left: 2.55rem;
+    z-index:11;
     img {
       width: 100%;
     }

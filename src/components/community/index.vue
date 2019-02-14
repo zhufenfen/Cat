@@ -1,10 +1,8 @@
 <template>
   <div class="communitys">
     <div class="communityT">
-      <!-- <span :class="flag?'active':''"></span> -->
-      <span class="cover"@click="$router.push('/community/discover')">发现</span>
-      <span @click="$router.push('/community/meowCircle')">喵圈</span>
-      <!-- <component :a="a" :is="comName"></component> -->
+      <span :class="flag?'active':''" class="cover" @click="handleDis()">发现</span>
+      <span :class="flag?'':'active'"@click="handleClick()">喵圈</span>
       <router-view></router-view>
     </div>
   </div>
@@ -25,18 +23,13 @@ export default {
     };
   },
   methods: {
-    // handleDis(val) {
-    //   if (val == 1) {
-    //     this.a = 1;
-    //   } else {
-    //     this.a = 2;
-    //   }
-    // }
-  },
-  watch:{
-    $router(newVal,oldVal){
-      console.log(newVal,oldVal);
-      
+    handleDis(val) {
+      this.flag = true;
+      this.$router.push('/community/discover')
+    },
+    handleClick(){
+      this.flag = false;
+      this.$router.push('/community/meowCircle')
     }
   },
 };
@@ -59,17 +52,17 @@ img {
     text-align: center;
     padding-top: 0.4rem;
     font-weight: 400;
-    height: 0.6rem;
-  }
-  span {
+    height: 1.2rem; 
+    span {
     display: inline-block;
     height: 0.6rem;
     font-size: 0.36rem;
-    // color: rgba(32, 32, 32, 1);
   }
   .cover {
     margin-right: 0.47rem;
   }
+  }
+ 
 }
 .active{
   color:rgba(255,120,120,1);

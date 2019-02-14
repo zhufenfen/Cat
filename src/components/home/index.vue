@@ -37,28 +37,12 @@
             </div>
             <div class="sift">
                 <p>精选</p>
-                <div @click="goDetail()">
-                    <img src="../../../static/imgs/home-img/count1.png" alt="">
+                <div v-for="(item,index) in homedata" :key="index" @click="goDetail()">
+                    <img :src="item.photo" alt="">
                     <div>
-                        <h3>求救如何让猫使用猫砂？</h3>
-                        <p>安徽省的问候你大V十年大V看见恩人跟日怒一你是大V你是进口国和如何能看见的身份女</p>
-                        <p><span>xxx</span>人阅读</p>
-                    </div>
-                </div>
-                <div @click="goDetail()">
-                    <img src="../../../static/imgs/home-img/count1.png" alt="">
-                    <div>
-                        <h3>求救如何让猫使用猫砂？</h3>
-                        <p>安徽省的问候你大V十年大V看见恩人跟日怒一你是大V你是进口国和如何能看见的身份女</p>
-                        <p><span>xxx</span>人阅读</p>
-                    </div>
-                </div>
-                <div @click="goDetail()">
-                    <img src="../../../static/imgs/home-img/count1.png" alt="">
-                    <div>
-                        <h3>求救如何让猫使用猫砂？</h3>
-                        <p>安徽省的问候你大V十年大V看见恩人跟日怒一你是大V你是进口国和如何能看见的身份女</p>
-                        <p><span>xxx</span>人阅读</p>
+                        <h3>{{item.title}}</h3>
+                        <div>{{item.content}}</div>
+                        <p><span>{{item.Number}}</span>人阅读</p>
                     </div>
                 </div>
             </div>
@@ -67,13 +51,32 @@
 </template>
 
 <script>
+import Vuex from "Vuex"
 import axios from "axios"
 import Swiper from "swiper"
 export default {
+    created(){
+        // this.$axios({
+        //     method:"post",
+        //     url:"/miaoquan/mock/5c35a4f7ce7b4303bd93fc09/example/home"
+        // }).then((data)=>{
+        //     console.log(data.data)
+        // })
+        this.homeData()
+    },
+    computed:{
+        ...Vuex.mapState({
+            homedata:state => state.home.list
+        })
+    },
     methods:{
         goDetail(){
+            // console.log(this.homeData())
             this.$router.push("/homedetail")
-        }
+        },
+        ...Vuex.mapActions({
+            homeData:"home/homeData"
+        })
     },
     mounted(){     //如果数据是静态可以在这里面实例化，如果是异步则需要watch中实例化
         var mySwiper = new Swiper ('.swiper-container', {
@@ -100,9 +103,10 @@ export default {
     font-family: MicrosoftYaHei;
     .top{
         width: 100%;
-        height: 1.58rem;
-        font-size: .34rem;
-        padding-top: .68rem;
+        height: 1.1rem;
+        font-size: .36rem;
+        color: #202020;
+        line-height: 1.2rem;
         background: rgb(253, 221, 98);
         text-align: center;
         font-weight: 500;
@@ -112,12 +116,16 @@ export default {
     }
     .content{
         overflow:auto;
-        margin-top: 1.58rem;
+        margin-top: 1.1rem;
         width: 100%;
-        height: 10.78rem;
+        height: 11.26rem;
         .banner{
             width: 100%;
             height: 2.25rem;
+            img{
+                width: 100%;
+                height: 2.25rem;
+            }
         }
         .star{
             padding: 0 .3rem;
@@ -169,29 +177,40 @@ export default {
                 display: flex;
                 
                 justify-content: space-between;
+                img{
+                    margin: .2rem 0 .2rem .22rem;
+                    width: 1.6rem;
+                    height: 1.8rem;
+                }
                 div{
+                    width: 100%;
+                    height: 100%;
                     display: flex;
                     flex-direction: column;
                     h3{
-                        height: .4rem;
+                        width: 100%;
+                        height: 100%;
+                        height: .7rem;
                         line-height: .8rem;
                         text-indent: .3rem;
                     }
-                    p:nth-of-type(1){
-                        line-height: .4rem;
+                    div{
+                        height: 1.2rem;
+                        line-height: .38rem;
                         text-indent: .3rem;
-                        padding: 0 .3rem
+                        padding: 0 .3rem;
+                        overflow:hidden;
+                        text-overflow:ellipsis; 
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 3;
                     }
-                    p:nth-of-type(2){
+                    p{
                         height: .4rem;
                         line-height: .25rem;
                         padding: 0 .3rem;
                         text-align: right;
                     }
-                }
-                img{
-                    margin: .2rem 0 .2rem .22rem;
-                    
                 }
             }
         }

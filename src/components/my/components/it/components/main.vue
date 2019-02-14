@@ -1,69 +1,18 @@
 <template>
   <div class="wrapper main" ref="mainWrapper">
     <div class="content mainInside">
-      <div class="center">
+      <div class="center"  v-for="(item,index) in List" >
         <div class="top">
-          <span>12-25</span>
+          <span>{{item && item.time}}</span>
           <b></b>
         </div>
         <div class="middle">
           <b class="wire"></b>
           <div class="right">
             <div class="pic">
-              <img src="static/myImgs/it/img1.png">
+              <img :src="item && item.myImg">
             </div>
-            <p>温柔小眼神</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="center">
-        <div class="top">
-          <span>12-25</span>
-          <b></b>
-        </div>
-        <div class="middle">
-          <b class="wire"></b>
-          <div class="right">
-            <div class="pic">
-              <img src="static/myImgs/it/img1.png">
-              <img src="static/myImgs/it/img3.png">
-            </div>
-            <p>小黑与小白</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="center">
-        <div class="top">
-          <span>12-25</span>
-          <b></b>
-        </div>
-        <div class="middle">
-          <b class="wire"></b>
-          <div class="right">
-            <div class="pic">
-              <img src="static/myImgs/it/img2.png">
-              <img src="static/myImgs/it/img3.png">
-            </div>
-            <p>温柔小眼神</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="center">
-        <div class="top">
-          <span>12-25</span>
-          <b></b>
-        </div>
-        <div class="middle">
-          <b class="wire"></b>
-          <div class="right">
-            <div class="pic">
-              <img src="static/myImgs/it/img1.png">
-              <img src="static/myImgs/it/img2.png">
-            </div>
-            <p>温柔小眼神</p>
+            <p>{{item && item.txt}}</p>
           </div>
         </div>
       </div>
@@ -72,9 +21,25 @@
 </template>
 <script>
 import BScroll from "better-scroll";
+import Vuex from "vuex";
 export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.mainWrapper);
+  },
+  created() {
+    this.handleGetIt();
+  },
+  
+  computed: {
+    ...Vuex.mapState({
+     List: state =>state.myMhm.itList && state.myMhm.itList.itMessage
+    }),
+  },
+  methods: {
+    ...Vuex.mapActions({
+      handleGetIt:"myMhm/handleGetIt"
+    }),
+    
   }
 };
 </script>
@@ -88,11 +53,11 @@ export default {
 .mainInside {
   width: 6.85rem;
   margin-left: 0.36rem;
-  margin-top: .38rem;
+  margin-top: 0.38rem;
   padding-bottom: 2.8rem;
   background: #fff;
-  box-shadow: 0px 1px 13px 0px rgba(66, 65, 62, 0.16);
-  border-radius: 12px;
+  box-shadow: 0 0.01rem 0.13rem 0 rgba(66, 65, 62, 0.16);
+  border-radius: 0.12rem;
   .top {
     width: 1rem;
     height: 0.18rem;
@@ -132,11 +97,20 @@ export default {
     .right {
       margin-left: 0.21rem;
       p {
+        display: block;
+        width: 100%;
+        height: 0.4rem;
         margin-top: 0.19rem;
-        font-size: 32px;
+        padding-bottom:.18rem;
+        font-size: 0.32rem;
         font-family: PingFang-SC-Regular;
         font-weight: 400;
         color: rgba(0, 0, 0, 1);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
       .pic {
         width: 2.34rem;
@@ -145,7 +119,7 @@ export default {
         display: flex;
         img {
           width: 100%;
-          border: 1px dashed #202020;
+          border: 0.01rem dashed #202020;
           margin-right: 0.19rem;
         }
       }
