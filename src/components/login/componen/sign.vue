@@ -19,10 +19,18 @@
 </template>
 
 <script>
+import axios from "../../../lib";
 	export default{
 		methods:{
 			signgohome(){
-				this.$router.push("/home")
+				axios.post("/register",{
+
+				}).then((data)=>{
+					if(data.status == 0){
+						this.$router.push("/login")
+					}
+				})
+				
 			}
 		}
 	}

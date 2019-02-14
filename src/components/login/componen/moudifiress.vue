@@ -14,13 +14,13 @@
 					<p class="name">楚子峰<span class="tel">18809767654</span>
 					<p class="site"><span class="def">【默认】</span>北京市昌平区天苑路</p>
 				</li> -->
-				<li v-for="item in list_l">
+				<li v-for="(item,index) in list_l">
 
 				<p class="name">{{item.name}}
 					<span class="tel">{{item.tel}}</span>
 					<span class="prc_bj"></span>
 				</p>
-				<p class="site"><span class="def" v-if="item.flag">【默认】</span>{{item.side}}</p>
+				<p class="site"><span class="def" v-if="index == 0">【默认】</span>{{item.side}}</p>
 				</li>
 
 			</ul>
@@ -34,28 +34,35 @@
 </template>
 
 <script>
+// import axios from "../../lib";
+import axios from "../../../lib";
 	export default{
+		created(){
+			axios.get("/address").then((data)=>{
+				this.list_l = data;
+			})
+		},
 		data(){
 			return{
 				list_l:[
-					{
-						name:"楚子峰",
-						tel:18837133244,
-						side:"北京市昌平区天苑路",
-						flag:true
+					// {
+					// 	name:"楚子峰",
+					// 	tel:18837133244,
+					// 	side:"北京市昌平区天苑路",
+					// 	flag:true
 						
-					},{
-						name:"楚子峰",
-						tel:13476809874,
-						side:"北京市昌平区天苑路",
-						flag:false
-					},{
-						name:"楚子峰",
-						tel:1576997327,
-						side:"北京市昌平区天苑路",
-						flag:false
+					// },{
+					// 	name:"楚子峰",
+					// 	tel:13476809874,
+					// 	side:"北京市昌平区天苑路",
+					// 	flag:false
+					// },{
+					// 	name:"楚子峰",
+					// 	tel:1576997327,
+					// 	side:"北京市昌平区天苑路",
+					// 	flag:false
 
-					}
+					// }
 				]
 			}
 		},
