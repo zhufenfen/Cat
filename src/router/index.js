@@ -191,6 +191,7 @@ var router = new Router({
       path: "/goodBalance",//结算页面
       name: "goodBalance",
       component: GoodBalance,
+      props:true,
       meta: {
         requireAuth: true,
         flag: false

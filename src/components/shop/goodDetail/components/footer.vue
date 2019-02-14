@@ -13,7 +13,7 @@
             购物车
         </div>
         <div class="three">
-            <span @click="handleAdd">加入购物车</span><span>立即购买</span>
+            <span @click="handleAdd">加入购物车</span><span @click="handleBuy">立即购买</span>
         </div>
     </div>
 </template>
@@ -85,6 +85,9 @@ export default {
         shopCart(){
             // 还需要传用户id
             this.$router.push({name:"shopCart"});
+        },
+        handleBuy(){
+            this.$router.push({name:"goodBalance",params:{shopId:this.goodDetail.shopId}});
         }
     },
 }
