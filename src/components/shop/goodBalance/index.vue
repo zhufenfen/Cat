@@ -3,10 +3,10 @@
         <Header-com></Header-com>
         <div class="wrapper" ref="shopWrapper">
             <div class="content">
-                <Main-com></Main-com>
+                <Main-com :shopId="shopId"></Main-com>
             </div>
         </div>
-        <Footer-com></Footer-com>
+        <Footer-com :shopId="shopId"></Footer-com>
     </div>
 </template>
 
@@ -21,6 +21,7 @@ export default {
         "Main-com":Main,
         "Footer-com":Footer
     },
+    props:["shopId"],
     mounted() {
         this.scroll = new Bscroll(this.$refs.shopWrapper,{
             click:true

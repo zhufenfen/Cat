@@ -2,6 +2,7 @@
     <div class="header">
         <img src="static/imgs/jiao_03.jpg" @click="handleBack">
         <span>订单信息</span>
+        <a @click="handleHome">商城</a>
     </div>
 </template>
 
@@ -10,6 +11,9 @@ export default {
     methods: {
         handleBack(){
             this.$router.back();
+        },
+        handleHome(){
+            this.$router.push("/shop");
         }
     },
 }
@@ -37,6 +41,17 @@ export default {
             font-size:.36rem;
             color:#202020;
         }
-
+        a{
+            cursor: pointer;
+            position: absolute;
+            right:.29rem;
+            width:.8rem;
+            height:.5rem;
+            line-height: .5rem;
+            text-align: center;
+            color:#fff;
+            background:#aaa;
+            border-radius: .3rem;
+        }
     }
 </style>

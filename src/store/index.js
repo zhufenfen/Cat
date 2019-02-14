@@ -3,6 +3,7 @@ import Vuex from "vuex"
 import information from "./information"
 import goodDetail from "./goodDetail"
 import shopCart from "./shopCart"
+import goodOrder from "./goodOrder"
 import myMhm from "./my/myMhm"
 import dell from "./my/dell"
 import home from "./home"
@@ -15,6 +16,7 @@ const store = new Vuex.Store({
         home,
         goodDetail,
         shopCart,
+        goodOrder,
         myMhm,
         dell,
         home,
