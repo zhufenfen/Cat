@@ -9,42 +9,36 @@
     </div>
     <div class="center">
       <div class="img1">
-        <img src="../../../../static/communityImg/touxiang-fen@2x.png" alt>
+        <img :src="catInfo.catPortrait" alt>
       </div>
       <ul class="tops">
-        <li class="one">布丁麻麻</li>
+        <li class="one">{{catInfo.catName}}</li>
         <li class="two">19小时前</li>
       </ul>
-      <p>哎，实在没那么大的圣诞帽给你啊，我的布丁！</p>
+      <p>{{catInfo.catContent}}</p>
       <div class="imgs">
         <div>
-          <img src="../../../../static/communityImg/img-xiangqing1@2x.png">
-        </div>
-        <div>
-          <img src="../../../../static/communityImg/img-xiangqing2@2x.png">
-        </div>
-        <div>
-          <img src="../../../../static/communityImg/img-xiangqing3@2x.png">
+          <img :src="catInfo.catPhoto">
         </div>
       </div>
       <div class="last">
         <div class="speak" @click="handelComments()">
           <img src="../../../../static/communityImg/icon-pl-2@2x.png" alt>
         </div>&nbsp;&nbsp;
-        <span>98</span>
-        <div class="xin" @click="()=>{num++}">
-          <img src="../../../../static/communityImg/icon-xin-2@2x.png" alt>
+        <span>{{catInfo.reviewCount}}</span>
+        <div class="xin" @click="handleCatAdd()">
+          <img :src="flag?'../../../../static/communityImg/icon-xin-2@2x.png':'../../../../static/communityImg/icon-xin-3@2x.png'" alt>
         </div>&nbsp;&nbsp;
-        <span>{{num}}</span>
+        <span>{{catInfo.number}}</span>
       </div>
     </div>
     <h4 v-if="commentsIsShow">评论</h4>
     <div class="comments">
-      <comments-com v-if="commentsIsShow"/>
+      <comments-com :add="add" :reviewList="reviewList" v-if="commentsIsShow"/>
     </div>
     <div class="foot">
-      <input type="text" placeholder="添加评论">
-      <span>
+      <input type="text" v-model.value="val" placeholder="添加评论">
+      <span @click="add()">
         <img src="../../../../static/communityImg/icon-pl-2@2x.png" alt>
       </span>
     </div>
@@ -52,6 +46,7 @@
 </template>
 <script>
 import comments from "./comments";
+import axios from "axios";
 export default {
   components: {
     "comments-com": comments
@@ -59,14 +54,46 @@ export default {
   data() {
     return {
       commentsIsShow: false,
-      num:12
+      flag:true,
+      catInfo:{},
+      val:"",
+      reviewList:[]
     }
   },
+   beforeMount() {
+
+    this.getCatDetails(this.$route.query.info);
+    },
   methods: {
+    add(){
+      // console.log(this.val);
+
+
+
+      
+      axios.post("/addReview",{val:this.val}).then((data)=>{
+        this.reviewList=data; 
+        // console.log(this.reviewList);
+      })
+    },
+     getCatDetails(catId){
+      axios.post("/getCatDetails",{catId}).then((data)=>{
+        this.catInfo = data; 
+          //  console.log(this.catInfo);
+      })
+    },
     handelComments() {
       this.commentsIsShow = !this.commentsIsShow;
+    },
+    handleCatAdd(){
+      this.flag = !this.flag;
+      if(!this.flag){
+        this.catInfo.number+=1;
+      }else{
+        this.catInfo.number-=1;
+      }
     }
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -109,11 +136,11 @@ img {
     .img1 {
       width: 0.64rem;
       height: 0.64rem;
-      border-radius: 50%;
       display: inline-block;
       img {
         width: 100%;
         height: 100%;
+        border-radius: 50%;
       }
     }
     .tops {
@@ -140,12 +167,12 @@ img {
     .imgs {
       width: 6.8rem;
       height: 2.5rem;
-      display: flex;
-      justify-content: space-between;
+      // display: flex;
+      // justify-content: space-between;
       margin-top: 0.3rem;
       div {
-        width: 2.26rem;
-        height: 2.5rem;
+        width: 100%;
+        height: 100%;
         img {
           width: 100%;
           height: 100%;

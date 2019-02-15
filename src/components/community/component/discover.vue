@@ -5,14 +5,14 @@
         <div class="big">
           <div class="lefts" v-for="(item,index) in disArr">
             <div class="right">
-              <div class="up"  @click="$router.push('/details')">
+              <div class="up" @click="handleJump(item.disId)">
                 <img :src="item.disPhoto" alt>
               </div>
               <div class="bot">
                 <p>
                   <span class="one">{{item.disContent}}</span>
-                  <span class="two" @click="()=>{item.number++}">
-                    <img src="../../../../static/communityImg/icon-xin-3@2x.png" alt>
+                  <span class="two" @click="handleAdd(item.number,item.disId,index)">
+                    <img ref="xin" :src="img.active" alt>
                   </span>
                   <span class="thr">{{item.number}}</span>
                 </p>
@@ -32,22 +32,45 @@
 </template>
 <script>
 import axios from "axios";
+import axias from "../../../lib";
 import BScroll from "better-scroll";
 export default {
   data() {
     return {
-      disArr: []
+      disArr: [],
+      flag: true,
+      img:{
+        active:"../../../../static/communityImg/icon-xin-2@2x.png",
+      }
     };
   },
   methods: {
+    handleAdd(v, id,index) {
+      // console.log(this.$refs.xin[index].src);
+      this.flag = !this.flag;
+      let type = 1;
+      if (!this.flag) {
+        type = 1;
+        this.disArr[index].number += 1;
+        this.$refs.xin[index].src="../../../../static/communityImg/icon-xin-3@2x.png"
+      } else {
+        type = 2;
+        this.disArr[index].number -= 1;
+         this.$refs.xin[index].src="../../../../static/communityImg/icon-xin-2@2x.png"
+      }
+      // axios.post("/up", { type, id }).then(data => {
+      //   console.log(data);
+      // });
+    },
+    handleJump(id) {
+      // console.log(id);
+      this.$router.push({ path: "/details", query: { info: id } });
+    },
     getDiscover() {
-      axios
-        .get(
-          "/miaoquan/mock/5c49554628a69b32a72d2834/example_copy/discover#!method=get"
-        )
-        .then(data => {
-          this.disArr = data.data;
-        });
+      axios.post("/getDiscover").then(data => {
+        // console.log(data);
+        this.disArr = data;
+      });
     }
   },
   mounted() {
@@ -117,7 +140,7 @@ html {
                   width: 0.18rem;
                   height: 0.16rem;
                   float: left;
-                  margin-left: 1rem;
+                  margin-left: 1.4rem;
                   img {
                     width: 100%;
                     height: 100%;
