@@ -68,32 +68,32 @@ import axios from "../../../lib";
 		},
 		methods:{
 			address_btn(){
-				this.$router.go(-1);
+				this.$router.push("/my");
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.list_ln{
 		width:100%;
 		height:100%;
 		position:relative;
 		.header_ln{
 			width:100%;
-			height:1.27rem;
+			height:1.1rem;
 			background:#fddd62;
 			p{
 				font-size: 0.36rem;
 				text-align: center;
-				line-height: 1.47rem;
+				line-height: 1.1rem;
 			}
 			
 			img{
 				width:0.19rem;
 				height:0.31rem;
 				position: absolute;
-				top:0.67rem;
+				top:0.42rem;
 				left:0.20rem;	
 			}
 		}
@@ -150,14 +150,14 @@ import axios from "../../../lib";
 /*增加地址*/	
 	.footer_ln{
 		width:100%;
-		height:1.27rem;
+		height:.9rem;
 		background:#fddd62;
 		position:fixed;
 		left:0;bottom: 0;
 			p{
 				font-size: 0.36rem;
 				text-align:center;
-				line-height: 1.27rem;
+				line-height: .9rem;
 				color:#000000;	
 				
 			}
