@@ -36,7 +36,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	
 /*头部地址管理*/	
 	.noneress_ln{

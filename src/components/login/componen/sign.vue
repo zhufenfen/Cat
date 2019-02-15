@@ -36,7 +36,7 @@ import axios from "../../../lib";
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	
 /*注册*/ 
 	.sign_ln{

@@ -35,7 +35,7 @@ export default {
     };
   },
   created() {
-    this.handleGoods();
+    // this.handleGoods();
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.mainWrapper, {
@@ -51,12 +51,12 @@ export default {
   },
   computed: {
     ...Vuex.mapState({
-       notList: state => state.myMhm. notList
+       notList: state => state.myMhm.notList
     })
   },
   methods: {
     ...Vuex.mapActions({
-      handleGoods: "myMhm/handleGoods"
+      // handleGoods: "myMhm/handleGoods"
     })
   }
 };

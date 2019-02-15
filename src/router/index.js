@@ -1,57 +1,53 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 首页的路由
-import Home from "@/components/home"
-import HomeDetail from "@/components/home/components/detail"
-import Information from "@/components/home/components/information"
-
-import Community from "@/components/community"
+const Home = () => import("@/components/home");
+const HomeDetail = () => import("@/components/home/components/detail");
+const Information = () => import("@/components/home/components/information");
 // 发布文件的路由
-import Publish from "@/components/publish"
-import Post from "@/components/publish/components/post"
-import Photo from "@/components/publish/components/photo"
-import Dynamic from "@/components/publish/components/dynamic"
+const Publish = () => import("@/components/publish");
+const Post = () => import("@/components/publish/components/post");
+const Photo = () => import("@/components/publish/components/photo");
+const Dynamic = () => import("@/components/publish/components/dynamic");
+//我的页面
+const My = () => import("@/components/my");                        //我的页面
+const Fans = () => import("@/components/my/components/fans");      //跳转到粉丝
+const It = () => import("@/components/my/components/it");          //跳转到他人主页
+const Dell = () => import("@/components/my/components/dell");      //跳转到动态
+const Not = () => import("@/components/my/components/not");        //跳转到关注页面
+const Paydell = () => import("@/components/my/components/paydell");//关注跳转到他人主页
+//商城路由
+const Shop = () => import("@/components/shop/goodClassify");
+const ShopList = () => import("@/components/shop/shopList");
+const GoodDetail = () => import("@/components/shop/goodDetail");
+const ShopCart = () => import("@/components/shop/shopCart");
+const GoodBalance = () => import("@/components/shop/goodBalance");
+const GoodApply = () => import("@/components/shop/goodApply");
+const MyOrder = () => import("@/components/shop/myOrder");
 
-import My from "@/components/my"                        //我的页面
-import Fans from "@/components/my/components/fans"      //跳转到粉丝
-import It from "@/components/my/components/it"          //跳转到他人主页
-import Dell from "@/components/my/components/dell"      //跳转到动态
-import Not from "@/components/my/components/not"        //跳转到关注页面
-import Paydell from "@/components/my/components/paydell"        //关注跳转到他人主页
+//喵圈
+const Community = () => import("@/components/community");
+const Details = () => import("@/components/community/component/details");
+const CatDetail = () => import("@/components/community/component/catDetail");
+const Discover = () => import("@/components/community/component/discover");
+const MeowCircle = () => import("@/components/community/component/meowCircle");
+//收藏&宠物信息
+const Article = () => import("@/components/my/article");
+const Noarticle = () => import("@/components/my/article/components/noarticle");
+const Nocollect = () => import("@/components/my/article/components/nocollect");
+const Pet = () => import("@/components/my/pet");
+const PetChange = () => import("@/components/my/pet/components/petchange");
+const Collect = () => import("@/components/my/collect");
 
-/* ----------商城路由----------- */
-import Shop from "@/components/shop/goodClassify"
-import ShopList from "@/components/shop/shopList"
-import GoodDetail from "@/components/shop/goodDetail"
-import ShopCart from "@/components/shop/shopCart"
-import GoodBalance from "@/components/shop/goodBalance"
-import GoodApply from "@/components/shop/goodApply"
-import MyOrder from "@/components/shop/myOrder"
+//LN
+const Address = () => import("@/components/login/componen/address_lnn");
+const Noneress = () => import("@/components/login/componen/noneress");
+const Moudifiress = () => import("@/components/login/componen/moudifiress");
+const Sign = () => import("@/components/login/componen/sign");
 
-import Err from "@/components/error"
-import Login from "@/components/login"
+const Err = () => import("@/components/error");
+const Login = () => import("@/components/login");
 
-/* ---------喵圈路由-------------*/
-import Details from "@/components/community/component/details"
-import CatDetail from "@/components/community/component/catDetail"
-import Discover from "@/components/community/component/discover"
-import MeowCircle from "@/components/community/component/meowCircle"
-
-import Article from "@/components/my/article"
-import Noarticle from "@/components/my/article/components/noarticle"
-import Nocollect from "@/components/my/article/components/nocollect"
-import Pet from "@/components/my/pet"
-import Collect from "@/components/my/collect"
-import Address from "@/components/login/componen/address_lnn"
-import Sign from "@/components/login/componen/sign"
-import Noneress from "@/components/login/componen/noneress"
-import Moudifiress from "@/components/login/componen/moudifiress"
-
-
-
-
-
-import PetChange from "@/components/my/pet/components/petchange"
 Vue.use(Router)
 
 var router = new Router({
