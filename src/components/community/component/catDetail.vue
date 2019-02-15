@@ -67,6 +67,10 @@ export default {
   methods: {
     add(){
       // console.log(this.val);
+
+
+
+      
       axios.post("/addReview",{val:this.val}).then((data)=>{
         this.reviewList=data; 
         // console.log(this.reviewList);
