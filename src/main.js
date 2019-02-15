@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from "./store"
 import "./mock/shop"
+import './mock/community'
 import "../node_modules/swiper/dist/css/swiper.min.css"
 import "./common/css/reset.css"
 import "./common/js/flexble"

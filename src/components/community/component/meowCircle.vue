@@ -1,48 +1,9 @@
 <template>
   <div class="community">
-    <!-- <div class="communityD" @click="$router.push('/catDetail')">
-      <div class="top">
-        <div class="img1">
-          <img src="../../../../static/communityImg/touixnag-mq@2x.png" alt>
-        </div>
-        <ul class="tops">
-          <li class="one">郭大白</li>
-          <li class="two">03-23&nbsp;&nbsp;&nbsp;15:32</li>
-        </ul>
-      </div>
-      <div class="middle">
-        <img src="../../../../static/communityImg/img-mq@2x.png" alt>
-      </div>
-      <p>好久没出来玩了，小伙伴们约不约？</p>
-      <p>
-        <span>
-          <div>
-            <img src="../../../../static/communityImg/icon-pl-mq-hei@2x.png" alt>
-          </div>
-          <i class="i">56</i>
-        </span>
-        <span>
-          <div>
-            <img src="../../../../static/communityImg/icon-xq-xin-hei@2x.png" alt>
-          </div>
-          <i>74</i>
-        </span>
-      </p>
-      <p class="cat">猫宁啊：好嗨哦！</p>
-      <p class="cat">面条：感觉到达人生的巅峰！</p>
-      <p class="last">显示全部评论</p>
-      <ul class="lastOne">
-        <li>
-          <img src="../../../../static/communityImg/icon-xin-3@2x.png" alt>
-        </li>
-        <li>
-          <img src="../../../../static/communityImg/icon-pl@2x.png" alt>
-        </li>
-      </ul>
-    </div>-->
     <div class="wrapper scrollHome" ref="homewrapper">
       <div class="auto">
-        <div v-for="(item,index) in arr" class="communityD" @click="$router.push('/catDetail')">
+        <!-- <div v-for="(item,index) in arr" class="communityD" @click="$router.push('/catDetail')"> -->
+        <div v-for="(item,index) in arr" class="communityD" @click="handleGo(item.catId)">
           <div class="top">
             <div class="img1">
               <img :src="item.catPortrait" alt>
@@ -72,7 +33,7 @@
           </p>
           <p class="cat">{{item.reviewList[0].reviewPer}}:{{item.reviewList[0].reviewCon}}</p>
           <p class="cat">{{item.reviewList[1].reviewPer}}:{{item.reviewList[1].reviewCon}}</p>
-          <p class="last">显示全部评论</p>
+          <!-- <p class="last">显示全部评论</p> -->
           <ul class="lastOne">
             <li>
               <img src="../../../../static/communityImg/icon-xin-3@2x.png" alt>
@@ -95,16 +56,28 @@ export default {
       arr: [],
     };
   },
+ 
   methods: {
+   
     getInfo() {
-      axios
-        .get(
-          "/miaoquan/mock/5c370de4f93efc493ce9c7af/example/meowCircle#!method=get"
-        )
-        .then(({ data }) => {
-          this.arr = data;
-        });
+      // axios
+      //   .get(
+      //     "/miaoquan/mock/5c370de4f93efc493ce9c7af/example/meowCircle#!method=get"
+      //   )
+      //   .then(({ data }) => {
+      //     this.arr = data;
+      //   });
+        axios.post("/getCat").then((data)=>{
+          if(data.success==true){
+            this.arr = data.data;
+          }else{
+            // console.log(111);
+          }
+    }) },
+    handleGo(id){
+      this.$router.push({ path: "/catDetail", query: { info: id } });
     }
+    
   },
   mounted() {
     this.getInfo();
@@ -154,12 +127,12 @@ img {
           .img1 {
             width: 1.12rem;
             height: 1.12rem;
-            border-radius: 50%;
             display: inline-block;
-            background: mediumaquamarine;
+            // background: mediumaquamarine;
             img {
               width: 100%;
               height: 100%;
+              border-radius: 50%;
             }
           }
           .tops {

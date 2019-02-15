@@ -2,7 +2,7 @@
   <div class="comments">
     <div class="wrapper scrollHome" ref="homewrapper">
       <div class="content">
-        <div class="box" v-for="(item,index) in catDetArr">
+        <div class="box" v-for="(item,index) in reviewList">
           <dl>
             <dd>
               <img :src="item.catDetPortrait" alt>
@@ -22,12 +22,19 @@
 import axios from "axios";
 import BScroll from "better-scroll";
 export default {
-  data() {
-    return {
-      catDetArr: []
-    };
-  },
+  props: ["reviewList","add"],
+  // data() {
+  //   return {
+  //     catDetArr: []
+  //   };
+  // },
   methods: {
+    getReview() {
+      axios.post("/getReview").then(data => {
+        // console.log(this.catDetArr);
+        this.reviewList = data.data;
+      });
+    },
     getMark() {
       axios
         .get(
@@ -39,7 +46,8 @@ export default {
     }
   },
   mounted() {
-    this.getMark();
+    // console.log(this.reviewList);
+    this.getReview();
     this.scroll = new BScroll(this.$refs.homewrapper, {
       pullUpLoad: true,
       click: true,
@@ -51,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .comments {
   width: 100%;
-  height:100%;
+  height: 100%;
   margin: 0 0.3rem;
   .scrollHome {
     width: 100%;
@@ -60,7 +68,7 @@ export default {
     top: 7.7rem;
     overflow: hidden;
     .content {
-      margin-top:0.5rem;
+      margin-top: 0.5rem;
       padding-bottom: 0.55rem;
       background: #fff;
       .box {
@@ -73,9 +81,9 @@ export default {
           dd {
             width: 0.68rem;
             height: 0.68rem;
-            border-radius: 50%;
-            background: mediumaquamarine;
+            // background: mediumaquamarine;
             img {
+              border-radius: 50%;
               width: 100%;
               height: 100%;
             }
@@ -95,7 +103,7 @@ export default {
           .addtime {
             width: 1.5rem;
             margin-right: 0.3rem;
-            color: #8F8F8F;
+            color: #8f8f8f;
             font-size: 0.2rem;
           }
         }
