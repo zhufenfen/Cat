@@ -40,10 +40,9 @@ const PetChange = () => import("@/components/my/pet/components/petchange");
 const Collect = () => import("@/components/my/collect");
 
 //LN
-const Address = () => import("@/components/login/componen/address_lnn");
-const Noneress = () => import("@/components/login/componen/noneress");
-const Moudifiress = () => import("@/components/login/componen/moudifiress");
-const Sign = () => import("@/components/login/componen/sign");
+const Address = () => import("@/components/login/components/address_lnn");
+const Moudifiress = () => import("@/components/login/components/moudifiress");
+const Sign = () => import("@/components/login/components/sign");
 
 const Err = () => import("@/components/error");
 const Login = () => import("@/components/login");
@@ -322,16 +321,6 @@ var router = new Router({
       path: "/sign",//跳转到注册页面
       name: "sign",
       component: Sign,
-      meta: {
-        requireAuth: true,
-        flag: false
-      },
-    },
-
-    {
-      path: "/noneress",//跳转到注册页面
-      name: "noneress",
-      component: Noneress,
       meta: {
         requireAuth: true,
         flag: false
