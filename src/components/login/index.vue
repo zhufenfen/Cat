@@ -5,95 +5,43 @@
       <img src="../../../static/img_ln/login.jpg">
     </div>
     <div class="dengl">
-      <p class="oder">快捷登陆</p>
-      <p class="news">
-        <router-link to="/sign">新用户注册</router-link>
+      <p class="oder" @click="handleToggle(1)">
+        <span :class="activeIndex==1?'active':''">快捷登陆</span>
+      </p>
+      <p class="news" @click="handleToggle(2)">
+        <span :class="activeIndex==2?'active':''">新用户注册</span>
       </p>
     </div>
-
-    <!--账号-->
-    <div class="uname_ln">
-      <input type="number" v-model="userName" @blur="userTest" placeholder="请输入手机号" class="tex1_ln">
-      <!-- <span class="phoneTest"></span> -->
-      <input type="number" v-model="passWord" placeholder="请输入密码" class="tex1_ln">
-      <!-- <input type="number" v-model="passWord" placeholder="请输入验证码" class="tex2_ln">
-      <div class="ver_ln">获取验证码</div>-->
-    </div>
-    <!--登陆-->
-    <div class="dl_ln" @click="gohome()">登陆</div>
+    <keep-alive include="Login-com">
+      <component :is="componentId"></component>
+    </keep-alive>
   </div>
 </template>
 <script>
-import Vuex from "vuex";
-import axios from "../../lib";
-import { Toast } from "mint-ui";
+import Login from "./components/login.vue";
+import Sign from "./components/sign.vue";
 export default {
+  components: {
+    "Login-com": Login,
+    "Sign-com": Sign
+  },
   data() {
     return {
-      userName: "",
-      passWord: "",
-      flag: true
+      componentId: "Login-com",
+      activeIndex: 1
     };
   },
-  computed: {
-    ...Vuex.mapState({
-      token: state => state.login.token
-    })
-  },
-  watch: {
-    token() {
-      this.$router.push("/home");
-    }
-  },
-  // login/handleUserLogin
   methods: {
-    ...Vuex.mapActions({
-      handleLogin: "login/handleUserLogin"
-    }),
-    gohome() {
-      if (this.flag) {
-        /* axios
-          .post("/getLogin", {
-            uname: this.userName,
-            upwd: this.passWord
-          })
-          .then(data => {
-            if (data.status == 0) {
-              this.$router.push("/home");
-            } else {
-              let instance = Toast({
-                message: data.info,
-                className: "toast"
-              });
-              setTimeout(() => {
-                instance.close();
-              }, 2000);
-            }
-          }); */
-        let userInfo = {
-          uname: this.userName,
-          upwd: this.passWord
-        };
-        this.handleLogin(userInfo);
-      } else {
-        let instance = Toast({
-          message: "请输入正确的手机号",
-          className: "toast"
-        });
-        setTimeout(() => {
-          instance.close();
-        }, 2000);
-      }
-    },
-    userTest() {
-      var reg = /^1(3|4|5|7|8)\d{9}$/;
-      if (!reg.test(this.userName)) {
-        // $(".phoneTest").html("123");
-        this.flag = false;
-        //this.$refs.phoneTest.innerHTML("请输入正确的手机号")
-      } else {
-        // $(".phoneTest").html("");
-        this.flag = true;
+    handleToggle(val) {
+      switch (val) {
+        case 1:
+          this.componentId = "Login-com";
+          this.activeIndex = 1;
+          break;
+        case 2:
+          this.componentId = "Sign-com";
+          this.activeIndex = 2;
+          break;
       }
     }
   }
@@ -121,15 +69,18 @@ export default {
     margin-left: 2.3rem;
     .oder {
       font-size: 0.3rem;
-      color: #202020;
+      color: #ccc;
       display: inline-block;
-      border-bottom: 0.02rem solid #000;
     }
     .news {
       font-size: 0.3rem;
       color: #ccc;
       display: inline-block;
       margin-left: 0.36rem;
+    }
+    .active {
+      color: #202020;
+      border-bottom: 0.02rem solid #000;
     }
   }
 

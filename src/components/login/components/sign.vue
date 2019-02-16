@@ -1,0 +1,141 @@
+<template>
+  <div class="sign_ln">
+    <div class="uname_ln">
+      <input type="number" v-model="userPhone" placeholder="请输入手机号" class="tex1_ln">
+      <input placeholder="请输入用户名" v-model="userName" class="tex1_ln">
+      <input type="number" v-model="userYzm" placeholder="请输入验证码" class="tex2_ln">
+      <div class="ver_ln" @click="getYZM()">获取验证码</div>
+    </div>
+    <div class="dl_ln" @click="signgohome()">注册</div>
+  </div>
+</template>
+
+<script>
+import { Toast } from "mint-ui";
+import axios from "../../../lib";
+export default {
+  data() {
+    return {
+      userPhone: "",
+      userName: "",
+      userYzm: "",
+      flag: true
+    };
+  },
+  methods: {
+    getYZM() {
+      axios
+        .post("/findByUser2", {
+          phone: this.userPhone,
+          nickname: this.userName
+        })
+        .then(data => {
+          if (data.status) {
+          } else {
+            let instance = Toast({
+              message: data,
+              className: "toast"
+            });
+            setTimeout(() => {
+              instance.close();
+            }, 2000);
+          }
+        });
+    },
+    signgohome() {
+      axios
+        .post("/user/register", {
+          pcode: this.userYzm
+        })
+        .then(data => {
+          if (data.status) {
+            let instance = Toast({
+              message: data,
+              className: "toast"
+            });
+            setTimeout(() => {
+              instance.close();
+            }, 2000);
+            this.$router.push("/home");
+          } else {
+            let instance = Toast({
+              message: data,
+              className: "toast"
+            });
+            setTimeout(() => {
+              instance.close();
+            }, 2000);
+          }
+        });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+/*注册*/
+.sign_ln {
+  width: 100%;
+  height: 100%;
+  .welcom_ln {
+    .p_ln {
+      margin-top: 2.56rem;
+      margin-left: 2.5rem;
+      font-size: 0.36rem;
+    }
+  }
+  /*用户名手机号*/
+  .uname_ln {
+    /*手机号*/
+    .tex1_ln {
+      width: 4.54rem;
+      height: 0.48rem;
+      font-size: 0.24rem;
+      color: #a5a5a5;
+      margin-top: 0.58rem;
+      margin-left: 1.64rem;
+      border: none;
+      outline: none;
+      border-bottom: 0.01rem solid #000;
+    }
+    /*验证码*/
+    .tex2_ln {
+      width: 2.6rem;
+      height: 0.46rem;
+      font-size: 0.24rem;
+      color: #a5a5a5;
+      margin-top: 0.85rem;
+      margin-left: 1.64rem;
+      border: none;
+      outline: none;
+      display: inline-block;
+      border-bottom: 0.01rem solid #000;
+    }
+    /*获取验证码*/
+    .ver_ln {
+      width: 1.8rem;
+      height: 0.6rem;
+      font-size: 0.24rem;
+      text-align: center;
+      line-height: 0.6rem;
+      background: #fddd62;
+      outline: none;
+      border-radius: 0.15rem;
+      display: inline-block;
+    }
+  }
+
+  /*注册*/
+  .dl_ln {
+    width: 4.53rem;
+    height: 0.6rem;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.6rem;
+    background: #fddd62;
+    border-radius: 0.15rem;
+    margin-top: 0.9rem;
+    margin-left: 1.64rem;
+  }
+}
+</style>
