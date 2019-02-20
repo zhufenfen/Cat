@@ -3,7 +3,7 @@
         <div class="top"> 
             <img @click="gomy()" src="../../../../static/imgs/publish/icon_jiantou1.png" alt="">
             <span>消息</span>
-            <span @click="voerlook()">忽略未读</span>
+            <span>忽略未读</span>
         </div>
         <ul>
             <li v-for="(item,index) in photo" :key="index">

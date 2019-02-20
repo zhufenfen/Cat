@@ -3,10 +3,10 @@
     <div class="main">
       <div class="main-m">
         <div class="message">
-          <div class="pic">
+          <div class="pic mhm">
             <img src="static/myImgs/message.png">
           </div>
-          <router-link :to="{name:'article'}">
+          <router-link :to="{name:'pet'}">
             <p>宠物信息</p>
           </router-link>
 
@@ -15,16 +15,18 @@
           </b>
         </div>
         <div class="news">
-          <div class="pic">
+          <div class="pic mhm">
             <img src="static/myImgs/news.png">
           </div>
-          <p>我的消息</p>
+          <router-link :to="{name:'information'}">
+            <p>我的消息</p>
+          </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>
         </div>
         <div class="collect">
-          <div class="pic">
+          <div class="pic mhm">
             <img src="static/myImgs/message.png">
           </div>
           <router-link :to="{name:'collect'}">
@@ -40,16 +42,20 @@
           <div class="pic">
             <img src="static/myImgs/order.png">
           </div>
-          <p>我的订单</p>
+          <router-link :to="{name:'myOrder'}">
+            <p>我的订单</p>
+          </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>
         </div>
         <div class="news">
-          <div class="pic">
+          <div class="pic shop">
             <img src="static/myImgs/car.png">
           </div>
-          <p>购物车</p>
+          <router-link :to="{name:'shopCart'}">
+            <p>购物车</p>
+          </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>
@@ -58,7 +64,9 @@
           <div class="pic">
             <img src="static/myImgs/site.png">
           </div>
-          <p>我的地址</p>
+          <router-link :to="{name:'moudifiress'}">
+            <p>我的地址</p>
+          </router-link>
           <b>
             <img src="static/myImgs/right2.png">
           </b>
@@ -92,28 +100,40 @@ export default {};
       background: #fff;
       display: flex;
       flex-direction: column;
-      border-radius: .18rem;
+      border-radius: 0.18rem;
       margin-top: 0.19rem;
-      .message,.news,
+      .message,
+      .news,
       .collect {
         width: 6.86rem;
         height: 0.57rem;
       }
-      .message{
-        margin-top:.28rem;
+      .message {
+        margin-top: 0.28rem;
       }
 
       div {
         position: relative;
         float: left;
-        margin-top: 0.1rem;
+        margin-top: 0.065rem;
         .pic {
           display: block;
           float: left;
           width: 0.28rem;
           height: 0.24rem;
           margin-left: 0.37rem;
-
+          margin-top: 0.009rem;
+          img {
+            width: 100%;
+          }
+        }
+        .mhm {
+          margin-top: 0.05rem;
+        }
+        .shop {
+          width: 0.36rem;
+          height: 0.36rem;
+          margin-left: 0.31rem;
           img {
             width: 100%;
           }

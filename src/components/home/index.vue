@@ -188,6 +188,8 @@ export default {
                     display: flex;
                     flex-direction: column;
                     h3{
+                        width: 100%;
+                        height: 100%;
                         height: .7rem;
                         line-height: .8rem;
                         text-indent: .3rem;

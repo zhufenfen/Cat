@@ -1,7 +1,9 @@
 <template>
     <div class="footer">
         <div>
-            合计：<span class="price">{{result.sumPrice | price}}</span>
+            合计：
+            <span v-if="shopId === undefined" class="price">{{result.sumPrice | price}}</span>
+            <span v-if="shopId !== undefined" class="price">{{good.goodPrice * good.num | price}}</span>
         </div>
         <button @click="handleApply">提交订单</button>
     </div>
@@ -10,10 +12,14 @@
 <script>
 import Vuex from "vuex"
 export default {
+    props:["shopId"],
     computed: {
         ...Vuex.mapGetters({
-            result:"shopCart/result"
-        })
+            result:"shopCart/result",
+        }),
+        ...Vuex.mapState({
+            good:state=>state.goodDetail.goodDetail
+        }),
     },
     methods: {
         handleApply(){
