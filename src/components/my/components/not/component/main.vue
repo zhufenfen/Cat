@@ -35,7 +35,7 @@ export default {
     };
   },
   created() {
-    this.handleGoods();
+    // this.handleGoods();
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.mainWrapper, {
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     ...Vuex.mapActions({
-      handleGoods: "myMhm/handleGoods"
+      // handleGoods: "myMhm/handleGoods"
     })
   }
 };

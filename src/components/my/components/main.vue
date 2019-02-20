@@ -3,7 +3,7 @@
     <div class="main">
       <div class="main-m">
         <div class="message">
-          <div class="pic">
+          <div class="pic mhm">
             <img src="static/myImgs/message.png">
           </div>
           <router-link :to="{name:'pet'}">
@@ -15,7 +15,7 @@
           </b>
         </div>
         <div class="news">
-          <div class="pic">
+          <div class="pic mhm">
             <img src="static/myImgs/news.png">
           </div>
           <router-link :to="{name:'information'}">
@@ -26,7 +26,7 @@
           </b>
         </div>
         <div class="collect">
-          <div class="pic">
+          <div class="pic mhm">
             <img src="static/myImgs/message.png">
           </div>
           <router-link :to="{name:'collect'}">
@@ -51,7 +51,7 @@
           </b>
         </div>
         <div class="news">
-          <div class="pic">
+          <div class="pic shop">
             <img src="static/myImgs/car.png">
           </div>
           <router-link :to="{name:'shopCart'}">
@@ -115,18 +115,31 @@ export default {};
       div {
         position: relative;
         float: left;
-        margin-top: 0.1rem;
+        margin-top: 0.065rem;
         .pic {
           display: block;
           float: left;
           width: 0.28rem;
           height: 0.24rem;
           margin-left: 0.37rem;
-
+          margin-top:.009rem;
           img {
             width: 100%;
           }
+          
         }
+        .mhm{
+            margin-top:.05rem;
+          }
+          .shop{
+            width:.36rem;
+            height:.36rem;
+            margin-left:.31rem;
+            img{
+              width:100%;
+            }
+          }
+
         p {
           display: block;
           margin-left: 1rem;
