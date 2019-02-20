@@ -17,6 +17,13 @@ module.exports = {
         pathRewrite:{
           "^/miaoquan":""
         }
+      },
+      "/tianqi":{
+        target:'http://www.weather.com.cn',
+        changeOrigin:true,
+        pathRewrite:{
+          "^/tianqi":""
+        }
       }
     },
     // Various Dev Server settings

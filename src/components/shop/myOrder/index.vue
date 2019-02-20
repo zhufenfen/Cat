@@ -9,6 +9,9 @@
 import Header from "./components/header"
 import Main from "./components/main"
 export default {
+    created(){
+        this.$store.dispatch("goodOrder/getGoodOrder");
+    },
     components:{
         "Header-com":Header,
         "Main-com":Main

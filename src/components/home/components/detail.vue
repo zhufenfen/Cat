@@ -36,16 +36,18 @@ export default {
     height: 100%;
     .top{
         width: 100%;
-        height: 1.58rem;
+        height: 1.1rem;
         font-size: .34rem;
         font-family: MicrosoftYaHei;
-        padding-top: .68rem;
+        padding-top: .3rem;
         background: rgb(253, 221, 98);
         img{
             width: .24rem;
             height: .42rem;
             display: inline-block;
             margin-left: .16rem;
+            width:.18rem;
+            height:.32rem;
         }
         span{
             margin-left: 2.55rem;

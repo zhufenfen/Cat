@@ -1,21 +1,21 @@
 <template>
   <div id="main">
-    <div class="shopItem" v-for="(item, index) in shopItem">
-      <img :src="item.imgUrl">
+    <div class="shopItem" v-for="(item, index) in goodItem">
+      <img :src="item.goodImage">
       <div class="message">
-        <div class="title">{{item.title}}</div>
+        <div class="title">{{item.goodTitle}}</div>
         <div class="size">
           尺寸：
-          <span>{{item.size}}</span>
+          <span>{{item.goodSize}}</span>
         </div>
         <div class="color">
           颜色：
-          <span>{{item.color}}</span>
+          <span>{{item.goodColor}}</span>
         </div>
         <div class="numPrice">
           共<span>{{item.num}}</span>件商品
           实付款
-          <span class="price">{{item.price}}</span>
+          <span class="price">￥{{item.goodPrice}}.00</span>
         </div>
       </div>
     </div>
@@ -23,8 +23,14 @@
 </template>
 
 <script>
+import Vuex from "vuex";
 export default {
-  data() {
+  computed: {
+    ...Vuex.mapState({
+      goodItem: state => state.goodOrder.shopList
+    })
+  },
+  /* data() {
     return {
       shopItem: [
         {
@@ -53,7 +59,7 @@ export default {
         }
       ]
     };
-  }
+  } */
 };
 </script>
 

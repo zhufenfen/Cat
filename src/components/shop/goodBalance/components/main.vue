@@ -11,7 +11,25 @@
         <span>喵星市喵星小区五号楼一单元</span>
       </div>
     </div>
-    <div class="shopMessage" v-for="(item, index) in goodCheck">
+    <div v-if="shopId !== undefined" class="shopMessage">
+      <img :src="good.goodImage">
+      <div class="message">
+        <div class="title">{{good.goodTitle}}</div>
+        <div class="color">
+          颜色分类：
+          <span>{{good.goodColor[good.colorFlag]}}</span>
+        </div>
+        <div class="size">
+          尺寸：
+          <span>{{good.goodSize[good.sizeFlag]}}</span>
+        </div>
+        <div class="priceNum">
+          <span class="price">{{good.goodPrice | price}}</span>
+          <span class="num">×{{good.num}}</span>
+        </div>
+      </div>
+    </div>
+    <div v-if="shopId === undefined" class="shopMessage" v-for="(item, index) in goodCheck">
       <img :src="item.goodImage">
       <div class="message">
         <div class="title">{{item.goodTitle}}</div>
@@ -43,6 +61,10 @@
 <script>
 import Vuex from "vuex"
 export default {
+  props:["shopId"],
+  /* mounted(){
+    console.log(this.shopId, this.good);
+  }, */
   computed: {
     ...Vuex.mapState({
       goodCheck:state=>{
@@ -50,7 +72,8 @@ export default {
           return item.flag == true;
         })
         return arr;
-      }
+      },
+      good:state=>state.goodDetail.goodDetail
     })
   },
   filters:{
