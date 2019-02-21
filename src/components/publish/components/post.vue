@@ -38,13 +38,13 @@ export default {
             area:""
         }
     },
-    // beforeRouteEnter(to,from,next){
-    //     if(sessionStorage.getItem != ""){
-    //         console.log(1111)
-    //         this.title = JSON.parse(sessionStorage.getItem("title"))
-    //         console.log(this.title)
-    //     }
-    // },
+    created(){
+        if(sessionStorage.getItem != ""){
+            this.title = JSON.parse(sessionStorage.getItem("title"))
+            this.title2 = JSON.parse(sessionStorage.getItem("title2"))
+            this.area = JSON.parse(sessionStorage.getItem("area"))
+        }
+    },
     methods:{
         showPost(){           //点击×，返回上一个页面
             this.flag = !this.flag
@@ -53,6 +53,9 @@ export default {
             this.flag = !this.flag
         },
         noreserve(){
+            sessionStorage.removeItem("title")
+            sessionStorage.removeItem("title2")
+            sessionStorage.removeItem("area")
             this.$router.go(-2)
         },
         reserve(){
@@ -72,6 +75,7 @@ export default {
                 duration: 3000,
                 calssName:"backgroung:'red'"
             });
+            this.$router.push("/home")
         }
     }
 }

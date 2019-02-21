@@ -11,6 +11,7 @@ import "./mock/login"
 import "./mock/address"
 import "./mock/register"
 import './mock/community'
+import "./mock/home"
 import "../node_modules/swiper/dist/css/swiper.min.css"
 import "./common/css/reset.css"
 import "./common/js/flexble"

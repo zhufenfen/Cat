@@ -39,6 +39,7 @@ export default {
                 duration: 3000,
                 calssName:"backgroung:'red'"
             });
+            this.$router.push("/home")
         },
         doThis(){
             this.flag = !this.flag
