@@ -42,6 +42,8 @@ export default {
         padding-top: .3rem;
         background: rgb(253, 221, 98);
         img{
+            width: .24rem;
+            height: .42rem;
             display: inline-block;
             margin-left: .16rem;
             width:.18rem;

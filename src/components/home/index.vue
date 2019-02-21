@@ -3,6 +3,9 @@
         <div class="top">
             首页
         </div>
+        
+        <div class="wrapper scrollHome" ref="homewrapper">
+        <div class="main">
         <div class="content">
             <div class="swiper-container banner">
                 <div class="swiper-wrapper">
@@ -15,29 +18,35 @@
             <div class="star">
                 <h2>萌宠明星</h2>
                 <div>
+                    <router-link :to="{name:'pet'}">
                     <div>
                         <p>活跃之星</p>
                         <img src="../../../static/imgs/home-img/star1.png" alt="">
                         <p>橘猫</p>
                         <p>3岁</p>
                     </div>
+                    </router-link>
+                    <router-link :to="{name:'pet'}">
                     <div>
                         <p>人气之星</p>
                         <img src="../../../static/imgs/home-img/star2.png" alt="">
                         <p>折耳猫</p>
                         <p>3岁</p>
                     </div>
+                    </router-link>
+                    <router-link :to="{name:'pet'}">
                     <div>
                         <p>魅力之星</p>
                         <img src="../../../static/imgs/home-img/star3.png" alt="">
                         <p>蓝猫</p>
                         <p>1岁</p>
                     </div>
+                    </router-link>
                 </div>
             </div>
             <div class="sift">
                 <p>精选</p>
-                <div v-for="(item,index) in homedata" :key="index" @click="goDetail()">
+                <div v-for="(item,index) in homeList" :key="index" @click="goDetail()">
                     <img :src="item.photo" alt="">
                     <div>
                         <h3>{{item.title}}</h3>
@@ -47,6 +56,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        </div>
     </div>
 </template>
 
@@ -54,29 +65,43 @@
 import Vuex from "Vuex"
 import axios from "axios"
 import Swiper from "swiper"
+import BScroll from "better-scroll";
 export default {
+    data(){
+        return{
+            homeList:[]
+        }
+    },
     created(){
-        // this.$axios({
-        //     method:"post",
-        //     url:"/miaoquan/mock/5c35a4f7ce7b4303bd93fc09/example/home"
-        // }).then((data)=>{
-        //     console.log(data.data)
-        // })
-        this.homeData()
+       
+        this.getHome(),
+        this.getmiaoquan()
     },
     computed:{
-        ...Vuex.mapState({
-            homedata:state => state.home.list
-        })
+        // ...Vuex.mapState({
+        //     homedata:state => state.home.list
+        // })
     },
     methods:{
+        getHome(){
+            axios.post("/getHome").then((data)=>{
+                if(data.success==true){
+                    this.homeList = data.data;
+                }
+            })
+        },
+        getmiaoquan(){
+            axios.post("/miaoquan/index").then((data)=>{
+                console.log(data)
+            })
+        },
         goDetail(){
             // console.log(this.homeData())
             this.$router.push("/homedetail")
         },
-        ...Vuex.mapActions({
-            homeData:"home/homeData"
-        })
+        // ...Vuex.mapActions({
+        //     homeData:"home/homeData"
+        // })
     },
     mounted(){     //如果数据是静态可以在这里面实例化，如果是异步则需要watch中实例化
         var mySwiper = new Swiper ('.swiper-container', {
@@ -91,6 +116,12 @@ export default {
             disableOnInteraction: false,
             },
         })
+        this.scroll = new BScroll(this.$refs.homewrapper, {
+            pullUpLoad: true,
+            click: true,
+            probetype: 1
+        });
+        
     }
 }
 </script>
@@ -101,6 +132,7 @@ export default {
     width: 100%;
     height: 100%;
     font-family: MicrosoftYaHei;
+    
     .top{
         width: 100%;
         height: 1.1rem;
@@ -110,15 +142,22 @@ export default {
         background: rgb(253, 221, 98);
         text-align: center;
         font-weight: 500;
-        position: fixed;
-        left: 0;
-        top: 0;
+        
     }
+    .scrollHome {
+    width: 100%;
+    // height: 100rem;
+    height:18.77rem;    
+    position: fixed;
+    // top:1.1rem;
+    overflow: hidden;
+    .main {
+      padding-bottom: 9rem;
     .content{
         overflow:auto;
-        margin-top: 1.1rem;
+        // margin-top: 1.1rem;
         width: 100%;
-        height: 11.26rem;
+        height: 54rem;
         .banner{
             width: 100%;
             height: 2.25rem;
@@ -215,6 +254,7 @@ export default {
             }
         }
     }
-    
+    }
+    }
 } 
 </style>

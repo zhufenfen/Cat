@@ -48,7 +48,8 @@ export default {
         })
        let d = new Date()
        this.year = d.getFullYear()
-       if((d.getMonth() + 1) / 10 < 1){
+       var mon =(d.getMonth() + 1) / 10
+       if(mon < 1){
            this.month = "" + d.getMonth() + 1
        }
        this.day = d.getDate()
