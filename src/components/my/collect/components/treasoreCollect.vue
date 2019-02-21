@@ -1,14 +1,14 @@
 <template>
     <div class="treasore wrapper" ref="prodectWrapper">
         <ul class="content prodect">
-                 <li v-for="(item,index) in colls">
+                 <li v-for="(item,index) in collectlist">
                      <div class="left">
-                            <img :src=item.src1 alt="">
+                            <img :src=item.picture alt="">
                      </div>
                      <div class="right">
-                            <h3>{{item.txt1}}</h3>
-                            <p>{{item.txt2}}</p>
-                            <span>{{item.price}}</span>
+                            <h3>{{item.name}}</h3>
+                            <p>{{item.intro}}</p>
+                            <span>${{item.price}}</span>
                      </div>
                  </li>
         </ul>
@@ -20,6 +20,11 @@ import axios from "axios";
 import Vuex from "vuex";
 import BScroll from "better-scroll";
 export default {
+     data(){
+        return{
+           collectlist:[]
+        }
+    },
     mounted(){
        if(!this.scroll){
            this.scroll=new BScroll(this.$refs.prodectWrapper,{
@@ -30,16 +35,28 @@ export default {
         //    screenY:true
        }
      },
+     methods:{
+         getdata(){
+           axios.post("/Collect").then((data)=>{
+               if(data.success==true){
+                   this.collectlist=data.data
+               }
+           })
+       }
+     },
      created(){
-        this.$store.dispatch("articleCollect/collect");
-        },
-    computed: {
-            ...Vuex.mapState({
-                colls:state=>state.articleCollect.colls
-            })
-    },
-    data(){
-        return{
+       this.getdata()
+     },
+    //  created(){
+    //     this.$store.dispatch("articleCollect/collect");
+    //     },
+    // computed: {
+    //         ...Vuex.mapState({
+    //             colls:state=>state.articleCollect.colls
+    //         })
+    // },
+    // data(){
+    //     return{
             // list:[
             // {
             //       src1:require("../../../../../static/hrj_img/img-bbsc-1.png"),
@@ -78,8 +95,8 @@ export default {
             //       price:"$  18"
             // },
             // ]
-        }
-    }
+    //     }
+    // }
 }
 </script>
 

@@ -10,12 +10,12 @@
            <router-link to="/my/pet/petchange"><img src="/static/hrj_img/icon-bxi.png" alt=""></router-link>
         </div>
          <div class="main" v-for="(item,index) in message">
-              <img :src=item.src1 alt="">
+              <img :src=item.picture alt="">
               <h2>{{item.name}}</h2>
               <p><span>生日</span>  {{item.birthday}}</p>
-              <p><span>性别</span>  {{item.sex}}</p>
-              <p><span>品种</span>  {{item.kind}}</p>
-              <p><span>介绍</span>  {{item.indtroduce}}</p>
+              <p><span>性别</span>  {{item.gender}}</p>
+              <p><span>品种</span>  {{item.varieties}}</p>
+              <p><span>介绍</span>  {{item.synopsis}}</p>
          </div>
     </div>
 </template>
@@ -30,12 +30,12 @@ export default {
              name:"my",
              message:[
                     {
-                  src1:"/static/hrj_img/touxiang-guanzhu-5.png",
+                  picture:"/static/hrj_img/touxiang-guanzhu-5.png",
                   name:"艾琪儿",
                   birthday:"2017-10-20",
-                  sex:"MM",
-                  kind:"波斯猫",
-                  indtroduce:"作为波斯猫，永远带着成熟稳重的眼神，给人一种踏实感"
+                  gender:"MM",
+                  varieties:"波斯猫",
+                  synopsis:"作为波斯猫，永远带着成熟稳重的眼神，给人一种踏实感"
                   }
              ]
          }

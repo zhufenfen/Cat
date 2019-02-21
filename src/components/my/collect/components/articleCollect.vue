@@ -1,9 +1,9 @@
 <template>
     <div class="treasore wrapper"  ref="tabsWrapper">
         <ul class="content">
-            <li v-for="(item,index) in lists">
-                <img :src=item.src1 alt="">
-                <p>{{item.txt}}</p>
+            <li v-for="(item,index) in articlelist">
+                <img :src=item.picture alt="">
+                <p>{{item.title}}</p>
                 <div class="bottom">
                     <div class="photo">
                     </div>
@@ -27,6 +27,11 @@ import axios from "axios";
 import Vuex from "vuex";
 import BScroll from "better-scroll";
 export default {
+    data(){
+        return{
+           articlelist:[]
+        }
+    },
     mounted(){
        if(!this.scroll){
            this.scroll=new BScroll(this.$refs.tabsWrapper,{
@@ -37,6 +42,44 @@ export default {
         //    screenY:true
        }
      },
+     methods:{
+         getdata(){
+           axios.post("/Article").then((data)=>{
+               if(data.success==true){
+                   this.articlelist=data.data
+               }
+           })
+       },
+       getnewdata(){
+           axios.post("/miaoquan/findArticleByUserId").then((data)=>{
+               console.log(data)
+           })
+       },
+        getolddata(){
+           axios.post("/miaoquan/findGoodsByUserId").then((data)=>{
+               console.log(data)
+           })
+       },
+       getpetdata(){
+           axios.post("/miaoquan/insertPet").then((data)=>{
+               console.log(data)
+           })
+       },
+        getpetshowdata(){
+           axios.post("/miaoquan/findPetById").then((data)=>{
+               console.log(data)
+           })
+       }
+     },
+     created(){
+       this.getdata(),
+       this.getnewdata(),
+       this.getolddata(),
+       this.getpetdata(),
+       this.getpetshowdata()
+     }
+     
+     
     // data(){
     //     return{
     //         list:[
@@ -98,14 +141,14 @@ export default {
     //         ]
     //     }
     // }
-     created(){
-        this.$store.dispatch("articleCollect/handle");
-        },
-    computed: {
-            ...Vuex.mapState({
-                lists:state=>state.articleCollect.lists
-            })
-    },
+    //  created(){
+    //     this.$store.dispatch("articleCollect/handle");
+    //     },
+    // computed: {
+    //         ...Vuex.mapState({
+    //             lists:state=>state.articleCollect.lists
+    //         })
+    // },
 }
 </script>
 <style lang="scss" scoped>
@@ -117,7 +160,7 @@ export default {
        height: 100%;
        width: 7.5rem;
        margin: 0 auto;
-       padding-top: 1rem;
+       margin-top: 0.8rem;
        margin-left:0.3rem;
        ul{
           background:#f0f2f5;

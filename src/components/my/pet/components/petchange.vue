@@ -13,45 +13,81 @@
         </div>
         <img :src=pic alt="哎呀，图片走丢了" class="head">
         </div>
-        <div class="list">
-              <p>昵称<input type="text"  placeholder="输入宠物昵称" :value="petnametrue"></p>
+        <div class="list" v-for="(item,index) in message">
+              <p>昵称<input type="text"  placeholder="输入宠物昵称" v-model="item.name"></p>
               <!-- :value="petname" -->
-              <p>性别<input type="text"  placeholder="输入性别" :value="sextrue"></p>
+              <p>性别<input type="text"  placeholder="输入性别" v-model="item.gender"></p>
                <!-- :value="sex" -->
-              <p>生日<input type="text"  placeholder="输入生日" :value="birthdaytrue"></p>
+              <p>生日<input type="text"  placeholder="输入生日" v-model="item.birthday"></p>
                <!-- :value="birthday" -->
-              <p>血统<input type="text"  placeholder="输入血统" :value="bloodtrue"></p>
+              <p>血统<input type="text"  placeholder="输入血统" v-model="item.varieties"></p>
                <!-- :value="blood" -->
-              <p>品种<input type="text"  placeholder="输入品种" :value="kindtrue"></p>
+              <p>品种<input type="text"  placeholder="输入品种" v-model="item.synopsis"></p>
                <!-- :value="kind" -->
-              <p>状态<input type="text"  placeholder="输入状态" :value="settrue"></p>
+              <p>状态<input type="text"  placeholder="输入状态" v-model="item.picture"></p>
                <!-- :value="set" -->
         </div>
         <div class="bottom">
-                    <button>保存</button>
+                    <button @click="sendMessage">保存</button>
         </div>
     </div>
 </template>
 <script>
+import {Toast} from "mint-ui";
+import axios from "axios";
 export default {
      data(){
          return{
-             petname:"喵小乖",
-             sex:"男",
-             birthday:"2014-4-4",
-             blood:"欧洲",
-             kind:"波斯猫",
-             set:"未婚",
-             comName: "TreasoreCollect-com",
-             path:"/my/pet",
+
              name:"pet",
              pic:"/static/hrj_img/touxiang-xinxi.png",
-             petnametrue:"",
-             sextrue:"",
-             birthdaytrue:"",
-             bloodtrue:"",
-             kindtrue:"",
-             settrue:"",
+             message:[ {
+                    name:"",
+                    gender:"",
+                    birthday:"",
+                    varieties:"",
+                    synopsis:"",
+                    picture:"",
+               }
+             ]
+         }
+     },
+     methods:{
+         sendMessage(){
+            // axios({
+            //     method:"post",
+            //     url:"/findPetById",
+            //     data:{
+            //         name:this.message[0].name,
+            //         gender:this.message[0].gender,
+            //         birthday:this.message[0].birthday,
+            //         varieties:this.message[0].varieties,
+            //         synopsis:this.message[0].synopsis,
+            //         picture:this.message[0].picture,
+            //     }
+            // }).then((data)=>{
+            //     let instance=Toast({
+            //         message:data.msg,
+            //         className:"toast"
+            //     });
+            //     setTimeout(()=>{
+            //         instance.close();
+            //     },2000);
+            //     if(data.code==0){
+            //         this.$router.push("/pet")
+            //     }
+            //     console.log(data)
+            // }).catch((err)=>{
+            //     console.log(err)
+            // })
+            console.log({
+                    name:this.message[0].name,
+                    gender:this.message[0].gender,
+                    birthday:this.message[0].birthday,
+                    varieties:this.message[0].varieties,
+                    synopsis:this.message[0].synopsis,
+                    picture:this.message[0].picture,
+                })
          }
      }
 }
@@ -105,9 +141,11 @@ export default {
                     opacity: 0.5; 
             }
             img{
+                height:2rem;
+                width:2rem;
                 position: absolute;
-                left: 3.2rem;
-                top: 2rem;
+                left: 2.7rem;
+                top: 1.4rem;
             }
         }
         .list{
@@ -136,9 +174,9 @@ export default {
             height:3rem;
             button{
                 font-size: 0.3rem;
-                margin:1.3rem 0 0 0.51rem;
-                width:648px;
-                height:80px;
+                margin:1.3rem 0 0 .8rem;
+                width:5.84rem;
+                height:0.8rem;
                 background:rgba(253,221,98,1);
                 border-radius:12px;
                 border: 0;  // 去除未选中状态边框
