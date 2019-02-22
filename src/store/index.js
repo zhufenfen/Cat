@@ -9,6 +9,7 @@ import dell from "./my/dell"
 import home from "./home"
 import login from "./login"
 import articleCollect from "./my_hrj"
+import goodList from "./goodList"
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -21,7 +22,8 @@ const store = new Vuex.Store({
         myMhm,
         dell,
         articleCollect,
-        login
+        login,
+        goodList
     }
 })
 export default store;

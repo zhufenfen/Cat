@@ -23,43 +23,57 @@ export default {
     };
   },
   methods: {
-    getYZM() {
-      axios
-        .post("/findByUser2", {
+    /* getYZM() {
+      axios({
+        method:"post",
+        url:"/miaoquan/findByUser2",
+        data:{
           phone: this.userPhone,
           nickname: this.userName
-        })
-        .then(data => {
-          if (data.status) {
-          } else {
-            let instance = Toast({
-              message: data,
-              className: "toast"
-            });
-            setTimeout(() => {
-              instance.close();
-            }, 2000);
-          }
-        });
+        }
+      })
+      .then(data => {
+        if (data.code == 0) {
+          let instance = Toast({
+            message: "验证码已发送",
+            className: "toast"
+          });
+          setTimeout(() => {
+            instance.close();
+          }, 2000);
+        } else {
+          let instance = Toast({
+            message: data.msg,
+            className: "toast"
+          });
+          setTimeout(() => {
+            instance.close();
+          }, 2000);
+        }
+      });
     },
     signgohome() {
-      axios
-        .post("/user/register", {
+      axios({
+        method:"post",
+        url:"/miaoquan/user/register",
+        data:{
           pcode: this.userYzm
-        })
+        }
+      })
         .then(data => {
-          if (data.status) {
+          console.log(data);
+          if (data.code == 0) {
             let instance = Toast({
-              message: data,
+              message: "注册成功",
               className: "toast"
             });
             setTimeout(() => {
               instance.close();
             }, 2000);
-            this.$router.push("/home");
+            // this.$router.push("/home");
           } else {
             let instance = Toast({
-              message: data,
+              message: "注册失败",
               className: "toast"
             });
             setTimeout(() => {
@@ -67,7 +81,7 @@ export default {
             }, 2000);
           }
         });
-    }
+    } */
   }
 };
 </script>

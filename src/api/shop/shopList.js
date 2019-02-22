@@ -1,7 +1,7 @@
 import {UrlParse} from "../../utils/urlParse"
 const Mock = require("mockjs");
 let data = Mock.mock({
-    "data|100":[{
+    "data|300":[{
         "classifyId|0-3":2,
         "shopId|+1":0,
         "shopTitle|2-4":"1",
@@ -16,16 +16,27 @@ let data = Mock.mock({
         "num":1
     }]
 })
+let dataList = data.data;
+function currentPage(arr, page){
+    var newArr = arr.filter((item, index) => {
+        return index >= (page - 1) * 6 && index < page * 6; 
+    })
+    return newArr;
+}
 const getShop = (config) => {
     var obj = JSON.parse(config.body);
-    var arr = data.data.filter((item, index) => {
+    let {page} = JSON.parse(config.body);
+    var arr = dataList.filter((item, index) => {
         return item.classifyId == Number(obj.classifyId);
     })
-    return arr;
+    return {
+        data:currentPage(arr, page),
+        maxPage:Math.ceil(arr.length/6)
+    };
 }
 const goodDetail = (config) => {
     var obj = JSON.parse(config.body);
-    var shopItem = data.data.filter((item, index) => {
+    var shopItem = dataList.filter((item, index) => {
         return item.shopId == Number(obj.shopId);
     })
     return shopItem[0];

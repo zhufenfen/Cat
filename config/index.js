@@ -11,13 +11,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/miaoquan":{
-        target:'https://www.easy-mock.com',
-        changeOrigin:true,
-        pathRewrite:{
-          "^/miaoquan":""
-        }
-      },
       "/tianqi":{
         target:'http://www.weather.com.cn',
         changeOrigin:true,

@@ -13,19 +13,19 @@
     <div class="main_ln">
       <ul>
         <li>
-			<span>收货人姓名</span>
+          <span>收货人姓名</span>
           <input type="text" class="cood" v-model="name">
         </li>
         <li>
-			<span>手机号码</span>
-		  
+          <span>手机号码</span>
+          
           <input type="number" class="cood" v-model="phone">
         </li>
         <li class="address">省/市/区
           <mt-picker :slots="myAddressSlots" @change="onMyAddressChange"></mt-picker>
         </li>
         <li>
-			<span>详细地址</span>
+          <span>详细地址</span>
           <input type="text" class="cood" v-model="address">
         </li>
         <li>
@@ -93,23 +93,35 @@ export default {
       this.$router.go(-1);
     },
     handleAdd() {
-      /* axios.post("/addAddress", {
-		  name:this.name,
-		  phone:this.phone,
-		  level:this.flag,
-		  level:this.myAddressProvince+" "+this.myAddressCity+" "+this.myAddresscounty+" "+this.address
-	  }).then(data => {
-		  let instance = Toast({
-              message: data,
-              className: "toast"
-            });
-            setTimeout(() => {
-              instance.close();
-            }, 2000);
-		  if(data.code){
-			  this.$router.push("/moudifiress");
-		  }
-	  }) */
+      this.$router.push("/moudifiress");
+      /* axios({
+        method: "post",
+        url: "/miaoquan/addAddress",
+        data: {
+          name: this.name,
+          phone: this.phone,
+          level: this.flag,
+          detail:
+            this.myAddressProvince +
+            " " +
+            this.myAddressCity +
+            " " +
+            this.myAddresscounty +
+            " " +
+            this.address
+        }
+      }).then(data => {
+        let instance = Toast({
+          message: data.msg,
+          className: "toast"
+        });
+        setTimeout(() => {
+          instance.close();
+        }, 2000);
+        if (data.code == 0) {
+          this.$router.push("/moudifiress");
+        }
+      }); */
     },
     handleOdd() {
       if (this.flag) {
@@ -218,7 +230,7 @@ export default {
         padding-left: 0.34rem;
         line-height: 0.87rem;
         input {
-        //   width: 100%;
+          //   width: 100%;
           height: 0.88rem;
           border: none;
           outline: none;
@@ -227,11 +239,11 @@ export default {
         .odd_a {
           width: 0.22rem;
           height: 0.22rem;
-		}
-		span{
-			display: inline-block;
-			width:1.5rem;
-		}
+        }
+        span {
+          display: inline-block;
+          width: 1.5rem;
+        }
       }
     }
   }
