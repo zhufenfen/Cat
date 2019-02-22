@@ -12,7 +12,6 @@ let data = Mock.mock({
     }]
 })
 const getHome =(config)=>{
-    console.log(config.url)
     // var list = JSON.parse(config.body)
     // console.log(list)
     return data

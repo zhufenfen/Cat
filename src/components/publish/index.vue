@@ -48,10 +48,8 @@ export default {
         })
        let d = new Date()
        this.year = d.getFullYear()
-       var mon =(d.getMonth() + 1) / 10
-       if(mon < 1){
-           this.month = "" + d.getMonth() + 1
-       }
+       var mon =d.getMonth() + 1
+       this.month = mon < 10 ? "0" + mon : mon
        this.day = d.getDate()
        switch(d.getDay()){
            case 1 : this.week = "星期一";break;

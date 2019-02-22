@@ -74,8 +74,7 @@ export default {
     },
     created(){
        
-        this.getHome(),
-        this.getmiaoquan()
+        this.getHome()
     },
     computed:{
         // ...Vuex.mapState({
@@ -88,11 +87,6 @@ export default {
                 if(data.success==true){
                     this.homeList = data.data;
                 }
-            })
-        },
-        getmiaoquan(){
-            axios.post("/miaoquan/index").then((data)=>{
-                console.log(data)
             })
         },
         goDetail(){
@@ -152,12 +146,12 @@ export default {
     // top:1.1rem;
     overflow: hidden;
     .main {
-      padding-bottom: 9rem;
+    //   padding-bottom: 9rem;
     .content{
         overflow:auto;
         // margin-top: 1.1rem;
         width: 100%;
-        height: 54rem;
+        height: 59.5rem;
         .banner{
             width: 100%;
             height: 2.25rem;
