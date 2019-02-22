@@ -4,8 +4,7 @@
             <li v-for="(item, index) in navs">
                 <router-link :to="{name:item.name}" @click.native="handleClick(index)">
                     <div>
-                        <img v-show="flag != index" :src="'./static/imgs/'+item.src" alt="">
-                        <img v-show="flag == index" :src="'./static/imgs/'+item.src1" alt="">
+                        <img :src="'./static/imgs/'+item.src1" alt="">
                     </div>
                     <span v-if="index != 2">{{item.title}}</span>
                 </router-link>
@@ -89,6 +88,11 @@ export default {
                 &:nth-child(3) img{
                     width:.76rem;
                     height:.76rem;
+                }
+                .router-link-active{
+                    span{
+                        color:red;
+                    }
                 }
             }
         }

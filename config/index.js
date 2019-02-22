@@ -11,13 +11,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/miaoquan":{
-        target:'http://10.9.69.240:9090',
-        changeOrigin:true,
-        pathRewrite:{
-          "^/miaoquan":""
-        }
-      },
       "/tianqi":{
         target:'http://www.weather.com.cn',
         changeOrigin:true,

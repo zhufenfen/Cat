@@ -24,15 +24,20 @@
             <span @click="handleDel(index)">删除</span>
           </div>
         </li>
-
-        <!-- <li v-for="(item,index) in list_l">
-
-				<p class="name">{{item.name}}
-					<span class="tel">{{item.phone}}</span>
-					<span class="prc_bj"></span>
-				</p>
-				<p class="site"><span class="def" v-if="item.level == 1">【默认】</span>{{item.detail}}</p>
-        </li>-->
+        <!-- <li v-for="(item,index) in list_l" class="wrapper" ref="addressWrapper">
+          <div class="content">
+            <p class="name">
+              {{item.name}}
+              <span class="tel">{{item.phone}}</span>
+              <span class="prc_bj"></span>
+            </p>
+            <p class="site">
+              <span class="def" v-if="item.level == 1">【默认】</span>
+              {{item.detail}}
+            </p>
+            <span @click="handleDel(item.id)">删除</span>
+          </div>
+        </li> -->
       </ul>
       <div class="none_bj" v-if="flag">
         <img src="../../../../static/img_ln/none.jpg">
@@ -48,6 +53,7 @@
 </template>
 
 <script>
+import { Toast } from "mint-ui";
 import BScroll from "better-scroll";
 import axios from "../../../lib";
 export default {
@@ -55,14 +61,14 @@ export default {
     axios.get("/address").then(data => {
       this.list_l = data;
     });
-    /* axios.post("/findByAddressAll").then((data)=>{
-				if(data){
-					this.flag = 0;
-				}else{
-					this.flag = 1;
-				}
-				this.list_l = data;
-			}) */
+    /* axios.post("/miaoquan/findByAddressAll").then(data => {
+      if (data.code == 0) {
+        this.flag = 0;
+      } else {
+        this.flag = 1;
+      }
+      this.list_l = data.addresses;
+    }); */
   },
   data() {
     return {
@@ -100,19 +106,27 @@ export default {
       this.$router.push("/my");
     },
     handleDel(index) {
-      axios
-        .post("/delAddress", {
-          name: index
-        })
-        .then(data => {
-          if (data.code) {
-            axios.get("/address").then(data => {
-              this.list_l = data;
-            });
-          }else{
-			  console.log("删除失败");
-		  }
-        });
+      /* axios({
+        method: "post",
+        url: "/miaoquan/delAddress",
+        data: {
+          id: index
+        }
+      }).then(data => {
+        if (data.code == 0) {
+          axios.get("/miaoquan/findByAddressAll").then(data => {
+            this.list_l = data.addresses;
+          });
+        } else {
+          let instance = Toast({
+            message: "删除失败",
+            className: "toast"
+          });
+          setTimeout(() => {
+            instance.close();
+          }, 2000);
+        }
+      }); */
     }
   }
 };
