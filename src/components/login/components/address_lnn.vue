@@ -6,7 +6,7 @@
       <p class="add_save" @click="handleAdd">保存</p>
 
       <div @click="address_btn2">
-        <img src="../../../../static/img_ln/jiao.jpg">
+        <img src="static/img_ln/jiao.jpg">
       </div>
     </div>
     <!--地址列表-->

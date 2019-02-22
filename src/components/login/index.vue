@@ -2,7 +2,7 @@
   <div class="login_ln">
     <!--logo-->
     <div class="log_ln">
-      <img src="../../../static/img_ln/login.jpg">
+      <img src="static/img_ln/login.jpg">
     </div>
     <div class="dengl">
       <p class="oder" @click="handleToggle(1)">

@@ -2,7 +2,7 @@
     <div id="photo">
         <!-- 头部 -->
         <div class="topPhoto"> 
-            <img @click="showPhoto()" src="../../../../static/imgs/publish/icon_jiantou1.png" alt="">
+            <img @click="showPhoto()" src="static/imgs/publish/icon_jiantou1.png" alt="">
             <span>精选图片</span>
             <span @click="godynamic()">下一步</span>
         </div>

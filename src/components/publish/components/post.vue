@@ -2,7 +2,7 @@
     <div id="post">
         <!-- 头部 -->
         <div class="top"> 
-            <img @click="showPost()" src="../../../../static/imgs/publish/icon_jiantou1.png" alt="">
+            <img @click="showPost()" src="static/imgs/publish/icon_jiantou1.png" alt="">
             <span>写点东西</span>
         </div>
         <div class="column">
