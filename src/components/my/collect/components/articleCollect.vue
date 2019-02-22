@@ -50,33 +50,33 @@ export default {
                }
            })
        },
-       getnewdata(){
-           axios.post("/miaoquan/findArticleByUserId").then((data)=>{
-               console.log(data)
-           })
-       },
-        getolddata(){
-           axios.post("/miaoquan/findGoodsByUserId").then((data)=>{
-               console.log(data)
-           })
-       },
-       getpetdata(){
-           axios.post("/miaoquan/insertPet").then((data)=>{
-               console.log(data)
-           })
-       },
-        getpetshowdata(){
-           axios.post("/miaoquan/findPetById").then((data)=>{
-               console.log(data)
-           })
-       }
+    //    getnewdata(){
+    //        axios.post("/miaoquan/findArticleByUserId").then((data)=>{
+    //            console.log(data)
+    //        })
+    //    },
+    //     getolddata(){
+    //        axios.post("/miaoquan/findGoodsByUserId").then((data)=>{
+    //            console.log(data)
+    //        })
+    //    },
+    //    getpetdata(){
+    //        axios.post("/miaoquan/insertPet").then((data)=>{
+    //            console.log(data)
+    //        })
+    //    },
+    //     getpetshowdata(){
+    //        axios.post("/miaoquan/findPetById").then((data)=>{
+    //            console.log(data)
+    //        })
+    //    }
      },
      created(){
-       this.getdata(),
-       this.getnewdata(),
-       this.getolddata(),
-       this.getpetdata(),
-       this.getpetshowdata()
+       this.getdata()
+    //    this.getnewdata(),
+    //    this.getolddata(),
+    //    this.getpetdata(),
+    //    this.getpetshowdata()
      }
      
      

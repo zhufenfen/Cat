@@ -80,14 +80,14 @@ export default {
             // }).catch((err)=>{
             //     console.log(err)
             // })
-            console.log({
-                    name:this.message[0].name,
-                    gender:this.message[0].gender,
-                    birthday:this.message[0].birthday,
-                    varieties:this.message[0].varieties,
-                    synopsis:this.message[0].synopsis,
-                    picture:this.message[0].picture,
-                })
+            // console.log({
+            //         name:this.message[0].name,
+            //         gender:this.message[0].gender,
+            //         birthday:this.message[0].birthday,
+            //         varieties:this.message[0].varieties,
+            //         synopsis:this.message[0].synopsis,
+            //         picture:this.message[0].picture,
+            //     })
          }
      }
 }
