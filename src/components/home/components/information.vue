@@ -1,7 +1,7 @@
 <template>
     <div id="information">
         <div class="top"> 
-            <img @click="gomy()" src="../../../../static/imgs/publish/icon_jiantou1.png" alt="">
+            <img @click="gomy()" src="static/imgs/publish/icon_jiantou1.png" alt="">
             <span>消息</span>
             <span>忽略未读</span>
         </div>

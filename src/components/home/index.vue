@@ -9,9 +9,9 @@
         <div class="content">
             <div class="swiper-container banner">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="../../../static/imgs/home-img/banner1.png" alt=""></div>
-                    <div class="swiper-slide"><img src="../../../static/imgs/home-img/banner2.png" alt=""></div>
-                    <div class="swiper-slide"><img src="../../../static/imgs/home-img/banner3.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/imgs/home-img/banner1.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/imgs/home-img/banner2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/imgs/home-img/banner3.png" alt=""></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -21,7 +21,7 @@
                     <router-link :to="{name:'pet'}">
                     <div>
                         <p>活跃之星</p>
-                        <img src="../../../static/imgs/home-img/star1.png" alt="">
+                        <img src="static/imgs/home-img/star1.png" alt="">
                         <p>橘猫</p>
                         <p>3岁</p>
                     </div>
@@ -29,7 +29,7 @@
                     <router-link :to="{name:'pet'}">
                     <div>
                         <p>人气之星</p>
-                        <img src="../../../static/imgs/home-img/star2.png" alt="">
+                        <img src="static/imgs/home-img/star2.png" alt="">
                         <p>折耳猫</p>
                         <p>3岁</p>
                     </div>
@@ -37,7 +37,7 @@
                     <router-link :to="{name:'pet'}">
                     <div>
                         <p>魅力之星</p>
-                        <img src="../../../static/imgs/home-img/star3.png" alt="">
+                        <img src="static/imgs/home-img/star3.png" alt="">
                         <p>蓝猫</p>
                         <p>1岁</p>
                     </div>

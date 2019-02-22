@@ -2,7 +2,7 @@
   <div class="catDetails">
     <div class="top">
       <div class="left" @click="$router.go(-1)">
-        <img src="../../../../static/communityImg/jiao_03.jpg" alt>
+        <img src="static/communityImg/jiao_03.jpg" alt>
       </div>
       <div class="middle">动态详情</div>
       <div></div>
@@ -23,11 +23,11 @@
       </div>
       <div class="last">
         <div class="speak" @click="handelComments()">
-          <img src="../../../../static/communityImg/icon-pl-2@2x.png" alt>
+          <img src="static/communityImg/icon-pl-2@2x.png" alt>
         </div>&nbsp;&nbsp;
         <span>{{catInfo.reviewCount}}</span>
         <div class="xin" @click="handleCatAdd()">
-          <img :src="flag?'../../../../static/communityImg/icon-xin-2@2x.png':'../../../../static/communityImg/icon-xin-3@2x.png'" alt>
+          <img :src="flag?'static/communityImg/icon-xin-2@2x.png':'static/communityImg/icon-xin-3@2x.png'" alt>
         </div>&nbsp;&nbsp;
         <span>{{catInfo.number}}</span>
       </div>
@@ -39,7 +39,7 @@
     <div class="foot">
       <input type="text" v-model.value="val" placeholder="添加评论">
       <span @click="add()">
-        <img src="../../../../static/communityImg/icon-pl-2@2x.png" alt>
+        <img src="static/communityImg/icon-pl-2@2x.png" alt>
       </span>
     </div>
   </div>

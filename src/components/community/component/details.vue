@@ -2,11 +2,11 @@
   <div class="details">
     <div class="top">
       <div class="left" @click="$router.push('/community')">
-        <img src="../../../../static/communityImg/jiao_03.jpg" alt>
+        <img src="static/communityImg/jiao_03.jpg" alt>
       </div>
       <div class="middle">详情</div>
       <div class="right">
-        <img src="../../../../static/communityImg/xin_03.jpg" alt>
+        <img src="static/communityImg/xin_03.jpg" alt>
       </div>
     </div>
     <div class="center">
@@ -22,7 +22,7 @@
       <img :src="detailInfo.disPhoto" alt>
     </div>
     <div class="last">
-      <img src="../../../../static/communityImg/hxin_03.jpg" alt>
+      <img src="static/communityImg/hxin_03.jpg" alt>
     </div>
   </div>
 </template>

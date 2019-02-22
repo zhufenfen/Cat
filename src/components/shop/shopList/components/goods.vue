@@ -1,6 +1,6 @@
 <template>
   <div class="goods">
-    <div class="goodItem" v-for="(item, index) in goodList" @click="goodDetail(val, item.shopId)">
+    <div class="goodItem" v-for="(item, index) in goodList" @click="goodDetail(item.shopId)">
       <img class="img1" :src="item.shopImg">
       <p>{{item.shopTitle}}</p>
     </div>

@@ -7,7 +7,7 @@
                      <h2>爱宠信息</h2>
                </li>
            </ul>
-           <router-link to="/my/pet/petchange"><img src="../../../../../static/hrj_img/icon-bxi.png" alt=""></router-link>
+           <router-link to="/my/pet/petchange"><img src="static/hrj_img/icon-bxi.png" alt=""></router-link>
         </div>
         <div class="main">
                  <p>暂无信息哦！！</p>

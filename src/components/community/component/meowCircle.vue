@@ -20,13 +20,13 @@
           <p>
             <span>
               <div>
-                <img src="../../../../static/communityImg/icon-pl-mq-hei@2x.png" alt>
+                <img src="static/communityImg/icon-pl-mq-hei@2x.png" alt>
               </div>
               <i class="i">56</i>
             </span>
             <span>
               <div>
-                <img src="../../../../static/communityImg/icon-xq-xin-hei@2x.png" alt>
+                <img src="static/communityImg/icon-xq-xin-hei@2x.png" alt>
               </div>
               <i>74</i>
             </span>
@@ -36,10 +36,10 @@
           <!-- <p class="last">显示全部评论</p> -->
           <ul class="lastOne">
             <li>
-              <img src="../../../../static/communityImg/icon-xin-3@2x.png" alt>
+              <img src="static/communityImg/icon-xin-3@2x.png" alt>
             </li>
             <li>
-              <img src="../../../../static/communityImg/icon-pl@2x.png" alt>
+              <img src="static/communityImg/icon-pl@2x.png" alt>
             </li>
           </ul>
         </div>

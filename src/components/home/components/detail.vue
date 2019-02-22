@@ -1,7 +1,7 @@
 <template>
     <div id="detail">
         <div class="top"> 
-            <img @click="go()" src="../../../../static/imgs/publish/icon_jiantou1.png" alt="">
+            <img @click="go()" src="static/imgs/publish/icon_jiantou1.png" alt="">
             <span>文章详情</span>
         </div>
         <div class="content">
@@ -15,7 +15,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;爱上第一个发USD异步vsjvb
                 收到货开关阀速度不吃亏VB这款项目VB胃口不好一样。情况不是要强硬的逼迫猫咪去吃猫粮。胃口不好一样。情况不是要强硬的逼迫猫咪去吃猫粮。
             </div>
-            <img src="../../../../static/imgs/home-img/img-wenzh@2x.png" alt="">
+            <img src="static/imgs/home-img/img-wenzh@2x.png" alt="">
         </div>
     </div>
 </template>

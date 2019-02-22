@@ -14,11 +14,11 @@
         </div>
         <div class="choose">
             <div class="post" @click="goPost()">
-                <img src="../../../static/imgs/publish/icon-ft.png" alt="">
+                <img src="static/imgs/publish/icon-ft.png" alt="">
                 <span>发帖</span>
             </div>
             <div class="photo" @click="goPhoto()">
-                <img src="../../../static/imgs/publish/icon-xc.png" alt="">
+                <img src="static/imgs/publish/icon-xc.png" alt="">
                 <span>相册</span>
             </div>
         </div>

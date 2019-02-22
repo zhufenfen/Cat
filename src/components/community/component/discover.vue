@@ -40,7 +40,7 @@ export default {
       disArr: [],
       flag: true,
       img:{
-        active:"../../../../static/communityImg/icon-xin-2@2x.png",
+        active:"static/communityImg/icon-xin-2@2x.png",
       }
     };
   },
@@ -52,11 +52,11 @@ export default {
       if (!this.flag) {
         type = 1;
         this.disArr[index].number += 1;
-        this.$refs.xin[index].src="../../../../static/communityImg/icon-xin-3@2x.png"
+        this.$refs.xin[index].src="static/communityImg/icon-xin-3@2x.png"
       } else {
         type = 2;
         this.disArr[index].number -= 1;
-         this.$refs.xin[index].src="../../../../static/communityImg/icon-xin-2@2x.png"
+         this.$refs.xin[index].src="static/communityImg/icon-xin-2@2x.png"
       }
       // axios.post("/up", { type, id }).then(data => {
       //   console.log(data);

@@ -1,6 +1,5 @@
-export default{
-     handleDell(state,params){
-        state.dellList=params;
-
+export default {
+    handleDell(state, params) {
+        state.dellList = params;
     }
 }

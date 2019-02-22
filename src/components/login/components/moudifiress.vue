@@ -4,7 +4,7 @@
     <div class="header_ln">
       <p>地址管理</p>
       <div @click="address_btn">
-        <img src="../../../../static/img_ln/jiao.jpg">
+        <img src="static/img_ln/jiao.jpg">
       </div>
     </div>
     <!--地址列表-->
@@ -40,7 +40,7 @@
         </li> -->
       </ul>
       <div class="none_bj" v-if="flag">
-        <img src="../../../../static/img_ln/none.jpg">
+        <img src="static/img_ln/none.jpg">
       </div>
     </div>
     <!--无地址-->

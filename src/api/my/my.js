@@ -31,6 +31,19 @@ let data = Mock.mock({
         ]
     })
 
+    let data2 = Mock.mock({
+        "data|15": [
+        {
+        "Id|+1": 0,
+        "myName": "@cname",
+        "txt": "@cparagraph()",
+        "myImg": "@image('128x128','#444','#FFF','Mock.js')",
+        time: "@date('MM-dd')", 
+        
+        }
+        ]
+        })
+
 const getFans = (config)=>{
     return data.data;  
 }
@@ -48,9 +61,12 @@ const getIt = (config) => {
  
 }
 
+const getDell =(config)=>{
+    return data2.data
+    }
 
-export default{
-    getFans,
-    getIt
-   
-}
+    export default{
+        getFans,
+        getIt,
+        getDell
+        }
