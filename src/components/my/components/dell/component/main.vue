@@ -30,7 +30,7 @@ export default {
     this.scroll = new BScroll(this.$refs.mainWrapper);
   },
   created() {
-    this.handleDell();
+    // this.handleDell();
   },
   computed: {
     ...Vuex.mapState({
