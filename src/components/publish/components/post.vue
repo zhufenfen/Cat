@@ -38,12 +38,11 @@ export default {
             area:""
         }
     },
-    created(){
-        if(sessionStorage.getItem != ""){
-            this.title = JSON.parse(sessionStorage.getItem("title"))
-            this.title2 = JSON.parse(sessionStorage.getItem("title2"))
-            this.area = JSON.parse(sessionStorage.getItem("area"))
-        }
+    beforeMount(){
+            this.title = sessionStorage.getItem("title")
+            this.title2 = sessionStorage.getItem("title2")
+            this.area = sessionStorage.getItem("area")
+        
     },
     methods:{
         showPost(){           //点击×，返回上一个页面

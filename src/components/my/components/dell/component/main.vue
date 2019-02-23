@@ -4,15 +4,15 @@
       <div class="center" v-for="(item,index) in dellList">
         <div class="top">
           <b></b>
-          <span>{{item.time}}</span>
+          <span>{{item && item.time}}</span>
         </div>
         <div class="middle">
           <div class="right">
             <b class="wire"></b>
             <div class="Rw">
-              <p>{{item.txt}}</p>
+              <p>{{item && item.txt}}</p>
               <div class="pic">
-                <img :src="item.imgUrl">
+                <img :src="item && item.myImg">
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default {
     this.scroll = new BScroll(this.$refs.mainWrapper);
   },
   created() {
-    // this.handleDell();
+    this.handleDell();
   },
   computed: {
     ...Vuex.mapState({
@@ -51,7 +51,7 @@ export default {
   width: 100%;
   height: 11.37rem;
   background: rgba(241, 241, 241, 1);
-  margin-top:.66rem;
+  margin-top: 0.66rem;
 }
 .mainInside {
   width: 100%;
@@ -62,7 +62,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top:.19rem;
+    margin-top: 0.19rem;
     .top {
       width: 1rem;
       height: 0.18rem;
@@ -90,7 +90,7 @@ export default {
       width: 100%;
       display: flex;
       margin-bottom: 0.2rem;
-      
+
       .right {
         margin-left: 0.21rem;
         flex-direction: row;
@@ -107,20 +107,20 @@ export default {
         }
         .Rw {
           float: left;
-          width:6.22rem;
+          width: 6.22rem;
           margin-top: 0.19rem;
-            margin-right: 0.08rem;
-            margin-left: 0.1rem;
+          margin-right: 0.08rem;
+          margin-left: 0.1rem;
           p {
             margin-top: 0.19rem;
             margin-right: 0.08rem;
             margin-left: 0.1rem;
-            font-size:.24rem;
+            font-size: 0.24rem;
             overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
           }
           .pic {
             width: 1.6rem;
