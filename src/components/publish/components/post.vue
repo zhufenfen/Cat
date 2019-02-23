@@ -2,7 +2,7 @@
     <div id="post">
         <!-- 头部 -->
         <div class="top"> 
-            <img @click="showPost()" src="static/imgs/publish/icon_jiantou1.png" alt="">
+            <img @click="showPost()" src="../../../../static/imgs/publish/icon_jiantou1.png" alt="">
             <span>写点东西</span>
         </div>
         <div class="column">
@@ -38,12 +38,11 @@ export default {
             area:""
         }
     },
-    created(){
-        if(sessionStorage.getItem != ""){
-            this.title = JSON.parse(sessionStorage.getItem("title"))
-            this.title2 = JSON.parse(sessionStorage.getItem("title2"))
-            this.area = JSON.parse(sessionStorage.getItem("area"))
-        }
+    beforeMount(){
+            this.title = sessionStorage.getItem("title")
+            this.title2 = sessionStorage.getItem("title2")
+            this.area = sessionStorage.getItem("area")
+        
     },
     methods:{
         showPost(){           //点击×，返回上一个页面
