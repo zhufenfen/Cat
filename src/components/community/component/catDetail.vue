@@ -83,7 +83,7 @@ export default {
       })
     },
     handelComments() {
-      this.commentsIsShow = !this.commentsIsShow;
+      // this.commentsIsShow = !this.commentsIsShow;
     },
     handleCatAdd(){
       this.flag = !this.flag;

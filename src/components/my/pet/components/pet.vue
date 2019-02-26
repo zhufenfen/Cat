@@ -1,16 +1,16 @@
 <template>
     <div class="outside">
         <div class="header">
-           <span><router-link :to="{name:name}"><img src="/static/hrj_img/left.png" alt=""></router-link></span>
+           <span><router-link :to="{name:name}"><img src="static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li>
                      <h2>爱宠信息</h2>
                </li>
            </ul>
-           <router-link to="/my/pet/petchange"><img src="/static/hrj_img/icon-bxi.png" alt=""></router-link>
+           <router-link to="/my/pet/petchange"><img src="static/hrj_img/icon-bxi.png" alt=""></router-link>
         </div>
          <div class="main" v-for="(item,index) in message">
-              <img :src=item.picture alt="">
+              <img :src="item.picture" alt="">
               <h2>{{item.name}}</h2>
               <p><span>生日</span>  {{item.birthday}}</p>
               <p><span>性别</span>  {{item.gender}}</p>
@@ -30,7 +30,7 @@ export default {
              name:"my",
              message:[
                     {
-                  picture:"/static/hrj_img/touxiang-guanzhu-5.png",
+                  picture:"static/hrj_img/touxiang-guanzhu-5.png",
                   name:"艾琪儿",
                   birthday:"2017-10-20",
                   gender:"MM",
