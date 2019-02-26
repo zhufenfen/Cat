@@ -365,7 +365,7 @@ var router = new Router({
   ]
 })
 // 全局守卫（登录验证）
-import store from "@/store"
+/* import store from "@/store"
 router.beforeEach((to, from, next) => {
   //存储的是需要做登录验证的路由的name
   var routers = ["my", "meowCircle", "shopCart", "goodBalance"];
@@ -378,5 +378,5 @@ router.beforeEach((to, from, next) => {
   }else{
     next();
   }
-})
+}) */
 export default router;

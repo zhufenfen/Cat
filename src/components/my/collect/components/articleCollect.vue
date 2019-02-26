@@ -11,7 +11,7 @@
                         <span class="title">
                             瞄圈公众号
                         </span>
-                        <img src="/static/hrj_img/icon-chakan.png" alt="">
+                        <img src="static/hrj_img/icon-chakan.png" alt="">
                         <span>
                             {{item.num}}
                         </span>

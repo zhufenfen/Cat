@@ -1,7 +1,7 @@
 <template>
     <div class="out">
         <div class="header">
-           <span><router-link :to="{name:name}"><img src="/static/hrj_img/left.png" alt=""></router-link></span>
+           <span><router-link :to="{name:name}"><img src="static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li @click="handleToggle(1)">
                      宝贝收藏

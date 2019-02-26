@@ -28,7 +28,7 @@
 import Vuex from "vuex";
 export default {
     created(){
-        this.informationData()
+        // this.informationData()
     },
     computed:{
         ...Vuex.mapState({

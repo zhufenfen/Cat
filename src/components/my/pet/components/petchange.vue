@@ -1,7 +1,7 @@
 <template>
     <div class="outside">
         <div class="header">
-           <span><router-link :to="{name:name}"><img src="/static/hrj_img/left.png" alt=""></router-link></span>
+           <span><router-link :to="{name:name}"><img src="static/hrj_img/left.png" alt=""></router-link></span>
            <ul>
                <li>
                      <h2>资料</h2>
@@ -11,7 +11,7 @@
         <div class="outpic">
         <div class="pic">
         </div>
-        <img :src=pic alt="哎呀，图片走丢了" class="head">
+        <img :src="pic" alt="哎呀，图片走丢了" class="head">
         </div>
         <div class="list" v-for="(item,index) in message">
               <p>昵称<input type="text"  placeholder="输入宠物昵称" v-model="item.name"></p>
@@ -40,7 +40,7 @@ export default {
          return{
 
              name:"pet",
-             pic:"/static/hrj_img/touxiang-xinxi.png",
+             pic:"static/hrj_img/touxiang-xinxi.png",
              message:[ {
                     name:"",
                     gender:"",
@@ -135,7 +135,7 @@ export default {
             .pic{
                     height: 3rem;
                     width: 7.5rem;
-                    background: url(/static/hrj_img/touxiang-xinxi.png) no-repeat;
+                    background: url("../../../../../static/hrj_img/touxiang-xinxi.png") no-repeat;
                     background-size: 8rem;
                     background-position: -0.25rem -2rem; 
                     opacity: 0.5; 

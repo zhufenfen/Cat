@@ -41,11 +41,11 @@ export default {
         }
     },
     created(){
-        this.$axios.get("/tianqi/data/cityinfo/101010100.html").then((res)=>{
+        /* this.$axios.get("/tianqi/data/cityinfo/101010100.html").then((res)=>{
             this.city = res.weatherinfo.city,
             this.weather = res.weatherinfo.weather,
             this.temperature = res.weatherinfo.temp1
-        })
+        }) */
        let d = new Date()
        this.year = d.getFullYear()
        var mon =d.getMonth() + 1
@@ -80,7 +80,7 @@ export default {
     #publish{
         width: 100%;
         height: 13.34rem;
-        background: url(../../../static/imgs/publish/background.png);
+        background: url("../../../static/imgs/publish/background.png");
         background-size: 7.5rem 13.34rem;
         .day{
             position: fixed;
